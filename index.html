@@ -155,7 +155,7 @@
       margin-top: 1.5rem;
       position: relative;
       width: 100%;
-      height: calc(100vh - 240px); /* covers remaining space after headers */
+      height: calc(100vh - 240px);
       min-height: 420px;
       max-height: 800px;
       background: #fcf8f5;
@@ -212,10 +212,11 @@
     .slide-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* covers entire area, crops if needed */
+      object-fit: contain; /* shows FULL image without cropping */
       object-position: center;
       display: block;
       border-radius: 2rem;
+      background: #fcf8f5;
     }
 
     /* carousel controls - positioned absolute over the image */
@@ -376,7 +377,7 @@
     </div>
   </header>
 
-  <!-- ========== HERO : FULL COVER CAROUSEL (image only) ========== -->
+  <!-- ========== HERO : FULL COVER CAROUSEL (image only, full show) ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
       <!-- slide 1 -->
@@ -431,7 +432,7 @@
 
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full cover · auto-slide
+    <i class="fas fa-image"></i> 4 images · full view (no crop) · auto-slide
   </div>
 </div>
 
@@ -510,7 +511,6 @@
       }
     });
 
-    // start with first slide active
     showSlide(0);
     startAutoSlide();
   })();
@@ -518,7 +518,7 @@
 
 <!-- instruction -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Full cover hero · images fill entire area · auto-slide every 3s.
+  <i class="fas fa-info-circle"></i> Full cover hero · images fully visible (object-fit: contain) · auto-slide every 3s.
 </div>
 </body>
 </html>
