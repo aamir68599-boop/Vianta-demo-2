@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NayanMahaShwari · Silk Saree</title>
+  <!-- Font Awesome 5 (free) for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: #f9f5f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      max-width: 1440px;
+      width: 100%;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      padding: 0 2rem 2rem 2rem;
+      border-radius: 0 0 2rem 2rem;
+    }
+
+    /* ---- TOP HEADER (brand + icons) ---- */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 0.5rem 0;
+      border-bottom: 1px solid #f0ebe6;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-icon {
+      background: #a67c6b;
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .brand h1 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #2c1810;
+    }
+    .brand h1 span {
+      font-weight: 300;
+      color: #a67c6b;
+    }
+
+    .top-icons {
+      display: flex;
+      gap: 1.8rem;
+      color: #2c1810;
+      font-size: 1.2rem;
+    }
+    .top-icons i {
+      cursor: default;
+      transition: color 0.2s;
+    }
+    .top-icons i:hover {
+      color: #a67c6b;
+    }
+
+    /* ---- BOTTOM HEADER (menu) ---- */
+    .bottom-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0 0.6rem 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #f0ebe6;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 2.2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #2c1810;
+      flex-wrap: wrap;
+    }
+    .main-menu a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .main-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: #a67c6b;
+      transition: width 0.2s;
+    }
+    .main-menu a:hover {
+      color: #a67c6b;
+    }
+    .main-menu a:hover::after {
+      width: 100%;
+    }
+
+    .more-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: default;
+    }
+    .more-dropdown i {
+      font-size: 0.7rem;
+      margin-left: 0.2rem;
+    }
+
+    .header-extra {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .header-extra .search-icon {
+      font-size: 1.1rem;
+      color: #2c1810;
+    }
+
+    /* ---- HERO SECTION / CAROUSEL ---- */
+    .hero-carousel {
+      margin-top: 2rem;
+      position: relative;
+      background: #fcf8f5;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+    }
+
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem;
+      position: relative;
+      min-height: 380px;
+    }
+
+    /* slide wrapper — we use a simple flex to display only one slide at a time */
+    .carousel-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      transition: opacity 0.25s ease;
+    }
+
+    .slide-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .slide-text {
+      flex: 1 1 300px;
+      padding: 0 1rem;
+    }
+
+    .slide-text .subhead {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a67c6b;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .slide-text .title {
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #1e130f;
+      margin: 0.25rem 0 0.2rem 0;
+    }
+    .slide-text .title strong {
+      font-weight: 600;
+      color: #2c1810;
+    }
+    .slide-text .sub-title {
+      font-size: 1rem;
+      color: #4d342b;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .slide-text .style-tag {
+      display: inline-block;
+      background: #2c1810;
+      color: #f5ede8;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .slide-image {
+      flex: 0 0 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slide-image img {
+      max-width: 100%;
+      height: auto;
+      max-height: 220px;
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      object-fit: cover;
+      background: #ede3db;
+    }
+
+    /* fallback: if image not loaded, show placeholder with text */
+    .placeholder-img {
+      width: 200px;
+      height: 200px;
+      background: #e3d7cf;
+      border-radius: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7b5f51;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    /* carousel controls */
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 0.5rem 0 1.8rem 0;
+    }
+    .carousel-btn {
+      background: transparent;
+      border: 1px solid #d6c9c0;
+      width: 44px;
+      height: 44px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #2c1810;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+    }
+    .carousel-btn:hover {
+      background: #2c1810;
+      color: white;
+      border-color: #2c1810;
+    }
+    .carousel-indicators {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 20px;
+      background: #d6c9c0;
+      transition: 0.2s;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+    .dot.active {
+      background: #2c1810;
+      width: 24px;
+    }
+
+    /* ---- responsive touches ---- */
+    @media screen and (max-width: 860px) {
+      .wrapper {
+        padding: 0 1rem 1.5rem 1rem;
+      }
+      .main-menu {
+        gap: 1.2rem;
+        font-size: 0.8rem;
+      }
+      .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .bottom-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .header-extra {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .slide-text .title {
+        font-size: 2.2rem;
+      }
+      .slide-image {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+      .slide-image img {
+        max-height: 180px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .main-menu {
+        gap: 0.9rem;
+        font-size: 0.7rem;
+      }
+      .brand h1 {
+        font-size: 1.3rem;
+      }
+      .slide-text .title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ========== HEADER 1 : TOP ========== -->
+  <header class="top-header">
+    <div class="brand">
+      <span class="brand-icon"><i class="fas fa-crown"></i></span>
+      <h1>Nayan<span>MahaShwari</span></h1>
+    </div>
+    <div class="top-icons">
+      <i class="fas fa-user-circle"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- ========== HEADER 2 : BOTTOM (MENU) ========== -->
+  <header class="bottom-header">
+    <nav class="main-menu">
+      <a href="#">HOME</a>
+      <a href="#">LEHENGA</a>
+      <a href="#">BEST SELLING</a>
+      <a href="#">ALL PRODUCTS</a>
+      <a href="#">COTTON SAREE</a>
+      <a href="#">KANJIVERAM SILK</a>
+      <span class="more-dropdown">
+        More <i class="fas fa-chevron-down"></i>
+      </span>
+    </nav>
+    <div class="header-extra">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION + CAROUSEL ========== -->
+  <section class="hero-carousel">
+    <div class="carousel-container" id="carouselContainer">
+      <!-- slide 1 (active) -->
+      <div class="carousel-slide active-slide" data-index="0">
+        <div class="slide-content">
+          <div class="slide-text">
+            <div class="subhead">✦ Nayanthana style</div>
+            <h2 class="title"><strong>NayanMahaShwari</strong><br>SILK SAREE</h2>
+            <div class="sub-title">Nayanthana style · pure silk</div>
+            <span class="style-tag"><i class="fas fa-star" style="margin-right: 6px;"></i> signature drape</span>
+          </div>
+          <div class="slide-image">
+            <!-- image url will be placed here (provided later) -->
+            <img src="#" alt="Silk Saree" id="slideImg0" style="display: none;" />
+            <div class="placeholder-img" id="placeholder0">
+              <span>🟤 silk saree<br/><small style="font-weight:300;">(image URL later)</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 2 (hidden) -->
+      <div class="carousel-slide" data-index="1" style="display: none;">
+        <div class="slide-content">
+          <div class="slide-text">
+            <div class="subhead">✦ festive collection</div>
+            <h2 class="title"><strong>Kanjiveram</strong><br>wedding silk</h2>
+            <div class="sub-title">Nayanthana inspired · zari weave</div>
+            <span class="style-tag"><i class="fas fa-feather-alt" style="margin-right: 6px;"></i> pure zari</span>
+          </div>
+          <div class="slide-image">
+            <img src="#" alt="Kanjiveram Silk" id="slideImg1" style="display: none;" />
+            <div class="placeholder-img" id="placeholder1">
+              <span>🔶 kanjiveram<br/><small style="font-weight:300;">(image URL later)</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 3 (hidden) -->
+      <div class="carousel-slide" data-index="2" style="display: none;">
+        <div class="slide-content">
+          <div class="slide-text">
+            <div class="subhead">✦ cotton saree</div>
+            <h2 class="title"><strong>everyday</strong><br>comfort silk</h2>
+            <div class="sub-title">Nayanthana style · lightweight</div>
+            <span class="style-tag"><i class="fas fa-leaf" style="margin-right: 6px;"></i> organic cotton</span>
+          </div>
+          <div class="slide-image">
+            <img src="#" alt="Cotton Saree" id="slideImg2" style="display: none;" />
+            <div class="placeholder-img" id="placeholder2">
+              <span>🌾 cotton saree<br/><small style="font-weight:300;">(image URL later)</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel controls -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-indicators">
+        <button class="dot active" data-index="0"></button>
+        <button class="dot" data-index="1"></button>
+        <button class="dot" data-index="2"></button>
+      </div>
+      <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- tiny note: image urls can be set later via JS or directly -->
+  <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
+    <i class="fas fa-image"></i> image URL ready (set via JS)
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ----- CAROUSEL LOGIC -----
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // show slide by index
+    function showSlide(index) {
+      // hide all slides
+      slides.forEach((slide, i) => {
+        slide.style.display = 'none';
+        slide.classList.remove('active-slide');
+      });
+      // show target
+      if (slides[index]) {
+        slides[index].style.display = 'flex';
+        slides[index].classList.add('active-slide');
+      }
+      // update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    }
+
+    // next / prev
+    function nextSlide() {
+      const newIndex = (currentIndex + 1) % totalSlides;
+      showSlide(newIndex);
+    }
+    function prevSlide() {
+      const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(newIndex);
+    }
+
+    // event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // dot click
+    dots.forEach((dot) => {
+      dot.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(index) && index !== currentIndex) {
+          showSlide(index);
+        }
+      });
+    });
+
+    // (optional) keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') nextSlide();
+      else if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // ----- SET IMAGE URLS (you can replace these later) -----
+    // we set the src for each slide image and hide placeholder
+    function setImageForSlide(index, url) {
+      const img = document.getElementById(`slideImg${index}`);
+      const placeholder = document.getElementById(`placeholder${index}`);
+      if (img && placeholder) {
+        img.src = url;
+        img.style.display = 'block';
+        placeholder.style.display = 'none';
+        // also set alt text
+        img.alt = `Saree image ${index+1}`;
+      }
+    }
+
+    // ----- PROVIDE YOUR IMAGE URLS BELOW (replace these with your actual urls) -----
+    // Example: setImageForSlide(0, 'https://your-image-url.com/silk1.jpg');
+    // For now, we keep placeholders visible.
+    // To test, uncomment and add real URLs:
+    // setImageForSlide(0, 'https://images.pexels.com/photos/123456/...');
+    // setImageForSlide(1, 'https://images.pexels.com/photos/234567/...');
+    // setImageForSlide(2, 'https://images.pexels.com/photos/345678/...');
+
+    // If you want to show a demo image (free placeholder) uncomment below:
+    /*
+    setImageForSlide(0, 'https://placehold.co/300x300/ede3db/2c1810?text=Silk+Saree');
+    setImageForSlide(1, 'https://placehold.co/300x300/d4c3b8/2c1810?text=Kanjiveram');
+    setImageForSlide(2, 'https://placehold.co/300x300/e3d7cf/2c1810?text=Cotton+Saree');
+    */
+
+    // ensure first slide is visible at start
+    showSlide(0);
+
+    // (optional) expose function globally so you can set images from console
+    window.setSareeImage = setImageForSlide;
+  })();
+</script>
+
+<!-- small instruction for image url update -->
+<div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
+  <i class="fas fa-info-circle"></i> To add your images: call <strong>setSareeImage(index, 'your-url')</strong> in console, or edit the script inside the &lt;script&gt; tag.
+</div>
+</body>
+</html>
