@@ -7,6 +7,7 @@
   <!-- Font Awesome 5 (free) for icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
   <style>
+    /* reset & base */
     * {
       margin: 0;
       padding: 0;
@@ -20,6 +21,7 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      width: 100%;
     }
 
     .wrapper {
@@ -148,10 +150,14 @@
       color: #2c1810;
     }
 
-    /* ---- HERO SECTION / CAROUSEL ---- */
+    /* ===== FULL COVER HERO CAROUSEL ===== */
     .hero-carousel {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       position: relative;
+      width: 100%;
+      height: calc(100vh - 240px); /* covers remaining space after headers */
+      min-height: 420px;
+      max-height: 800px;
       background: #fcf8f5;
       border-radius: 2rem;
       overflow: hidden;
@@ -159,119 +165,74 @@
     }
 
     .carousel-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2.5rem 2rem;
-      position: relative;
-      min-height: 380px;
     }
 
-    /* slide wrapper — we use a simple flex to display only one slide at a time */
     .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      transition: opacity 0.25s ease;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .carousel-slide.active-slide {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .slide-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
       width: 100%;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .slide-text {
-      flex: 1 1 300px;
-      padding: 0 1rem;
-    }
-
-    .slide-text .subhead {
-      font-size: 0.9rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #a67c6b;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .slide-text .title {
-      font-size: 2.8rem;
-      font-weight: 300;
-      line-height: 1.2;
-      color: #1e130f;
-      margin: 0.25rem 0 0.2rem 0;
-    }
-    .slide-text .title strong {
-      font-weight: 600;
-      color: #2c1810;
-    }
-    .slide-text .sub-title {
-      font-size: 1rem;
-      color: #4d342b;
-      letter-spacing: 1px;
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-    .slide-text .style-tag {
-      display: inline-block;
-      background: #2c1810;
-      color: #f5ede8;
-      padding: 0.4rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-top: 0.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .slide-image {
-      flex: 0 0 200px;
+      width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
+
     .slide-image img {
-      max-width: 100%;
-      height: auto;
-      max-height: 220px;
-      border-radius: 1.2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-      object-fit: cover;
-      background: #ede3db;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* covers entire area, crops if needed */
+      object-position: center;
+      display: block;
+      border-radius: 2rem;
     }
 
-    /* fallback: if image not loaded, show placeholder with text */
-    .placeholder-img {
-      width: 200px;
-      height: 200px;
-      background: #e3d7cf;
-      border-radius: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7b5f51;
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    /* carousel controls */
+    /* carousel controls - positioned absolute over the image */
     .carousel-controls {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: center;
       gap: 1.2rem;
-      padding: 0.5rem 0 1.8rem 0;
+      z-index: 10;
+      padding: 0 1rem;
     }
+
     .carousel-btn {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid #d6c9c0;
       width: 44px;
       height: 44px;
@@ -283,34 +244,38 @@
       color: #2c1810;
       cursor: pointer;
       transition: all 0.2s;
-      background: white;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
     .carousel-btn:hover {
       background: #2c1810;
       color: white;
       border-color: #2c1810;
     }
+
     .carousel-indicators {
       display: flex;
       gap: 0.6rem;
       align-items: center;
     }
+
     .dot {
       width: 9px;
       height: 9px;
       border-radius: 20px;
-      background: #d6c9c0;
+      background: rgba(255, 255, 255, 0.6);
       transition: 0.2s;
       cursor: pointer;
-      border: none;
+      border: 1px solid rgba(0, 0, 0, 0.1);
       padding: 0;
     }
     .dot.active {
       background: #2c1810;
       width: 24px;
+      border-color: #2c1810;
     }
 
-    /* ---- responsive touches ---- */
+    /* ---- responsive adjustments ---- */
     @media screen and (max-width: 860px) {
       .wrapper {
         padding: 0 1rem 1.5rem 1rem;
@@ -333,15 +298,15 @@
         width: 100%;
         justify-content: flex-end;
       }
-      .slide-text .title {
-        font-size: 2.2rem;
+      .hero-carousel {
+        height: calc(100vh - 280px);
+        min-height: 320px;
+        max-height: 600px;
       }
-      .slide-image {
-        flex: 1 1 100%;
-        justify-content: center;
-      }
-      .slide-image img {
-        max-height: 180px;
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
       }
     }
 
@@ -353,8 +318,26 @@
       .brand h1 {
         font-size: 1.3rem;
       }
-      .slide-text .title {
-        font-size: 1.8rem;
+      .hero-carousel {
+        height: calc(100vh - 260px);
+        min-height: 260px;
+        max-height: 450px;
+      }
+      .carousel-controls {
+        bottom: 1rem;
+        gap: 0.8rem;
+      }
+      .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+      }
+      .dot.active {
+        width: 18px;
       }
     }
   </style>
@@ -393,83 +376,47 @@
     </div>
   </header>
 
-  <!-- ========== HERO SECTION + CAROUSEL (4 slides) ========== -->
+  <!-- ========== HERO : FULL COVER CAROUSEL (image only) ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
-      <!-- slide 1 (active) -->
+      <!-- slide 1 -->
       <div class="carousel-slide active-slide" data-index="0">
         <div class="slide-content">
-          <div class="slide-text">
-            <div class="subhead">✦ Izhaiyin</div>
-            <h2 class="title"><strong>SOUTH SILK</strong><br>HALF SAREE</h2>
-            <div class="sub-title">bridesmaid's special</div>
-            <span class="style-tag"><i class="fas fa-star" style="margin-right: 6px;"></i> signature drape</span>
-          </div>
           <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Izhaiyinsouthsilkimage%201.webp" alt="Izhaiyin South Silk" id="slideImg0" />
-            <div class="placeholder-img" id="placeholder0" style="display:none;">
-              <span>🟤 silk saree<br/><small style="font-weight:300;">(image URL later)</small></span>
-            </div>
+            <img src="https://vianta-demo.aamir68599.workers.dev/Izhaiyinsouthsilkimage%201.webp" alt="South Silk" id="slideImg0" />
           </div>
         </div>
       </div>
 
-      <!-- slide 2 (hidden) -->
-      <div class="carousel-slide" data-index="1" style="display: none;">
+      <!-- slide 2 -->
+      <div class="carousel-slide" data-index="1">
         <div class="slide-content">
-          <div class="slide-text">
-            <div class="subhead">✦ Maheshwari</div>
-            <h2 class="title"><strong>MAHESHWARI</strong><br>silk saree</h2>
-            <div class="sub-title">pure silk · classic weave</div>
-            <span class="style-tag"><i class="fas fa-feather-alt" style="margin-right: 6px;"></i> pure zari</span>
-          </div>
           <div class="slide-image">
             <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" id="slideImg1" />
-            <div class="placeholder-img" id="placeholder1" style="display:none;">
-              <span>🔶 kanjiveram<br/><small style="font-weight:300;">(image URL later)</small></span>
-            </div>
           </div>
         </div>
       </div>
 
-      <!-- slide 3 (hidden) -->
-      <div class="carousel-slide" data-index="2" style="display: none;">
+      <!-- slide 3 -->
+      <div class="carousel-slide" data-index="2">
         <div class="slide-content">
-          <div class="slide-text">
-            <div class="subhead">✦ Maheshwari</div>
-            <h2 class="title"><strong>MAHESHWARI</strong><br>premium silk</h2>
-            <div class="sub-title">luxury · bridal collection</div>
-            <span class="style-tag"><i class="fas fa-leaf" style="margin-right: 6px;"></i> organic silk</span>
-          </div>
           <div class="slide-image">
             <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" id="slideImg2" />
-            <div class="placeholder-img" id="placeholder2" style="display:none;">
-              <span>🌾 cotton saree<br/><small style="font-weight:300;">(image URL later)</small></span>
-            </div>
           </div>
         </div>
       </div>
 
-      <!-- slide 4 (hidden) -->
-      <div class="carousel-slide" data-index="3" style="display: none;">
+      <!-- slide 4 -->
+      <div class="carousel-slide" data-index="3">
         <div class="slide-content">
-          <div class="slide-text">
-            <div class="subhead">✦ Maheshwari</div>
-            <h2 class="title"><strong>MAHESHWARI</strong><br>wedding silk</h2>
-            <div class="sub-title">zari weave · bridal</div>
-            <span class="style-tag"><i class="fas fa-crown" style="margin-right: 6px;"></i> royal collection</span>
-          </div>
           <div class="slide-image">
             <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" id="slideImg3" />
-            <div class="placeholder-img" id="placeholder3" style="display:none;">
-              <span>🔶 kanjiveram<br/><small style="font-weight:300;">(image URL later)</small></span>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- carousel controls -->
+    <!-- carousel controls (overlay) -->
     <div class="carousel-controls">
       <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
       <div class="carousel-indicators">
@@ -482,15 +429,14 @@
     </div>
   </section>
 
-  <!-- tiny note: image urls can be set later via JS or directly -->
+  <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images added · auto-slide enabled
+    <i class="fas fa-image"></i> 4 images · full cover · auto-slide
   </div>
 </div>
 
 <script>
   (function() {
-    // ----- CAROUSEL LOGIC -----
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.getElementById('prevBtn');
@@ -498,28 +444,21 @@
     let currentIndex = 0;
     const totalSlides = slides.length;
     let autoSlideInterval = null;
-    const AUTO_SLIDE_DELAY = 3000; // 3 seconds
+    const AUTO_SLIDE_DELAY = 3000;
 
-    // show slide by index
     function showSlide(index) {
-      // hide all slides
       slides.forEach((slide, i) => {
-        slide.style.display = 'none';
         slide.classList.remove('active-slide');
       });
-      // show target
       if (slides[index]) {
-        slides[index].style.display = 'flex';
         slides[index].classList.add('active-slide');
       }
-      // update dots
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
       currentIndex = index;
     }
 
-    // next / prev
     function nextSlide() {
       const newIndex = (currentIndex + 1) % totalSlides;
       showSlide(newIndex);
@@ -529,13 +468,11 @@
       showSlide(newIndex);
     }
 
-    // start auto-slide
     function startAutoSlide() {
       if (autoSlideInterval) clearInterval(autoSlideInterval);
       autoSlideInterval = setInterval(nextSlide, AUTO_SLIDE_DELAY);
     }
 
-    // stop auto-slide (restart after manual interaction)
     function resetAutoSlide() {
       if (autoSlideInterval) {
         clearInterval(autoSlideInterval);
@@ -544,7 +481,6 @@
       startAutoSlide();
     }
 
-    // event listeners
     nextBtn.addEventListener('click', function() {
       nextSlide();
       resetAutoSlide();
@@ -554,7 +490,6 @@
       resetAutoSlide();
     });
 
-    // dot click
     dots.forEach((dot) => {
       dot.addEventListener('click', function() {
         const index = parseInt(this.getAttribute('data-index'), 10);
@@ -565,7 +500,6 @@
       });
     });
 
-    // keyboard navigation
     document.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowRight') {
         nextSlide();
@@ -576,29 +510,15 @@
       }
     });
 
-    // ensure first slide is visible at start
+    // start with first slide active
     showSlide(0);
-
-    // start auto-slide
     startAutoSlide();
-
-    // (optional) expose function globally
-    window.setSareeImage = function(index, url) {
-      const img = document.getElementById(`slideImg${index}`);
-      const placeholder = document.getElementById(`placeholder${index}`);
-      if (img && placeholder) {
-        img.src = url;
-        img.style.display = 'block';
-        placeholder.style.display = 'none';
-        img.alt = `Saree image ${index+1}`;
-      }
-    };
   })();
 </script>
 
-<!-- small instruction for image url update -->
+<!-- instruction -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> 4 images added · auto-slide every 3s. Click arrows or dots to navigate.
+  <i class="fas fa-info-circle"></i> Full cover hero · images fill entire area · auto-slide every 3s.
 </div>
 </body>
 </html>
