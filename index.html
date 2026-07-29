@@ -393,22 +393,21 @@
     </div>
   </header>
 
-  <!-- ========== HERO SECTION + CAROUSEL ========== -->
+  <!-- ========== HERO SECTION + CAROUSEL (4 slides) ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
       <!-- slide 1 (active) -->
       <div class="carousel-slide active-slide" data-index="0">
         <div class="slide-content">
           <div class="slide-text">
-            <div class="subhead">✦ Nayanthana style</div>
-            <h2 class="title"><strong>NayanMahaShwari</strong><br>SILK SAREE</h2>
-            <div class="sub-title">Nayanthana style · pure silk</div>
+            <div class="subhead">✦ Izhaiyin</div>
+            <h2 class="title"><strong>SOUTH SILK</strong><br>HALF SAREE</h2>
+            <div class="sub-title">bridesmaid's special</div>
             <span class="style-tag"><i class="fas fa-star" style="margin-right: 6px;"></i> signature drape</span>
           </div>
           <div class="slide-image">
-            <!-- image url will be placed here (provided later) -->
-            <img src="#" alt="Silk Saree" id="slideImg0" style="display: none;" />
-            <div class="placeholder-img" id="placeholder0">
+            <img src="https://vianta-demo.aamir68599.workers.dev/Izhaiyinsouthsilkimage%201.webp" alt="Izhaiyin South Silk" id="slideImg0" />
+            <div class="placeholder-img" id="placeholder0" style="display:none;">
               <span>🟤 silk saree<br/><small style="font-weight:300;">(image URL later)</small></span>
             </div>
           </div>
@@ -419,14 +418,14 @@
       <div class="carousel-slide" data-index="1" style="display: none;">
         <div class="slide-content">
           <div class="slide-text">
-            <div class="subhead">✦ festive collection</div>
-            <h2 class="title"><strong>Kanjiveram</strong><br>wedding silk</h2>
-            <div class="sub-title">Nayanthana inspired · zari weave</div>
+            <div class="subhead">✦ Maheshwari</div>
+            <h2 class="title"><strong>MAHESHWARI</strong><br>silk saree</h2>
+            <div class="sub-title">pure silk · classic weave</div>
             <span class="style-tag"><i class="fas fa-feather-alt" style="margin-right: 6px;"></i> pure zari</span>
           </div>
           <div class="slide-image">
-            <img src="#" alt="Kanjiveram Silk" id="slideImg1" style="display: none;" />
-            <div class="placeholder-img" id="placeholder1">
+            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" id="slideImg1" />
+            <div class="placeholder-img" id="placeholder1" style="display:none;">
               <span>🔶 kanjiveram<br/><small style="font-weight:300;">(image URL later)</small></span>
             </div>
           </div>
@@ -437,15 +436,33 @@
       <div class="carousel-slide" data-index="2" style="display: none;">
         <div class="slide-content">
           <div class="slide-text">
-            <div class="subhead">✦ cotton saree</div>
-            <h2 class="title"><strong>everyday</strong><br>comfort silk</h2>
-            <div class="sub-title">Nayanthana style · lightweight</div>
-            <span class="style-tag"><i class="fas fa-leaf" style="margin-right: 6px;"></i> organic cotton</span>
+            <div class="subhead">✦ Maheshwari</div>
+            <h2 class="title"><strong>MAHESHWARI</strong><br>premium silk</h2>
+            <div class="sub-title">luxury · bridal collection</div>
+            <span class="style-tag"><i class="fas fa-leaf" style="margin-right: 6px;"></i> organic silk</span>
           </div>
           <div class="slide-image">
-            <img src="#" alt="Cotton Saree" id="slideImg2" style="display: none;" />
-            <div class="placeholder-img" id="placeholder2">
+            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" id="slideImg2" />
+            <div class="placeholder-img" id="placeholder2" style="display:none;">
               <span>🌾 cotton saree<br/><small style="font-weight:300;">(image URL later)</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 4 (hidden) -->
+      <div class="carousel-slide" data-index="3" style="display: none;">
+        <div class="slide-content">
+          <div class="slide-text">
+            <div class="subhead">✦ Maheshwari</div>
+            <h2 class="title"><strong>MAHESHWARI</strong><br>wedding silk</h2>
+            <div class="sub-title">zari weave · bridal</div>
+            <span class="style-tag"><i class="fas fa-crown" style="margin-right: 6px;"></i> royal collection</span>
+          </div>
+          <div class="slide-image">
+            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" id="slideImg3" />
+            <div class="placeholder-img" id="placeholder3" style="display:none;">
+              <span>🔶 kanjiveram<br/><small style="font-weight:300;">(image URL later)</small></span>
             </div>
           </div>
         </div>
@@ -459,6 +476,7 @@
         <button class="dot active" data-index="0"></button>
         <button class="dot" data-index="1"></button>
         <button class="dot" data-index="2"></button>
+        <button class="dot" data-index="3"></button>
       </div>
       <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
     </div>
@@ -466,7 +484,7 @@
 
   <!-- tiny note: image urls can be set later via JS or directly -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> image URL ready (set via JS)
+    <i class="fas fa-image"></i> 4 images added · auto-slide enabled
   </div>
 </div>
 
@@ -479,6 +497,8 @@
     const nextBtn = document.getElementById('nextBtn');
     let currentIndex = 0;
     const totalSlides = slides.length;
+    let autoSlideInterval = null;
+    const AUTO_SLIDE_DELAY = 3000; // 3 seconds
 
     // show slide by index
     function showSlide(index) {
@@ -509,9 +529,30 @@
       showSlide(newIndex);
     }
 
+    // start auto-slide
+    function startAutoSlide() {
+      if (autoSlideInterval) clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(nextSlide, AUTO_SLIDE_DELAY);
+    }
+
+    // stop auto-slide (restart after manual interaction)
+    function resetAutoSlide() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+      }
+      startAutoSlide();
+    }
+
     // event listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', function() {
+      nextSlide();
+      resetAutoSlide();
+    });
+    prevBtn.addEventListener('click', function() {
+      prevSlide();
+      resetAutoSlide();
+    });
 
     // dot click
     dots.forEach((dot) => {
@@ -519,56 +560,45 @@
         const index = parseInt(this.getAttribute('data-index'), 10);
         if (!isNaN(index) && index !== currentIndex) {
           showSlide(index);
+          resetAutoSlide();
         }
       });
     });
 
-    // (optional) keyboard navigation
+    // keyboard navigation
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowRight') nextSlide();
-      else if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoSlide();
+      }
     });
 
-    // ----- SET IMAGE URLS (you can replace these later) -----
-    // we set the src for each slide image and hide placeholder
-    function setImageForSlide(index, url) {
+    // ensure first slide is visible at start
+    showSlide(0);
+
+    // start auto-slide
+    startAutoSlide();
+
+    // (optional) expose function globally
+    window.setSareeImage = function(index, url) {
       const img = document.getElementById(`slideImg${index}`);
       const placeholder = document.getElementById(`placeholder${index}`);
       if (img && placeholder) {
         img.src = url;
         img.style.display = 'block';
         placeholder.style.display = 'none';
-        // also set alt text
         img.alt = `Saree image ${index+1}`;
       }
-    }
-
-    // ----- PROVIDE YOUR IMAGE URLS BELOW (replace these with your actual urls) -----
-    // Example: setImageForSlide(0, 'https://your-image-url.com/silk1.jpg');
-    // For now, we keep placeholders visible.
-    // To test, uncomment and add real URLs:
-    // setImageForSlide(0, 'https://images.pexels.com/photos/123456/...');
-    // setImageForSlide(1, 'https://images.pexels.com/photos/234567/...');
-    // setImageForSlide(2, 'https://images.pexels.com/photos/345678/...');
-
-    // If you want to show a demo image (free placeholder) uncomment below:
-    /*
-    setImageForSlide(0, 'https://placehold.co/300x300/ede3db/2c1810?text=Silk+Saree');
-    setImageForSlide(1, 'https://placehold.co/300x300/d4c3b8/2c1810?text=Kanjiveram');
-    setImageForSlide(2, 'https://placehold.co/300x300/e3d7cf/2c1810?text=Cotton+Saree');
-    */
-
-    // ensure first slide is visible at start
-    showSlide(0);
-
-    // (optional) expose function globally so you can set images from console
-    window.setSareeImage = setImageForSlide;
+    };
   })();
 </script>
 
 <!-- small instruction for image url update -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> To add your images: call <strong>setSareeImage(index, 'your-url')</strong> in console, or edit the script inside the &lt;script&gt; tag.
+  <i class="fas fa-info-circle"></i> 4 images added · auto-slide every 3s. Click arrows or dots to navigate.
 </div>
 </body>
 </html>
