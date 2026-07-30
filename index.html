@@ -242,8 +242,8 @@
     /* ===== HERO CAROUSEL — FULL WIDTH, NO LEFT/RIGHT SPACE ===== */
     .hero-carousel {
       margin-top: 1.5rem;
-      margin-left: -2rem;     /* pull left to remove wrapper padding */
-      margin-right: -2rem;    /* pull right to remove wrapper padding */
+      margin-left: -2rem;
+      margin-right: -2rem;
       position: relative;
       width: calc(100% + 4rem);
       height: calc(100vh - 240px);
@@ -252,7 +252,7 @@
       background: #fcf8f5;
       overflow: hidden;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
-      border-radius: 0;       /* remove radius so image touches edges */
+      border-radius: 0;
     }
 
     .carousel-container {
@@ -303,7 +303,7 @@
     .slide-image img {
       width: 100%;
       height: 100%;
-      object-fit: contain;   /* full image without crop */
+      object-fit: cover;
       object-position: center;
       display: block;
       background: #fcf8f5;
@@ -501,7 +501,7 @@
     </nav>
   </header>
 
-  <!-- ========== HERO : FULL COVER CAROUSEL (edge-to-edge, no left/right space) ========== -->
+  <!-- ========== HERO : FULL COVER CAROUSEL (edge-to-edge, cover) ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
       <!-- slide 1 -->
@@ -556,7 +556,7 @@
 
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full view (no crop) · auto-slide · edge-to-edge
+    <i class="fas fa-image"></i> 4 images · full screen (cover) · auto-slide · edge-to-edge
   </div>
 </div>
 
@@ -642,7 +642,7 @@
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · clean header · lightweight offer · menu centered · hero edge‑to‑edge
+  <i class="fas fa-info-circle"></i> Vianta Saree · clean header · lightweight offer · menu centered · hero edge‑to‑edge · full screen cover
 </div>
 </body>
 </html>
