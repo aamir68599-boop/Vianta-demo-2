@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NayanMahaShwari · Silk Saree</title>
-  <!-- Font Awesome 5 (free) for icons -->
+  <title>Vianta Saree · Silk & Heritage</title>
+  <!-- Font Awesome 5 (free) -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
   <style>
-    /* reset & base */
     * {
       margin: 0;
       padding: 0;
@@ -33,12 +32,52 @@
       border-radius: 0 0 2rem 2rem;
     }
 
-    /* ---- TOP HEADER (brand + icons) ---- */
+    /* ---- OFFER BANNER (top) ---- */
+    .offer-banner {
+      background: #2c1810;
+      color: #f5e7de;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      border-radius: 40px;
+      margin-top: 0.6rem;
+      margin-bottom: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      font-weight: 400;
+      border: 1px solid #d9c7bc;
+    }
+    .offer-banner strong {
+      font-weight: 600;
+      color: #f2d9c9;
+      background: #4d3228;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+    }
+    .offer-banner i {
+      color: #dbb8a4;
+      margin: 0 0.2rem;
+    }
+    .offer-banner span {
+      background: #a67c6b;
+      padding: 0.1rem 1.2rem;
+      border-radius: 30px;
+      color: #1f110b;
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+
+    /* ---- TOP HEADER : brand + icons + search ---- */
     .top-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0 0.5rem 0;
+      padding: 0.8rem 0 0.3rem 0;
       border-bottom: 1px solid #f0ebe6;
       flex-wrap: wrap;
     }
@@ -52,17 +91,17 @@
     .brand-icon {
       background: #a67c6b;
       color: white;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
 
     .brand h1 {
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       font-weight: 400;
       letter-spacing: 1px;
       color: #2c1810;
@@ -74,7 +113,8 @@
 
     .top-icons {
       display: flex;
-      gap: 1.8rem;
+      align-items: center;
+      gap: 1.6rem;
       color: #2c1810;
       font-size: 1.2rem;
     }
@@ -86,25 +126,54 @@
       color: #a67c6b;
     }
 
-    /* ---- BOTTOM HEADER (menu) ---- */
+    /* search field inside top-icons */
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      background: #f3ede8;
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+      gap: 0.4rem;
+      border: 1px solid #e2d6ce;
+    }
+    .search-wrap i {
+      color: #6b5a4f;
+      font-size: 0.9rem;
+    }
+    .search-wrap input {
+      border: none;
+      background: transparent;
+      padding: 0.25rem 0;
+      font-size: 0.85rem;
+      width: 110px;
+      outline: none;
+      color: #2c1810;
+    }
+    .search-wrap input::placeholder {
+      color: #ab988b;
+      font-weight: 300;
+    }
+
+    /* ---- BOTTOM HEADER : menu (centered) ---- */
     .bottom-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 0.85rem 0 0.6rem 0;
+      padding: 0.9rem 0 0.5rem 0;
       flex-wrap: wrap;
       border-bottom: 1px solid #f0ebe6;
     }
 
     .main-menu {
       display: flex;
-      gap: 2.2rem;
+      gap: 2.5rem;
       font-size: 0.95rem;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #2c1810;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .main-menu a {
       text-decoration: none;
@@ -140,22 +209,17 @@
       margin-left: 0.2rem;
     }
 
+    /* hide header-extra from old layout – we moved search */
     .header-extra {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .header-extra .search-icon {
-      font-size: 1.1rem;
-      color: #2c1810;
+      display: none;
     }
 
-    /* ===== FULL COVER HERO CAROUSEL ===== */
+    /* ===== HERO CAROUSEL (full cover, image full view) ===== */
     .hero-carousel {
       margin-top: 1.5rem;
       position: relative;
       width: 100%;
-      height: calc(100vh - 240px);
+      height: calc(100vh - 260px);
       min-height: 420px;
       max-height: 800px;
       background: #fcf8f5;
@@ -212,14 +276,14 @@
     .slide-image img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* shows FULL image without cropping */
+      object-fit: contain;   /* full image without crop */
       object-position: center;
       display: block;
       border-radius: 2rem;
       background: #fcf8f5;
     }
 
-    /* carousel controls - positioned absolute over the image */
+    /* carousel controls */
     .carousel-controls {
       position: absolute;
       bottom: 1.8rem;
@@ -276,7 +340,7 @@
       border-color: #2c1810;
     }
 
-    /* ---- responsive adjustments ---- */
+    /* ---- responsive ---- */
     @media screen and (max-width: 860px) {
       .wrapper {
         padding: 0 1rem 1.5rem 1rem;
@@ -291,13 +355,10 @@
         gap: 0.5rem;
       }
       .bottom-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
+        justify-content: center;
       }
-      .header-extra {
-        width: 100%;
-        justify-content: flex-end;
+      .search-wrap input {
+        width: 80px;
       }
       .hero-carousel {
         height: calc(100vh - 280px);
@@ -317,7 +378,11 @@
         font-size: 0.7rem;
       }
       .brand h1 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+      }
+      .offer-banner {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
       }
       .hero-carousel {
         height: calc(100vh - 260px);
@@ -340,26 +405,46 @@
       .dot.active {
         width: 18px;
       }
+      .search-wrap input {
+        width: 60px;
+        font-size: 0.7rem;
+      }
     }
   </style>
 </head>
 <body>
 <div class="wrapper">
 
+  <!-- ===== OFFER BANNER (exactly as image reference) ===== -->
+  <div class="offer-banner">
+    <i class="fas fa-tag"></i> 
+    <strong>OFFER</strong> 
+    <span>UP TO 30% OFF</span> 
+    <i class="fas fa-gem"></i> 
+    <span style="background: #4d3228; color: #f2d9c9; padding: 0.1rem 1rem;">NEW SEASON</span>
+    <i class="fas fa-leaf"></i> 
+    <span style="background: #8b6b5b; color: #fcf5f0;">ETHNIC WEAR</span>
+  </div>
+
   <!-- ========== HEADER 1 : TOP ========== -->
   <header class="top-header">
     <div class="brand">
       <span class="brand-icon"><i class="fas fa-crown"></i></span>
-      <h1>Nayan<span>MahaShwari</span></h1>
+      <h1>Vianta<span>Saree</span></h1>
     </div>
     <div class="top-icons">
+      <!-- search embedded -->
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
       <i class="fas fa-user-circle"></i>
       <i class="fas fa-heart"></i>
       <i class="fas fa-shopping-bag"></i>
     </div>
   </header>
 
-  <!-- ========== HEADER 2 : BOTTOM (MENU) ========== -->
+  <!-- ========== HEADER 2 : BOTTOM (menu CENTERED) ========== -->
   <header class="bottom-header">
     <nav class="main-menu">
       <a href="#">HOME</a>
@@ -372,19 +457,16 @@
         More <i class="fas fa-chevron-down"></i>
       </span>
     </nav>
-    <div class="header-extra">
-      <i class="fas fa-search search-icon"></i>
-    </div>
   </header>
 
-  <!-- ========== HERO : FULL COVER CAROUSEL (image only, full show) ========== -->
+  <!-- ========== HERO : FULL COVER CAROUSEL (image full view) ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
       <!-- slide 1 -->
       <div class="carousel-slide active-slide" data-index="0">
         <div class="slide-content">
           <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Izhaiyinsouthsilkimage%201.webp" alt="South Silk" id="slideImg0" />
+            <img src="https://vianta-demo.aamir68599.workers.dev/Izhaiyinsouthsilkimage%201.webp" alt="South Silk" />
           </div>
         </div>
       </div>
@@ -393,7 +475,7 @@
       <div class="carousel-slide" data-index="1">
         <div class="slide-content">
           <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" id="slideImg1" />
+            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" />
           </div>
         </div>
       </div>
@@ -402,7 +484,7 @@
       <div class="carousel-slide" data-index="2">
         <div class="slide-content">
           <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" id="slideImg2" />
+            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" />
           </div>
         </div>
       </div>
@@ -411,13 +493,13 @@
       <div class="carousel-slide" data-index="3">
         <div class="slide-content">
           <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" id="slideImg3" />
+            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" />
           </div>
         </div>
       </div>
     </div>
 
-    <!-- carousel controls (overlay) -->
+    <!-- carousel controls overlay -->
     <div class="carousel-controls">
       <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
       <div class="carousel-indicators">
@@ -430,7 +512,7 @@
     </div>
   </section>
 
-  <!-- small note -->
+  <!-- small note (optional) -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
     <i class="fas fa-image"></i> 4 images · full view (no crop) · auto-slide
   </div>
@@ -516,9 +598,9 @@
   })();
 </script>
 
-<!-- instruction -->
+<!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Full cover hero · images fully visible (object-fit: contain) · auto-slide every 3s.
+  <i class="fas fa-info-circle"></i> Vianta Saree · offer banner · menu centered · search in header
 </div>
 </body>
 </html>
