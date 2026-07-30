@@ -239,18 +239,20 @@
       display: none;
     }
 
-    /* ===== HERO CAROUSEL (full cover, image full view) ===== */
+    /* ===== HERO CAROUSEL — FULL WIDTH, NO LEFT/RIGHT SPACE ===== */
     .hero-carousel {
       margin-top: 1.5rem;
+      margin-left: -2rem;     /* pull left to remove wrapper padding */
+      margin-right: -2rem;    /* pull right to remove wrapper padding */
       position: relative;
-      width: 100%;
+      width: calc(100% + 4rem);
       height: calc(100vh - 240px);
       min-height: 420px;
       max-height: 800px;
       background: #fcf8f5;
-      border-radius: 2rem;
       overflow: hidden;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+      border-radius: 0;       /* remove radius so image touches edges */
     }
 
     .carousel-container {
@@ -301,10 +303,9 @@
     .slide-image img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: contain;   /* full image without crop */
       object-position: center;
       display: block;
-      border-radius: 2rem;
       background: #fcf8f5;
     }
 
@@ -370,6 +371,14 @@
       .wrapper {
         padding: 0 1rem 1.5rem 1rem;
       }
+      .hero-carousel {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        height: calc(100vh - 280px);
+        min-height: 320px;
+        max-height: 600px;
+      }
       .main-menu {
         gap: 1.2rem;
         font-size: 0.8rem;
@@ -385,11 +394,6 @@
       .search-wrap input {
         width: 80px;
       }
-      .hero-carousel {
-        height: calc(100vh - 280px);
-        min-height: 320px;
-        max-height: 600px;
-      }
       .carousel-btn {
         width: 36px;
         height: 36px;
@@ -398,6 +402,17 @@
     }
 
     @media screen and (max-width: 480px) {
+      .wrapper {
+        padding: 0 0.5rem 1.5rem 0.5rem;
+      }
+      .hero-carousel {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        width: calc(100% + 1rem);
+        height: calc(100vh - 260px);
+        min-height: 260px;
+        max-height: 450px;
+      }
       .main-menu {
         gap: 0.8rem;
         font-size: 0.7rem;
@@ -416,11 +431,6 @@
       }
       .offer-banner strong {
         font-size: 0.7rem;
-      }
-      .hero-carousel {
-        height: calc(100vh - 260px);
-        min-height: 260px;
-        max-height: 450px;
       }
       .carousel-controls {
         bottom: 1rem;
@@ -448,7 +458,7 @@
 <body>
 <div class="wrapper">
 
-  <!-- ===== OFFER BANNER (lightweight, professional, refined) ===== -->
+  <!-- ===== OFFER BANNER ===== -->
   <div class="offer-banner">
     <i class="fas fa-tag" style="color:#a67c6b;"></i>
     <strong>OFFER</strong>
@@ -459,14 +469,13 @@
     <span>ETHNIC WEAR</span>
   </div>
 
-  <!-- ========== HEADER 1 : TOP (simplified, professional) ========== -->
+  <!-- ========== HEADER 1 : TOP ========== -->
   <header class="top-header">
     <div class="brand">
       <span class="brand-icon"><i class="fas fa-crown"></i></span>
       <h1>Vianta<span>Saree</span></h1>
     </div>
     <div class="top-icons">
-      <!-- search embedded -->
       <div class="search-wrap">
         <i class="fas fa-search"></i>
         <input type="text" placeholder="Search..." />
@@ -492,7 +501,7 @@
     </nav>
   </header>
 
-  <!-- ========== HERO : FULL COVER CAROUSEL (image full view) ========== -->
+  <!-- ========== HERO : FULL COVER CAROUSEL (edge-to-edge, no left/right space) ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
       <!-- slide 1 -->
@@ -545,9 +554,9 @@
     </div>
   </section>
 
-  <!-- small note (optional) -->
+  <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full view (no crop) · auto-slide
+    <i class="fas fa-image"></i> 4 images · full view (no crop) · auto-slide · edge-to-edge
   </div>
 </div>
 
@@ -633,7 +642,7 @@
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · clean header · lightweight offer · menu centered
+  <i class="fas fa-info-circle"></i> Vianta Saree · clean header · lightweight offer · menu centered · hero edge‑to‑edge
 </div>
 </body>
 </html>
