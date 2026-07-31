@@ -700,6 +700,176 @@
       color: #2c1810;
     }
 
+    /* ===== BOTTOM CAROUSEL - 2 SLIDES ===== */
+    .bottom-carousel {
+      margin-top: 2.5rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      position: relative;
+      width: calc(100% + 4rem);
+      height: calc(100vh - 300px);
+      min-height: 350px;
+      max-height: 700px;
+      background: #1a1a1a;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+      border-radius: 0;
+    }
+
+    .bottom-carousel .carousel-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-carousel .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+
+    .bottom-carousel .carousel-slide.active-slide {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .bottom-carousel .slide-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-carousel .slide-image {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .bottom-carousel .slide-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #1a1a1a;
+    }
+
+    .bottom-carousel .carousel-controls {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      z-index: 10;
+      padding: 0 1rem;
+    }
+
+    .bottom-carousel .carousel-btn {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #d6c9c0;
+      width: 44px;
+      height: 44px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #2c1810;
+      cursor: pointer;
+      transition: all 0.2s;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+    .bottom-carousel .carousel-btn:hover {
+      background: #2c1810;
+      color: white;
+      border-color: #2c1810;
+    }
+
+    .bottom-carousel .carousel-indicators {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .bottom-carousel .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      transition: 0.2s;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 0;
+    }
+    .bottom-carousel .dot.active {
+      background: #2c1810;
+      width: 24px;
+      border-color: #2c1810;
+    }
+
+    /* ---- responsive for bottom carousel ---- */
+    @media screen and (max-width: 860px) {
+      .bottom-carousel {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        height: calc(100vh - 300px);
+        min-height: 280px;
+        max-height: 500px;
+      }
+      .bottom-carousel .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .bottom-carousel {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        width: calc(100% + 1rem);
+        height: calc(100vh - 260px);
+        min-height: 220px;
+        max-height: 400px;
+      }
+      .bottom-carousel .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+      }
+      .bottom-carousel .dot {
+        width: 7px;
+        height: 7px;
+      }
+      .bottom-carousel .dot.active {
+        width: 18px;
+      }
+      .bottom-carousel .carousel-controls {
+        bottom: 1rem;
+        gap: 0.8rem;
+      }
+    }
+
     /* ---- responsive ---- */
     @media screen and (max-width: 1024px) {
       .category-grid {
@@ -1126,16 +1296,50 @@
     </div>
   </section>
 
+  <!-- ========== BOTTOM CAROUSEL (2 slides) ========== -->
+  <section class="bottom-carousel" id="bottomCarousel">
+    <div class="carousel-container">
+      <!-- slide 1 -->
+      <div class="carousel-slide active-slide" data-index="0">
+        <div class="slide-content">
+          <div class="slide-image">
+            <img src="https://vianta-demo.aamir68599.workers.dev/shine%20with%20sher%20image.webp" alt="Shine with Sher" />
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 2 -->
+      <div class="carousel-slide" data-index="1">
+        <div class="slide-content">
+          <div class="slide-image">
+            <img src="https://vianta-demo.aamir68599.workers.dev/conquer%20image.webp" alt="Conquer" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel controls overlay -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="bottomPrevBtn"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-indicators">
+        <button class="dot active" data-index="0"></button>
+        <button class="dot" data-index="1"></button>
+      </div>
+      <button class="carousel-btn" id="bottomNextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category
+    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel
   </div>
 </div>
 
 <script>
   (function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
+    // ----- HERO CAROUSEL -----
+    const slides = document.querySelectorAll('.hero-carousel .carousel-slide');
+    const dots = document.querySelectorAll('.hero-carousel .dot');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     let currentIndex = 0;
@@ -1218,13 +1422,89 @@
 
     showSlide(0);
     startAutoSlide();
+
+    // ----- BOTTOM CAROUSEL (2 slides) -----
+    const bottomSlides = document.querySelectorAll('.bottom-carousel .carousel-slide');
+    const bottomDots = document.querySelectorAll('.bottom-carousel .dot');
+    const bottomPrevBtn = document.getElementById('bottomPrevBtn');
+    const bottomNextBtn = document.getElementById('bottomNextBtn');
+    let bottomIndex = 0;
+    const bottomTotal = bottomSlides.length;
+    let bottomAutoSlide = null;
+    const BOTTOM_AUTO_DELAY = 3000;
+
+    function showBottomSlide(index) {
+      bottomSlides.forEach(function(slide) {
+        slide.classList.remove('active-slide');
+      });
+      if (bottomSlides[index]) {
+        bottomSlides[index].classList.add('active-slide');
+      }
+      bottomDots.forEach(function(dot, i) {
+        if (i === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+      bottomIndex = index;
+    }
+
+    function nextBottomSlide() {
+      var newIndex = (bottomIndex + 1) % bottomTotal;
+      showBottomSlide(newIndex);
+    }
+
+    function prevBottomSlide() {
+      var newIndex = (bottomIndex - 1 + bottomTotal) % bottomTotal;
+      showBottomSlide(newIndex);
+    }
+
+    function startBottomAutoSlide() {
+      if (bottomAutoSlide) {
+        clearInterval(bottomAutoSlide);
+        bottomAutoSlide = null;
+      }
+      bottomAutoSlide = setInterval(nextBottomSlide, BOTTOM_AUTO_DELAY);
+    }
+
+    function resetBottomAutoSlide() {
+      if (bottomAutoSlide) {
+        clearInterval(bottomAutoSlide);
+        bottomAutoSlide = null;
+      }
+      startBottomAutoSlide();
+    }
+
+    bottomNextBtn.addEventListener('click', function() {
+      nextBottomSlide();
+      resetBottomAutoSlide();
+    });
+
+    bottomPrevBtn.addEventListener('click', function() {
+      prevBottomSlide();
+      resetBottomAutoSlide();
+    });
+
+    bottomDots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        var index = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(index) && index !== bottomIndex) {
+          showBottomSlide(index);
+          resetBottomAutoSlide();
+        }
+      });
+    });
+
+    showBottomSlide(0);
+    startBottomAutoSlide();
   })();
 </script>
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Full Image Carousel · Auto-slide 3s
-  <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals)</span>
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · Full Image Carousel · Auto-slide 3s
+  <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals) · ~1200×600 (bottom carousel)</span>
 </div>
 </body>
 </html>
