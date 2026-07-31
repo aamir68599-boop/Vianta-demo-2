@@ -366,7 +366,252 @@
       border-color: #2c1810;
     }
 
+    /* ===== CATEGORY SECTION ===== */
+    .category-section {
+      margin-top: 2.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .category-section .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-section .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #2c1810;
+      letter-spacing: 0.5px;
+    }
+
+    .category-section .section-header a {
+      color: #a67c6b;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .category-section .section-header a:hover {
+      color: #2c1810;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+    }
+
+    .category-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border: 1px solid #f0ebe6;
+    }
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .category-card .cat-image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #f5f0eb;
+    }
+    .category-card .cat-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .category-card:hover .cat-image img {
+      transform: scale(1.03);
+    }
+
+    .category-card .cat-info {
+      padding: 0.8rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    .category-card .cat-info h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2c1810;
+      letter-spacing: 0.3px;
+    }
+    .category-card .cat-info .offer-tag {
+      display: inline-block;
+      margin-top: 0.3rem;
+      background: #e8dfd9;
+      color: #2c1810;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.15rem 0.8rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .category-card .cat-info .offer-tag.highlight {
+      background: #a67c6b;
+      color: #ffffff;
+    }
+
+    /* ===== NEW ARRIVALS ===== */
+    .new-arrivals {
+      margin-top: 2.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .new-arrivals .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .new-arrivals .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #2c1810;
+      letter-spacing: 0.5px;
+    }
+
+    .new-arrivals .section-header a {
+      color: #a67c6b;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .new-arrivals .section-header a:hover {
+      color: #2c1810;
+    }
+
+    .arrival-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .arrival-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border: 1px solid #f0ebe6;
+      position: relative;
+    }
+    .arrival-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .arrival-card .arrival-image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #f5f0eb;
+    }
+    .arrival-card .arrival-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .arrival-card:hover .arrival-image img {
+      transform: scale(1.03);
+    }
+
+    .arrival-card .arrival-badge {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      background: #a67c6b;
+      color: #ffffff;
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .arrival-card .arrival-info {
+      padding: 0.7rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    .arrival-card .arrival-info h4 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2c1810;
+      margin-bottom: 0.2rem;
+    }
+    .arrival-card .arrival-info .price {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a67c6b;
+    }
+    .arrival-card .arrival-info .price .original {
+      font-weight: 400;
+      color: #b7a69b;
+      text-decoration: line-through;
+      font-size: 0.75rem;
+      margin-left: 0.4rem;
+    }
+
+    /* ===== EXTRA OFFER BANNER ROW ===== */
+    .offer-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      padding: 0 0.5rem;
+    }
+
+    .offer-box {
+      background: #f3ede8;
+      border-radius: 0.8rem;
+      padding: 1.2rem 0.8rem;
+      text-align: center;
+      border: 1px solid #e8dfd9;
+      transition: background 0.2s;
+    }
+    .offer-box:hover {
+      background: #ede5de;
+    }
+    .offer-box .offer-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #a67c6b;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .offer-box .offer-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c1810;
+      margin-top: 0.2rem;
+    }
+
     /* ---- responsive ---- */
+    @media screen and (max-width: 1024px) {
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .arrival-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .offer-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media screen and (max-width: 860px) {
       .wrapper {
         padding: 0 1rem 1.5rem 1rem;
@@ -398,6 +643,18 @@
         width: 36px;
         height: 36px;
         font-size: 0.9rem;
+      }
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+      }
+      .arrival-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
+      .offer-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
       }
     }
 
@@ -451,6 +708,34 @@
       .search-wrap input {
         width: 60px;
         font-size: 0.7rem;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .arrival-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .offer-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+      .category-section .section-header h2,
+      .new-arrivals .section-header h2 {
+        font-size: 1.1rem;
+      }
+      .category-card .cat-info h3 {
+        font-size: 0.7rem;
+      }
+      .arrival-card .arrival-info h4 {
+        font-size: 0.7rem;
+      }
+      .arrival-card .arrival-info .price {
+        font-size: 0.75rem;
+      }
+      .offer-box .offer-value {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -554,9 +839,134 @@
     </div>
   </section>
 
+  <!-- ========== CATEGORY SECTION (5 categories) ========== -->
+  <section class="category-section">
+    <div class="section-header">
+      <h2>CATEGORY</h2>
+      <a href="#">VIEW ALL →</a>
+    </div>
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="cat-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Half Saree" />
+        </div>
+        <div class="cat-info">
+          <h3>HALF SAREE</h3>
+          <span class="offer-tag highlight">Extra 60% OFF</span>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="cat-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Lehenga" />
+        </div>
+        <div class="cat-info">
+          <h3>LEHENGA</h3>
+          <span class="offer-tag">Extra 60% OFF</span>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="cat-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Banarasi Silk" />
+        </div>
+        <div class="cat-info">
+          <h3>BANARASI SILK</h3>
+          <span class="offer-tag highlight">Extra 60% OFF</span>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="cat-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Kanchipuram Silk" />
+        </div>
+        <div class="cat-info">
+          <h3>KANCHIPURAM SILK</h3>
+          <span class="offer-tag">Extra 60% OFF</span>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="cat-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Cotton Silk" />
+        </div>
+        <div class="cat-info">
+          <h3>COTTON SILK</h3>
+          <span class="offer-tag highlight">Extra 60% OFF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEW ARRIVALS ========== -->
+  <section class="new-arrivals">
+    <div class="section-header">
+      <h2>NEW ARRIVALS</h2>
+      <a href="#">VIEW ALL →</a>
+    </div>
+    <div class="arrival-grid">
+      <div class="arrival-card">
+        <div class="arrival-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="New Arrival 1" />
+        </div>
+        <span class="arrival-badge">NEW</span>
+        <div class="arrival-info">
+          <h4>Silk Saree</h4>
+          <div class="price">₹2,499 <span class="original">₹4,999</span></div>
+        </div>
+      </div>
+      <div class="arrival-card">
+        <div class="arrival-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="New Arrival 2" />
+        </div>
+        <span class="arrival-badge">NEW</span>
+        <div class="arrival-info">
+          <h4>Maheshwari Silk</h4>
+          <div class="price">₹3,199 <span class="original">₹6,499</span></div>
+        </div>
+      </div>
+      <div class="arrival-card">
+        <div class="arrival-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="New Arrival 3" />
+        </div>
+        <span class="arrival-badge">NEW</span>
+        <div class="arrival-info">
+          <h4>Banarasi Silk</h4>
+          <div class="price">₹4,999 <span class="original">₹9,999</span></div>
+        </div>
+      </div>
+      <div class="arrival-card">
+        <div class="arrival-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="New Arrival 4" />
+        </div>
+        <span class="arrival-badge">NEW</span>
+        <div class="arrival-info">
+          <h4>Kanchipuram Silk</h4>
+          <div class="price">₹5,999 <span class="original">₹12,999</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXTRA OFFER ROW ========== -->
+  <div class="offer-row">
+    <div class="offer-box">
+      <div class="offer-label">Extra 60% OFF</div>
+      <div class="offer-value">HALF SAREE</div>
+    </div>
+    <div class="offer-box">
+      <div class="offer-label">Extra 60% OFF</div>
+      <div class="offer-value">LEHENGA</div>
+    </div>
+    <div class="offer-box">
+      <div class="offer-label">Extra 60% OFF</div>
+      <div class="offer-value">BANARASI SILK</div>
+    </div>
+    <div class="offer-box">
+      <div class="offer-label">Extra 60% OFF</div>
+      <div class="offer-value">KANCHIPURAM</div>
+    </div>
+  </div>
+
   <!-- small note -->
-  <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 0.4rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · edge-to-edge
+  <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
+    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 categories · 4 new arrivals
   </div>
 </div>
 
@@ -651,7 +1061,8 @@
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · clean header · lightweight offer · menu centered · hero edge‑to‑edge · full image (contain) · auto-slide 3s
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 categories · 4 new arrivals · offer row · full image carousel · auto-slide 3s
+  <span style="margin-left: 1rem;">Image pixels: ~1200×1200 (category) · ~600×600 (arrivals)</span>
 </div>
 </body>
 </html>
