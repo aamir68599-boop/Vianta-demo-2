@@ -234,11 +234,6 @@
       color: #7a685c;
     }
 
-    /* hide old extra */
-    .header-extra {
-      display: none;
-    }
-
     /* ===== HERO CAROUSEL — FULL WIDTH, FULL SCREEN COVER ===== */
     .hero-carousel {
       margin-top: 1.5rem;
@@ -959,9 +954,117 @@
       display: block;
     }
 
+    /* ===== ALL PRODUCTS SECTION (4 products, below video) ===== */
+    .all-products-section {
+      margin-top: 2.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .all-products-section .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .all-products-section .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #2c1810;
+      letter-spacing: 0.5px;
+    }
+
+    .all-products-section .section-header a {
+      color: #a67c6b;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .all-products-section .section-header a:hover {
+      color: #2c1810;
+    }
+
+    .all-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .all-product-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border: 1px solid #f0ebe6;
+      position: relative;
+    }
+    .all-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .all-product-card .product-image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #f5f0eb;
+    }
+    .all-product-card .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .all-product-card:hover .product-image img {
+      transform: scale(1.03);
+    }
+
+    .all-product-card .product-badge {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      background: #a67c6b;
+      color: #ffffff;
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .all-product-card .product-info {
+      padding: 0.7rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    .all-product-card .product-info h4 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2c1810;
+      margin-bottom: 0.2rem;
+    }
+    .all-product-card .product-info .price {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a67c6b;
+    }
+    .all-product-card .product-info .price .original {
+      font-weight: 400;
+      color: #b7a69b;
+      text-decoration: line-through;
+      font-size: 0.75rem;
+      margin-left: 0.4rem;
+    }
+
     /* ---- responsive for spotlight ---- */
     @media screen and (max-width: 1024px) {
       .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .all-products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -971,10 +1074,18 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
       }
+      .all-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
     }
 
     @media screen and (max-width: 480px) {
       .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .all-products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.6rem;
       }
@@ -987,6 +1098,15 @@
       .spotlight-card .spotlight-info .offer-tag-spotlight {
         font-size: 0.5rem;
         padding: 0.1rem 0.4rem;
+      }
+      .all-products-section .section-header h2 {
+        font-size: 1.1rem;
+      }
+      .all-product-card .product-info h4 {
+        font-size: 0.7rem;
+      }
+      .all-product-card .product-info .price {
+        font-size: 0.75rem;
       }
     }
 
@@ -1559,9 +1679,59 @@
     <video src="https://vianta-demo.aamir68599.workers.dev/video%201.mp4" muted autoplay loop playsinline></video>
   </section>
 
+  <!-- ========== ALL PRODUCTS SECTION (4 products, below video) ========== -->
+  <section class="all-products-section">
+    <div class="section-header">
+      <h2>ALL PRODUCTS</h2>
+      <a href="#">VIEW ALL →</a>
+    </div>
+    <div class="all-products-grid">
+      <div class="all-product-card">
+        <div class="product-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Product 1" />
+        </div>
+        <span class="product-badge">Extra 50% OFF</span>
+        <div class="product-info">
+          <h4>Silk Saree</h4>
+          <div class="price">₹2,499 <span class="original">₹4,999</span></div>
+        </div>
+      </div>
+      <div class="all-product-card">
+        <div class="product-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Product 2" />
+        </div>
+        <span class="product-badge">Extra 50% OFF</span>
+        <div class="product-info">
+          <h4>Maheshwari Silk</h4>
+          <div class="price">₹3,199 <span class="original">₹6,499</span></div>
+        </div>
+      </div>
+      <div class="all-product-card">
+        <div class="product-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Product 3" />
+        </div>
+        <span class="product-badge">Extra 50% OFF</span>
+        <div class="product-info">
+          <h4>Banarasi Silk</h4>
+          <div class="price">₹4,999 <span class="original">₹9,999</span></div>
+        </div>
+      </div>
+      <div class="all-product-card">
+        <div class="product-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Product 4" />
+        </div>
+        <span class="product-badge">Extra 50% OFF</span>
+        <div class="product-info">
+          <h4>Kanchipuram Silk</h4>
+          <div class="price">₹5,999 <span class="original">₹12,999</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · full-width video
+    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · full-width video · all products (4)
   </div>
 </div>
 
@@ -1733,7 +1903,7 @@
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video below Spotlight
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video below Spotlight · All Products (4)
   <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals & spotlight) · ~1200×600 (bottom carousel)</span>
 </div>
 </body>
