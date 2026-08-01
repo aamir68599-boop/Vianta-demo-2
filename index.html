@@ -826,6 +826,145 @@
       border-color: #2c1810;
     }
 
+    /* ===== IN THE SPOTLIGHT SECTION ===== */
+    .spotlight-section {
+      margin-top: 2.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .spotlight-section .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .spotlight-section .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #2c1810;
+      letter-spacing: 0.5px;
+    }
+
+    .spotlight-section .section-header a {
+      color: #a67c6b;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .spotlight-section .section-header a:hover {
+      color: #2c1810;
+    }
+
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .spotlight-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border: 1px solid #f0ebe6;
+      position: relative;
+    }
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .spotlight-card .spotlight-image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #f5f0eb;
+    }
+    .spotlight-card .spotlight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .spotlight-card:hover .spotlight-image img {
+      transform: scale(1.03);
+    }
+
+    .spotlight-card .spotlight-badge {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      background: #a67c6b;
+      color: #ffffff;
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .spotlight-card .spotlight-info {
+      padding: 0.7rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    .spotlight-card .spotlight-info h4 {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #2c1810;
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+    .spotlight-card .spotlight-info .offer-tag-spotlight {
+      display: inline-block;
+      background: #e8dfd9;
+      color: #2c1810;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .spotlight-card .spotlight-info .offer-tag-spotlight.highlight {
+      background: #a67c6b;
+      color: #ffffff;
+    }
+
+    /* ---- responsive for spotlight ---- */
+    @media screen and (max-width: 1024px) {
+      .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 860px) {
+      .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .spotlight-section .section-header h2 {
+        font-size: 1.1rem;
+      }
+      .spotlight-card .spotlight-info h4 {
+        font-size: 0.7rem;
+      }
+      .spotlight-card .spotlight-info .offer-tag-spotlight {
+        font-size: 0.5rem;
+        padding: 0.1rem 0.4rem;
+      }
+    }
+
     /* ---- responsive for bottom carousel ---- */
     @media screen and (max-width: 860px) {
       .bottom-carousel {
@@ -1329,9 +1468,59 @@
     </div>
   </section>
 
+  <!-- ========== IN THE SPOTLIGHT (4 products) ========== -->
+  <section class="spotlight-section">
+    <div class="section-header">
+      <h2>IN THE SPOTLIGHT</h2>
+      <a href="#">VIEW ALL →</a>
+    </div>
+    <div class="spotlight-grid">
+      <div class="spotlight-card">
+        <div class="spotlight-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Kanjivaram Silk Zari Half Saree" />
+        </div>
+        <span class="spotlight-badge">Extra 50% OFF</span>
+        <div class="spotlight-info">
+          <h4>KANJIVARAM SILK ZARI HALF SAREE</h4>
+          <span class="offer-tag-spotlight highlight">50% OFF</span>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="spotlight-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Premium Banarasi Silk Chanderi Saree" />
+        </div>
+        <span class="spotlight-badge">Extra 50% OFF</span>
+        <div class="spotlight-info">
+          <h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4>
+          <span class="offer-tag-spotlight">50% OFF</span>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="spotlight-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Kanjivaram Silk Zari Half Saree Lehenga" />
+        </div>
+        <span class="spotlight-badge">Extra 50% OFF</span>
+        <div class="spotlight-info">
+          <h4>KANJIVARAM SILK ZARI HALF SAREE LEH</h4>
+          <span class="offer-tag-spotlight highlight">50% OFF</span>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="spotlight-image">
+          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Premium Banarasi Silk Chanderi Saree" />
+        </div>
+        <span class="spotlight-badge">Extra 50% OFF</span>
+        <div class="spotlight-info">
+          <h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4>
+          <span class="offer-tag-spotlight">50% OFF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel
+    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight
   </div>
 </div>
 
@@ -1503,8 +1692,8 @@
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · Full Image Carousel · Auto-slide 3s
-  <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals) · ~1200×600 (bottom carousel)</span>
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s
+  <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals & spotlight) · ~1200×600 (bottom carousel)</span>
 </div>
 </body>
 </html>
