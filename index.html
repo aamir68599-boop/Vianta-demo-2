@@ -934,6 +934,31 @@
       color: #ffffff;
     }
 
+    /* ---- VIDEO SECTION (FULL WIDTH, BELOW SPOTLIGHT) ---- */
+    .video-section {
+      margin-top: 2.5rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      width: calc(100% + 4rem);
+      background: #0f0c0a;
+      aspect-ratio: 16 / 9;
+      max-height: 800px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .video-section video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0f0c0a;
+      display: block;
+    }
+
     /* ---- responsive for spotlight ---- */
     @media screen and (max-width: 1024px) {
       .spotlight-grid {
@@ -1073,6 +1098,11 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
       }
+      .video-section {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -1165,6 +1195,12 @@
       }
       .offer-box .offer-value {
         font-size: 0.9rem;
+      }
+      .video-section {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        width: calc(100% + 1rem);
+        aspect-ratio: 16 / 9;
       }
     }
   </style>
@@ -1518,9 +1554,14 @@
     </div>
   </section>
 
+  <!-- ========== VIDEO SECTION (FULL WIDTH, UNDER SPOTLIGHT) ========== -->
+  <section class="video-section">
+    <video src="https://vianta-demo.aamir68599.workers.dev/video%201.mp4" muted autoplay loop playsinline></video>
+  </section>
+
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight
+    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · full-width video
   </div>
 </div>
 
@@ -1692,7 +1733,7 @@
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video below Spotlight
   <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals & spotlight) · ~1200×600 (bottom carousel)</span>
 </div>
 </body>
