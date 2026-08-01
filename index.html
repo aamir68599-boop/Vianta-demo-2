@@ -1185,6 +1185,180 @@
       border-color: #2c1810;
     }
 
+    /* ===== TESTIMONIALS / GOOGLE REVIEWS CAROUSEL (5 slides) ===== */
+    .testimonials-section {
+      margin-top: 2.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .testimonials-section .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonials-section .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #2c1810;
+      letter-spacing: 0.5px;
+    }
+
+    .testimonials-section .section-header a {
+      color: #a67c6b;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .testimonials-section .section-header a:hover {
+      color: #2c1810;
+    }
+
+    .testimonials-carousel {
+      position: relative;
+      width: 100%;
+      background: #faf6f2;
+      border-radius: 1.5rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f0ebe6;
+      overflow: hidden;
+    }
+
+    .testimonials-carousel .carousel-container {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+    }
+
+    .testimonials-carousel .carousel-slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      width: 100%;
+    }
+
+    .testimonials-carousel .carousel-slide.active-slide {
+      display: flex;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.3; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .testimonial-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+      border: 3px solid #a67c6b;
+      flex-shrink: 0;
+      background: #ede5de;
+    }
+
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .testimonial-stars {
+      color: #f5a623;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+    }
+
+    .testimonial-stars .far {
+      color: #d6c9c0;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      color: #2c1810;
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 0.4rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a67c6b;
+      letter-spacing: 0.3px;
+    }
+
+    .testimonial-source {
+      font-size: 0.75rem;
+      color: #b7a69b;
+      margin-top: 0.1rem;
+    }
+
+    .testimonials-carousel .carousel-controls {
+      position: relative;
+      bottom: auto;
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 0;
+    }
+
+    .testimonials-carousel .carousel-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d6c9c0;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #2c1810;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .testimonials-carousel .carousel-btn:hover {
+      background: #2c1810;
+      color: white;
+      border-color: #2c1810;
+    }
+
+    .testimonials-carousel .carousel-indicators {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .testimonials-carousel .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 20px;
+      background: #d6c9c0;
+      transition: 0.2s;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+    .testimonials-carousel .dot.active {
+      background: #a67c6b;
+      width: 24px;
+    }
+
     /* ---- responsive for spotlight ---- */
     @media screen and (max-width: 1024px) {
       .spotlight-grid {
@@ -1203,6 +1377,12 @@
       .all-products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
+      }
+      .testimonials-carousel {
+        padding: 1.5rem 0.8rem;
+      }
+      .testimonial-text {
+        font-size: 0.9rem;
       }
     }
 
@@ -1232,6 +1412,21 @@
         font-size: 0.7rem;
       }
       .all-product-card .product-info .price {
+        font-size: 0.75rem;
+      }
+      .testimonials-carousel {
+        padding: 1rem 0.5rem;
+      }
+      .testimonial-text {
+        font-size: 0.8rem;
+      }
+      .testimonial-avatar {
+        width: 56px;
+        height: 56px;
+      }
+      .testimonials-carousel .carousel-btn {
+        width: 32px;
+        height: 32px;
         font-size: 0.75rem;
       }
     }
@@ -1534,10 +1729,9 @@
     </nav>
   </header>
 
-  <!-- ========== HERO : FULL COVER CAROUSEL (edge-to-edge, full screen cover) ========== -->
+  <!-- ========== HERO : FULL COVER CAROUSEL ========== -->
   <section class="hero-carousel">
     <div class="carousel-container" id="carouselContainer">
-      <!-- slide 1 -->
       <div class="carousel-slide active-slide" data-index="0">
         <div class="slide-content">
           <div class="slide-image">
@@ -1545,8 +1739,6 @@
           </div>
         </div>
       </div>
-
-      <!-- slide 2 -->
       <div class="carousel-slide" data-index="1">
         <div class="slide-content">
           <div class="slide-image">
@@ -1554,8 +1746,6 @@
           </div>
         </div>
       </div>
-
-      <!-- slide 3 -->
       <div class="carousel-slide" data-index="2">
         <div class="slide-content">
           <div class="slide-image">
@@ -1563,8 +1753,6 @@
           </div>
         </div>
       </div>
-
-      <!-- slide 4 -->
       <div class="carousel-slide" data-index="3">
         <div class="slide-content">
           <div class="slide-image">
@@ -1573,8 +1761,6 @@
         </div>
       </div>
     </div>
-
-    <!-- carousel controls overlay -->
     <div class="carousel-controls">
       <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
       <div class="carousel-indicators">
@@ -1587,7 +1773,7 @@
     </div>
   </section>
 
-  <!-- ========== CATEGORY SECTION (5 categories - full circle image) ========== -->
+  <!-- ========== CATEGORY SECTION (5 categories) ========== -->
   <section class="category-section">
     <div class="section-header">
       <h2>CATEGORY</h2>
@@ -1595,339 +1781,197 @@
     </div>
     <div class="category-grid">
       <div class="category-card">
-        <div class="cat-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Half Saree" />
-        </div>
-        <div class="cat-info">
-          <h3>HALF SAREE</h3>
-          <span class="offer-tag">60% OFF</span>
-        </div>
+        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Half Saree" /></div>
+        <div class="cat-info"><h3>HALF SAREE</h3><span class="offer-tag">60% OFF</span></div>
       </div>
       <div class="category-card">
-        <div class="cat-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Lehenga" />
-        </div>
-        <div class="cat-info">
-          <h3>LEHENGA</h3>
-          <span class="offer-tag light">60% OFF</span>
-        </div>
+        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Lehenga" /></div>
+        <div class="cat-info"><h3>LEHENGA</h3><span class="offer-tag light">60% OFF</span></div>
       </div>
       <div class="category-card">
-        <div class="cat-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Banarasi Silk" />
-        </div>
-        <div class="cat-info">
-          <h3>BANARASI SILK</h3>
-          <span class="offer-tag">60% OFF</span>
-        </div>
+        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Banarasi Silk" /></div>
+        <div class="cat-info"><h3>BANARASI SILK</h3><span class="offer-tag">60% OFF</span></div>
       </div>
       <div class="category-card">
-        <div class="cat-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Kanchipuram Silk" />
-        </div>
-        <div class="cat-info">
-          <h3>KANCHIPURAM</h3>
-          <span class="offer-tag light">60% OFF</span>
-        </div>
+        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Kanchipuram Silk" /></div>
+        <div class="cat-info"><h3>KANCHIPURAM</h3><span class="offer-tag light">60% OFF</span></div>
       </div>
       <div class="category-card">
-        <div class="cat-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Cotton Silk" />
-        </div>
-        <div class="cat-info">
-          <h3>COTTON SILK</h3>
-          <span class="offer-tag">60% OFF</span>
-        </div>
+        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Cotton Silk" /></div>
+        <div class="cat-info"><h3>COTTON SILK</h3><span class="offer-tag">60% OFF</span></div>
       </div>
     </div>
   </section>
 
   <!-- ========== EXTRA OFFER ROW ========== -->
   <div class="offer-row">
-    <div class="offer-box">
-      <div class="offer-label">Extra 60% OFF</div>
-      <div class="offer-value">HALF SAREE</div>
-    </div>
-    <div class="offer-box">
-      <div class="offer-label">Extra 60% OFF</div>
-      <div class="offer-value">LEHENGA</div>
-    </div>
-    <div class="offer-box">
-      <div class="offer-label">Extra 60% OFF</div>
-      <div class="offer-value">BANARASI SILK</div>
-    </div>
-    <div class="offer-box">
-      <div class="offer-label">Extra 60% OFF</div>
-      <div class="offer-value">KANCHIPURAM</div>
-    </div>
+    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">HALF SAREE</div></div>
+    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">LEHENGA</div></div>
+    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">BANARASI SILK</div></div>
+    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">KANCHIPURAM</div></div>
   </div>
 
   <!-- ========== NEW ARRIVALS ========== -->
   <section class="new-arrivals">
-    <div class="section-header">
-      <h2>NEW ARRIVALS</h2>
-      <a href="#">VIEW ALL →</a>
-    </div>
+    <div class="section-header"><h2>NEW ARRIVALS</h2><a href="#">VIEW ALL →</a></div>
     <div class="arrival-grid">
-      <div class="arrival-card">
-        <div class="arrival-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="New Arrival 1" />
-        </div>
-        <span class="arrival-badge">NEW</span>
-        <div class="arrival-info">
-          <h4>Silk Saree</h4>
-          <div class="price">₹2,499 <span class="original">₹4,999</span></div>
-        </div>
-      </div>
-      <div class="arrival-card">
-        <div class="arrival-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="New Arrival 2" />
-        </div>
-        <span class="arrival-badge">NEW</span>
-        <div class="arrival-info">
-          <h4>Maheshwari Silk</h4>
-          <div class="price">₹3,199 <span class="original">₹6,499</span></div>
-        </div>
-      </div>
-      <div class="arrival-card">
-        <div class="arrival-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="New Arrival 3" />
-        </div>
-        <span class="arrival-badge">NEW</span>
-        <div class="arrival-info">
-          <h4>Banarasi Silk</h4>
-          <div class="price">₹4,999 <span class="original">₹9,999</span></div>
-        </div>
-      </div>
-      <div class="arrival-card">
-        <div class="arrival-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="New Arrival 4" />
-        </div>
-        <span class="arrival-badge">NEW</span>
-        <div class="arrival-info">
-          <h4>Kanchipuram Silk</h4>
-          <div class="price">₹5,999 <span class="original">₹12,999</span></div>
-        </div>
-      </div>
+      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="New Arrival 1" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Silk Saree</h4><div class="price">₹2,499 <span class="original">₹4,999</span></div></div></div>
+      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="New Arrival 2" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Maheshwari Silk</h4><div class="price">₹3,199 <span class="original">₹6,499</span></div></div></div>
+      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="New Arrival 3" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Banarasi Silk</h4><div class="price">₹4,999 <span class="original">₹9,999</span></div></div></div>
+      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="New Arrival 4" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Kanchipuram Silk</h4><div class="price">₹5,999 <span class="original">₹12,999</span></div></div></div>
     </div>
   </section>
 
-  <!-- ========== SHOP BY CATEGORY (4 images) ========== -->
+  <!-- ========== SHOP BY CATEGORY ========== -->
   <section class="shop-category-section">
-    <div class="section-header">
-      <h2>SHOP BY CATEGORY</h2>
-      <a href="#">VIEW ALL →</a>
-    </div>
+    <div class="section-header"><h2>SHOP BY CATEGORY</h2><a href="#">VIEW ALL →</a></div>
     <div class="shop-category-grid">
-      <div class="shop-category-card">
-        <div class="shop-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Traders7" />
-        </div>
-        <div class="shop-info">
-          <h4>Traders7</h4>
-        </div>
-      </div>
-      <div class="shop-category-card">
-        <div class="shop-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Traders7" />
-        </div>
-        <div class="shop-info">
-          <h4>Traders7</h4>
-        </div>
-      </div>
-      <div class="shop-category-card">
-        <div class="shop-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Traders7" />
-        </div>
-        <div class="shop-info">
-          <h4>Traders7</h4>
-        </div>
-      </div>
-      <div class="shop-category-card">
-        <div class="shop-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Traders7" />
-        </div>
-        <div class="shop-info">
-          <h4>Traders7</h4>
-        </div>
-      </div>
+      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
     </div>
   </section>
 
   <!-- ========== BOTTOM CAROUSEL (2 slides) ========== -->
   <section class="bottom-carousel" id="bottomCarousel">
     <div class="carousel-container">
-      <!-- slide 1 -->
-      <div class="carousel-slide active-slide" data-index="0">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/shine%20with%20sher%20image.webp" alt="Shine with Sher" />
-          </div>
-        </div>
-      </div>
-
-      <!-- slide 2 -->
-      <div class="carousel-slide" data-index="1">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/conquer%20image.webp" alt="Conquer" />
-          </div>
-        </div>
-      </div>
+      <div class="carousel-slide active-slide" data-index="0"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/shine%20with%20sher%20image.webp" alt="Shine with Sher" /></div></div></div>
+      <div class="carousel-slide" data-index="1"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/conquer%20image.webp" alt="Conquer" /></div></div></div>
     </div>
-
-    <!-- carousel controls overlay -->
     <div class="carousel-controls">
       <button class="carousel-btn" id="bottomPrevBtn"><i class="fas fa-chevron-left"></i></button>
-      <div class="carousel-indicators">
-        <button class="dot active" data-index="0"></button>
-        <button class="dot" data-index="1"></button>
-      </div>
+      <div class="carousel-indicators"><button class="dot active" data-index="0"></button><button class="dot" data-index="1"></button></div>
       <button class="carousel-btn" id="bottomNextBtn"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
 
-  <!-- ========== IN THE SPOTLIGHT (4 products) ========== -->
+  <!-- ========== IN THE SPOTLIGHT ========== -->
   <section class="spotlight-section">
-    <div class="section-header">
-      <h2>IN THE SPOTLIGHT</h2>
-      <a href="#">VIEW ALL →</a>
-    </div>
+    <div class="section-header"><h2>IN THE SPOTLIGHT</h2><a href="#">VIEW ALL →</a></div>
     <div class="spotlight-grid">
-      <div class="spotlight-card">
-        <div class="spotlight-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Kanjivaram Silk Zari Half Saree" />
-        </div>
-        <span class="spotlight-badge">Extra 50% OFF</span>
-        <div class="spotlight-info">
-          <h4>KANJIVARAM SILK ZARI HALF SAREE</h4>
-          <span class="offer-tag-spotlight highlight">50% OFF</span>
-        </div>
-      </div>
-      <div class="spotlight-card">
-        <div class="spotlight-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Premium Banarasi Silk Chanderi Saree" />
-        </div>
-        <span class="spotlight-badge">Extra 50% OFF</span>
-        <div class="spotlight-info">
-          <h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4>
-          <span class="offer-tag-spotlight">50% OFF</span>
-        </div>
-      </div>
-      <div class="spotlight-card">
-        <div class="spotlight-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Kanjivaram Silk Zari Half Saree Lehenga" />
-        </div>
-        <span class="spotlight-badge">Extra 50% OFF</span>
-        <div class="spotlight-info">
-          <h4>KANJIVARAM SILK ZARI HALF SAREE LEH</h4>
-          <span class="offer-tag-spotlight highlight">50% OFF</span>
-        </div>
-      </div>
-      <div class="spotlight-card">
-        <div class="spotlight-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Premium Banarasi Silk Chanderi Saree" />
-        </div>
-        <span class="spotlight-badge">Extra 50% OFF</span>
-        <div class="spotlight-info">
-          <h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4>
-          <span class="offer-tag-spotlight">50% OFF</span>
-        </div>
-      </div>
+      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Kanjivaram Silk Zari Half Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
+      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
+      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Kanjivaram Silk Zari Half Saree Lehenga" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE LEH</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
+      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
     </div>
   </section>
 
-  <!-- ========== VIDEO SECTION (FULL WIDTH, UNDER SPOTLIGHT) ========== -->
+  <!-- ========== VIDEO SECTION ========== -->
   <section class="video-section">
     <video src="https://vianta-demo.aamir68599.workers.dev/video%201.mp4" muted autoplay loop playsinline></video>
   </section>
 
-  <!-- ========== ALL PRODUCTS SECTION (4 products, below video) ========== -->
+  <!-- ========== ALL PRODUCTS ========== -->
   <section class="all-products-section">
-    <div class="section-header">
-      <h2>ALL PRODUCTS</h2>
-      <a href="#">VIEW ALL →</a>
-    </div>
+    <div class="section-header"><h2>ALL PRODUCTS</h2><a href="#">VIEW ALL →</a></div>
     <div class="all-products-grid">
-      <div class="all-product-card">
-        <div class="product-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Product 1" />
-        </div>
-        <span class="product-badge">Extra 50% OFF</span>
-        <div class="product-info">
-          <h4>Silk Saree</h4>
-          <div class="price">₹2,499 <span class="original">₹4,999</span></div>
-        </div>
-      </div>
-      <div class="all-product-card">
-        <div class="product-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Product 2" />
-        </div>
-        <span class="product-badge">Extra 50% OFF</span>
-        <div class="product-info">
-          <h4>Maheshwari Silk</h4>
-          <div class="price">₹3,199 <span class="original">₹6,499</span></div>
-        </div>
-      </div>
-      <div class="all-product-card">
-        <div class="product-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Product 3" />
-        </div>
-        <span class="product-badge">Extra 50% OFF</span>
-        <div class="product-info">
-          <h4>Banarasi Silk</h4>
-          <div class="price">₹4,999 <span class="original">₹9,999</span></div>
-        </div>
-      </div>
-      <div class="all-product-card">
-        <div class="product-image">
-          <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Product 4" />
-        </div>
-        <span class="product-badge">Extra 50% OFF</span>
-        <div class="product-info">
-          <h4>Kanchipuram Silk</h4>
-          <div class="price">₹5,999 <span class="original">₹12,999</span></div>
-        </div>
-      </div>
+      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Product 1" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Silk Saree</h4><div class="price">₹2,499 <span class="original">₹4,999</span></div></div></div>
+      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Product 2" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Maheshwari Silk</h4><div class="price">₹3,199 <span class="original">₹6,499</span></div></div></div>
+      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Product 3" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Banarasi Silk</h4><div class="price">₹4,999 <span class="original">₹9,999</span></div></div></div>
+      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Product 4" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Kanchipuram Silk</h4><div class="price">₹5,999 <span class="original">₹12,999</span></div></div></div>
     </div>
   </section>
 
-  <!-- ========== EXTRA BOTTOM CAROUSEL (2 slides, full width, below ALL PRODUCTS) ========== -->
+  <!-- ========== EXTRA BOTTOM CAROUSEL (2 slides) ========== -->
   <section class="extra-bottom-carousel" id="extraBottomCarousel">
     <div class="carousel-container">
-      <!-- slide 1 -->
-      <div class="carousel-slide active-slide" data-index="0">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/image%2020.webp" alt="Extra Carousel 1" />
-          </div>
-        </div>
-      </div>
-
-      <!-- slide 2 -->
-      <div class="carousel-slide" data-index="1">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/image%2021.webp" alt="Extra Carousel 2" />
-          </div>
-        </div>
-      </div>
+      <div class="carousel-slide active-slide" data-index="0"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/image%2020.webp" alt="Extra Carousel 1" /></div></div></div>
+      <div class="carousel-slide" data-index="1"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/image%2021.webp" alt="Extra Carousel 2" /></div></div></div>
     </div>
-
-    <!-- carousel controls overlay -->
     <div class="carousel-controls">
       <button class="carousel-btn" id="extraPrevBtn"><i class="fas fa-chevron-left"></i></button>
-      <div class="carousel-indicators">
-        <button class="dot active" data-index="0"></button>
-        <button class="dot" data-index="1"></button>
-      </div>
+      <div class="carousel-indicators"><button class="dot active" data-index="0"></button><button class="dot" data-index="1"></button></div>
       <button class="carousel-btn" id="extraNextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS / GOOGLE REVIEWS CAROUSEL (5 slides) ========== -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <h2>⭐ Google Reviews</h2>
+      <a href="#">VIEW ALL →</a>
+    </div>
+    <div class="testimonials-carousel" id="testimonialsCarousel">
+      <div class="carousel-container">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active-slide" data-index="0">
+          <div class="testimonial-avatar">
+            <img src="https://ui-avatars.com/api/?name=Priya+Sharma&background=a67c6b&color=fff&size=72" alt="Priya Sharma" />
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Absolutely stunning sarees! The quality of the silk is unmatched and the designs are so elegant. My wedding trousseau was incomplete without Vianta. Highly recommend!"</p>
+          <p class="testimonial-author">— Priya Sharma</p>
+          <p class="testimonial-source">Google Review · 5 stars</p>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide" data-index="1">
+          <div class="testimonial-avatar">
+            <img src="https://ui-avatars.com/api/?name=Ananya+Reddy&background=a67c6b&color=fff&size=72" alt="Ananya Reddy" />
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"I ordered a Kanchipuram silk saree and it exceeded my expectations. The craftsmanship is divine and the color is even richer in person. Will definitely shop again!"</p>
+          <p class="testimonial-author">— Ananya Reddy</p>
+          <p class="testimonial-source">Google Review · 5 stars</p>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide" data-index="2">
+          <div class="testimonial-avatar">
+            <img src="https://ui-avatars.com/api/?name=Meera+Patel&background=a67c6b&color=fff&size=72" alt="Meera Patel" />
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">"Beautiful collection of Banarasi sarees. The packaging was premium and delivery was quick. I felt like a queen wearing their saree at my sister's wedding. Thank you!"</p>
+          <p class="testimonial-author">— Meera Patel</p>
+          <p class="testimonial-source">Google Review · 4.5 stars</p>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-slide" data-index="3">
+          <div class="testimonial-avatar">
+            <img src="https://ui-avatars.com/api/?name=Sneha+Desai&background=a67c6b&color=fff&size=72" alt="Sneha Desai" />
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Vianta Saree is my new go-to for ethnic wear. The half sarees are so trendy and the fabric is super comfortable. Got so many compliments at the family gathering!"</p>
+          <p class="testimonial-author">— Sneha Desai</p>
+          <p class="testimonial-source">Google Review · 5 stars</p>
+        </div>
+        <!-- Slide 5 -->
+        <div class="carousel-slide" data-index="4">
+          <div class="testimonial-avatar">
+            <img src="https://ui-avatars.com/api/?name=Kavita+Menon&background=a67c6b&color=fff&size=72" alt="Kavita Menon" />
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"The best online saree shopping experience ever! The website is easy to navigate, the prices are fair, and the quality is top-notch. Love every piece I ordered."</p>
+          <p class="testimonial-author">— Kavita Menon</p>
+          <p class="testimonial-source">Google Review · 5 stars</p>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="testPrevBtn"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-indicators">
+          <button class="dot active" data-index="0"></button>
+          <button class="dot" data-index="1"></button>
+          <button class="dot" data-index="2"></button>
+          <button class="dot" data-index="3"></button>
+          <button class="dot" data-index="4"></button>
+        </div>
+        <button class="carousel-btn" id="testNextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
     </div>
   </section>
 
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · full-width video · all products (4) · extra carousel (2 images)
+    <i class="fas fa-image"></i> 4 images · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · video · all products (4) · extra carousel (2) · testimonials (5)
   </div>
 </div>
 
@@ -1944,238 +1988,118 @@
     const AUTO_SLIDE_DELAY = 3000;
 
     function showSlide(index) {
-      slides.forEach(function(slide) {
-        slide.classList.remove('active-slide');
-      });
-      if (slides[index]) {
-        slides[index].classList.add('active-slide');
-      }
-      dots.forEach(function(dot, i) {
-        if (i === index) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
+      slides.forEach(function(slide) { slide.classList.remove('active-slide'); });
+      if (slides[index]) slides[index].classList.add('active-slide');
+      dots.forEach(function(dot, i) { i === index ? dot.classList.add('active') : dot.classList.remove('active'); });
       currentIndex = index;
     }
-
-    function nextSlide() {
-      var newIndex = (currentIndex + 1) % totalSlides;
-      showSlide(newIndex);
-    }
-
-    function prevSlide() {
-      var newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      showSlide(newIndex);
-    }
-
-    function startAutoSlide() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = null;
-      }
-      autoSlideInterval = setInterval(nextSlide, AUTO_SLIDE_DELAY);
-    }
-
-    function resetAutoSlide() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = null;
-      }
-      startAutoSlide();
-    }
-
-    nextBtn.addEventListener('click', function() {
-      nextSlide();
-      resetAutoSlide();
-    });
-
-    prevBtn.addEventListener('click', function() {
-      prevSlide();
-      resetAutoSlide();
-    });
-
+    function nextSlide() { showSlide((currentIndex + 1) % totalSlides); }
+    function prevSlide() { showSlide((currentIndex - 1 + totalSlides) % totalSlides); }
+    function startAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval); autoSlideInterval = setInterval(nextSlide, AUTO_SLIDE_DELAY); }
+    function resetAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval); startAutoSlide(); }
+    nextBtn.addEventListener('click', function() { nextSlide(); resetAutoSlide(); });
+    prevBtn.addEventListener('click', function() { prevSlide(); resetAutoSlide(); });
     dots.forEach(function(dot) {
       dot.addEventListener('click', function() {
         var index = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(index) && index !== currentIndex) {
-          showSlide(index);
-          resetAutoSlide();
-        }
+        if (!isNaN(index) && index !== currentIndex) { showSlide(index); resetAutoSlide(); }
       });
     });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowRight') {
-        nextSlide();
-        resetAutoSlide();
-      } else if (e.key === 'ArrowLeft') {
-        prevSlide();
-        resetAutoSlide();
-      }
-    });
-
     showSlide(0);
     startAutoSlide();
 
     // ----- BOTTOM CAROUSEL (2 slides) -----
-    const bottomSlides = document.querySelectorAll('.bottom-carousel .carousel-slide');
-    const bottomDots = document.querySelectorAll('.bottom-carousel .dot');
-    const bottomPrevBtn = document.getElementById('bottomPrevBtn');
-    const bottomNextBtn = document.getElementById('bottomNextBtn');
-    let bottomIndex = 0;
-    const bottomTotal = bottomSlides.length;
-    let bottomAutoSlide = null;
-    const BOTTOM_AUTO_DELAY = 3000;
-
-    function showBottomSlide(index) {
-      bottomSlides.forEach(function(slide) {
-        slide.classList.remove('active-slide');
-      });
-      if (bottomSlides[index]) {
-        bottomSlides[index].classList.add('active-slide');
-      }
-      bottomDots.forEach(function(dot, i) {
-        if (i === index) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-      bottomIndex = index;
+    const bSlides = document.querySelectorAll('.bottom-carousel .carousel-slide');
+    const bDots = document.querySelectorAll('.bottom-carousel .dot');
+    const bPrev = document.getElementById('bottomPrevBtn');
+    const bNext = document.getElementById('bottomNextBtn');
+    let bIdx = 0;
+    const bTotal = bSlides.length;
+    let bAuto = null;
+    function showB(idx) {
+      bSlides.forEach(function(s) { s.classList.remove('active-slide'); });
+      if (bSlides[idx]) bSlides[idx].classList.add('active-slide');
+      bDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
+      bIdx = idx;
     }
-
-    function nextBottomSlide() {
-      var newIndex = (bottomIndex + 1) % bottomTotal;
-      showBottomSlide(newIndex);
-    }
-
-    function prevBottomSlide() {
-      var newIndex = (bottomIndex - 1 + bottomTotal) % bottomTotal;
-      showBottomSlide(newIndex);
-    }
-
-    function startBottomAutoSlide() {
-      if (bottomAutoSlide) {
-        clearInterval(bottomAutoSlide);
-        bottomAutoSlide = null;
-      }
-      bottomAutoSlide = setInterval(nextBottomSlide, BOTTOM_AUTO_DELAY);
-    }
-
-    function resetBottomAutoSlide() {
-      if (bottomAutoSlide) {
-        clearInterval(bottomAutoSlide);
-        bottomAutoSlide = null;
-      }
-      startBottomAutoSlide();
-    }
-
-    bottomNextBtn.addEventListener('click', function() {
-      nextBottomSlide();
-      resetBottomAutoSlide();
-    });
-
-    bottomPrevBtn.addEventListener('click', function() {
-      prevBottomSlide();
-      resetBottomAutoSlide();
-    });
-
-    bottomDots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        var index = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(index) && index !== bottomIndex) {
-          showBottomSlide(index);
-          resetBottomAutoSlide();
-        }
+    function nextB() { showB((bIdx + 1) % bTotal); }
+    function prevB() { showB((bIdx - 1 + bTotal) % bTotal); }
+    function startB() { if (bAuto) clearInterval(bAuto); bAuto = setInterval(nextB, 3000); }
+    function resetB() { if (bAuto) clearInterval(bAuto); startB(); }
+    bNext.addEventListener('click', function() { nextB(); resetB(); });
+    bPrev.addEventListener('click', function() { prevB(); resetB(); });
+    bDots.forEach(function(d) {
+      d.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(idx) && idx !== bIdx) { showB(idx); resetB(); }
       });
     });
-
-    showBottomSlide(0);
-    startBottomAutoSlide();
+    showB(0);
+    startB();
 
     // ----- EXTRA BOTTOM CAROUSEL (2 slides) -----
-    const extraSlides = document.querySelectorAll('.extra-bottom-carousel .carousel-slide');
-    const extraDots = document.querySelectorAll('.extra-bottom-carousel .dot');
-    const extraPrevBtn = document.getElementById('extraPrevBtn');
-    const extraNextBtn = document.getElementById('extraNextBtn');
-    let extraIndex = 0;
-    const extraTotal = extraSlides.length;
-    let extraAutoSlide = null;
-    const EXTRA_AUTO_DELAY = 3000;
-
-    function showExtraSlide(index) {
-      extraSlides.forEach(function(slide) {
-        slide.classList.remove('active-slide');
-      });
-      if (extraSlides[index]) {
-        extraSlides[index].classList.add('active-slide');
-      }
-      extraDots.forEach(function(dot, i) {
-        if (i === index) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-      extraIndex = index;
+    const eSlides = document.querySelectorAll('.extra-bottom-carousel .carousel-slide');
+    const eDots = document.querySelectorAll('.extra-bottom-carousel .dot');
+    const ePrev = document.getElementById('extraPrevBtn');
+    const eNext = document.getElementById('extraNextBtn');
+    let eIdx = 0;
+    const eTotal = eSlides.length;
+    let eAuto = null;
+    function showE(idx) {
+      eSlides.forEach(function(s) { s.classList.remove('active-slide'); });
+      if (eSlides[idx]) eSlides[idx].classList.add('active-slide');
+      eDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
+      eIdx = idx;
     }
-
-    function nextExtraSlide() {
-      var newIndex = (extraIndex + 1) % extraTotal;
-      showExtraSlide(newIndex);
-    }
-
-    function prevExtraSlide() {
-      var newIndex = (extraIndex - 1 + extraTotal) % extraTotal;
-      showExtraSlide(newIndex);
-    }
-
-    function startExtraAutoSlide() {
-      if (extraAutoSlide) {
-        clearInterval(extraAutoSlide);
-        extraAutoSlide = null;
-      }
-      extraAutoSlide = setInterval(nextExtraSlide, EXTRA_AUTO_DELAY);
-    }
-
-    function resetExtraAutoSlide() {
-      if (extraAutoSlide) {
-        clearInterval(extraAutoSlide);
-        extraAutoSlide = null;
-      }
-      startExtraAutoSlide();
-    }
-
-    extraNextBtn.addEventListener('click', function() {
-      nextExtraSlide();
-      resetExtraAutoSlide();
-    });
-
-    extraPrevBtn.addEventListener('click', function() {
-      prevExtraSlide();
-      resetExtraAutoSlide();
-    });
-
-    extraDots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        var index = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(index) && index !== extraIndex) {
-          showExtraSlide(index);
-          resetExtraAutoSlide();
-        }
+    function nextE() { showE((eIdx + 1) % eTotal); }
+    function prevE() { showE((eIdx - 1 + eTotal) % eTotal); }
+    function startE() { if (eAuto) clearInterval(eAuto); eAuto = setInterval(nextE, 3000); }
+    function resetE() { if (eAuto) clearInterval(eAuto); startE(); }
+    eNext.addEventListener('click', function() { nextE(); resetE(); });
+    ePrev.addEventListener('click', function() { prevE(); resetE(); });
+    eDots.forEach(function(d) {
+      d.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(idx) && idx !== eIdx) { showE(idx); resetE(); }
       });
     });
+    showE(0);
+    startE();
 
-    showExtraSlide(0);
-    startExtraAutoSlide();
+    // ----- TESTIMONIALS CAROUSEL (5 slides) -----
+    const tSlides = document.querySelectorAll('.testimonials-carousel .carousel-slide');
+    const tDots = document.querySelectorAll('.testimonials-carousel .dot');
+    const tPrev = document.getElementById('testPrevBtn');
+    const tNext = document.getElementById('testNextBtn');
+    let tIdx = 0;
+    const tTotal = tSlides.length;
+    let tAuto = null;
+    function showT(idx) {
+      tSlides.forEach(function(s) { s.classList.remove('active-slide'); });
+      if (tSlides[idx]) tSlides[idx].classList.add('active-slide');
+      tDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
+      tIdx = idx;
+    }
+    function nextT() { showT((tIdx + 1) % tTotal); }
+    function prevT() { showT((tIdx - 1 + tTotal) % tTotal); }
+    function startT() { if (tAuto) clearInterval(tAuto); tAuto = setInterval(nextT, 3500); }
+    function resetT() { if (tAuto) clearInterval(tAuto); startT(); }
+    tNext.addEventListener('click', function() { nextT(); resetT(); });
+    tPrev.addEventListener('click', function() { prevT(); resetT(); });
+    tDots.forEach(function(d) {
+      d.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(idx) && idx !== tIdx) { showT(idx); resetT(); }
+      });
+    });
+    showT(0);
+    startT();
   })();
 </script>
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video below Spotlight · All Products (4) · Extra Carousel (2 images)
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video · All Products (4) · Extra Carousel (2) · Google Reviews Testimonials (5)
   <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals & spotlight) · ~1200×600 (carousels)</span>
 </div>
 </body>
