@@ -1059,6 +1059,132 @@
       margin-left: 0.4rem;
     }
 
+    /* ===== EXTRA BOTTOM CAROUSEL (2 slides, full width, below ALL PRODUCTS) ===== */
+    .extra-bottom-carousel {
+      margin-top: 2.5rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      position: relative;
+      width: calc(100% + 4rem);
+      height: calc(100vh - 300px);
+      min-height: 350px;
+      max-height: 700px;
+      background: #1a1a1a;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+      border-radius: 0;
+    }
+
+    .extra-bottom-carousel .carousel-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .extra-bottom-carousel .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+
+    .extra-bottom-carousel .carousel-slide.active-slide {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .extra-bottom-carousel .slide-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .extra-bottom-carousel .slide-image {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .extra-bottom-carousel .slide-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #1a1a1a;
+    }
+
+    .extra-bottom-carousel .carousel-controls {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      z-index: 10;
+      padding: 0 1rem;
+    }
+
+    .extra-bottom-carousel .carousel-btn {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #d6c9c0;
+      width: 44px;
+      height: 44px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #2c1810;
+      cursor: pointer;
+      transition: all 0.2s;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+    .extra-bottom-carousel .carousel-btn:hover {
+      background: #2c1810;
+      color: white;
+      border-color: #2c1810;
+    }
+
+    .extra-bottom-carousel .carousel-indicators {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .extra-bottom-carousel .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      transition: 0.2s;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 0;
+    }
+    .extra-bottom-carousel .dot.active {
+      background: #2c1810;
+      width: 24px;
+      border-color: #2c1810;
+    }
+
     /* ---- responsive for spotlight ---- */
     @media screen and (max-width: 1024px) {
       .spotlight-grid {
@@ -1125,6 +1251,19 @@
         height: 36px;
         font-size: 0.9rem;
       }
+      .extra-bottom-carousel {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        height: calc(100vh - 300px);
+        min-height: 280px;
+        max-height: 500px;
+      }
+      .extra-bottom-carousel .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -1149,6 +1288,30 @@
         width: 18px;
       }
       .bottom-carousel .carousel-controls {
+        bottom: 1rem;
+        gap: 0.8rem;
+      }
+      .extra-bottom-carousel {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        width: calc(100% + 1rem);
+        height: calc(100vh - 260px);
+        min-height: 220px;
+        max-height: 400px;
+      }
+      .extra-bottom-carousel .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+      }
+      .extra-bottom-carousel .dot {
+        width: 7px;
+        height: 7px;
+      }
+      .extra-bottom-carousel .dot.active {
+        width: 18px;
+      }
+      .extra-bottom-carousel .carousel-controls {
         bottom: 1rem;
         gap: 0.8rem;
       }
@@ -1729,9 +1892,42 @@
     </div>
   </section>
 
+  <!-- ========== EXTRA BOTTOM CAROUSEL (2 slides, full width, below ALL PRODUCTS) ========== -->
+  <section class="extra-bottom-carousel" id="extraBottomCarousel">
+    <div class="carousel-container">
+      <!-- slide 1 -->
+      <div class="carousel-slide active-slide" data-index="0">
+        <div class="slide-content">
+          <div class="slide-image">
+            <img src="https://vianta-demo.aamir68599.workers.dev/image%2020.webp" alt="Extra Carousel 1" />
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 2 -->
+      <div class="carousel-slide" data-index="1">
+        <div class="slide-content">
+          <div class="slide-image">
+            <img src="https://vianta-demo.aamir68599.workers.dev/image%2021.webp" alt="Extra Carousel 2" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel controls overlay -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="extraPrevBtn"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-indicators">
+        <button class="dot active" data-index="0"></button>
+        <button class="dot" data-index="1"></button>
+      </div>
+      <button class="carousel-btn" id="extraNextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
   <!-- small note -->
   <div style="text-align: right; font-size: 0.7rem; color: #b7a69b; margin-top: 1.5rem; padding-right: 0.2rem;">
-    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · full-width video · all products (4)
+    <i class="fas fa-image"></i> 4 images · full screen (contain) · auto-slide 3s · 5 circular categories · offer row · new arrivals · shop by category · bottom carousel · spotlight · full-width video · all products (4) · extra carousel (2 images)
   </div>
 </div>
 
@@ -1898,13 +2094,89 @@
 
     showBottomSlide(0);
     startBottomAutoSlide();
+
+    // ----- EXTRA BOTTOM CAROUSEL (2 slides) -----
+    const extraSlides = document.querySelectorAll('.extra-bottom-carousel .carousel-slide');
+    const extraDots = document.querySelectorAll('.extra-bottom-carousel .dot');
+    const extraPrevBtn = document.getElementById('extraPrevBtn');
+    const extraNextBtn = document.getElementById('extraNextBtn');
+    let extraIndex = 0;
+    const extraTotal = extraSlides.length;
+    let extraAutoSlide = null;
+    const EXTRA_AUTO_DELAY = 3000;
+
+    function showExtraSlide(index) {
+      extraSlides.forEach(function(slide) {
+        slide.classList.remove('active-slide');
+      });
+      if (extraSlides[index]) {
+        extraSlides[index].classList.add('active-slide');
+      }
+      extraDots.forEach(function(dot, i) {
+        if (i === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+      extraIndex = index;
+    }
+
+    function nextExtraSlide() {
+      var newIndex = (extraIndex + 1) % extraTotal;
+      showExtraSlide(newIndex);
+    }
+
+    function prevExtraSlide() {
+      var newIndex = (extraIndex - 1 + extraTotal) % extraTotal;
+      showExtraSlide(newIndex);
+    }
+
+    function startExtraAutoSlide() {
+      if (extraAutoSlide) {
+        clearInterval(extraAutoSlide);
+        extraAutoSlide = null;
+      }
+      extraAutoSlide = setInterval(nextExtraSlide, EXTRA_AUTO_DELAY);
+    }
+
+    function resetExtraAutoSlide() {
+      if (extraAutoSlide) {
+        clearInterval(extraAutoSlide);
+        extraAutoSlide = null;
+      }
+      startExtraAutoSlide();
+    }
+
+    extraNextBtn.addEventListener('click', function() {
+      nextExtraSlide();
+      resetExtraAutoSlide();
+    });
+
+    extraPrevBtn.addEventListener('click', function() {
+      prevExtraSlide();
+      resetExtraAutoSlide();
+    });
+
+    extraDots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        var index = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(index) && index !== extraIndex) {
+          showExtraSlide(index);
+          resetExtraAutoSlide();
+        }
+      });
+    });
+
+    showExtraSlide(0);
+    startExtraAutoSlide();
   })();
 </script>
 
 <!-- footer hint -->
 <div style="max-width:1440px; width:100%; margin-top: 1rem; padding: 0.2rem 2rem; font-size: 0.75rem; color: #aa9b91; border-top: 1px solid #efe8e2; text-align: center; background: #fcf8f5; border-radius: 30px;">
-  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video below Spotlight · All Products (4)
-  <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals & spotlight) · ~1200×600 (bottom carousel)</span>
+  <i class="fas fa-info-circle"></i> Vianta Saree · 5 circular categories · Offer Row · New Arrivals (4) · Shop by Category (4) · Bottom Carousel (2 slides) · In The Spotlight (4) · Full Image Carousel · Auto-slide 3s · Full-width video below Spotlight · All Products (4) · Extra Carousel (2 images)
+  <span style="margin-left: 1rem;">Image pixels: ~400×400 (circle & shop) · ~600×600 (arrivals & spotlight) · ~1200×600 (carousels)</span>
 </div>
 </body>
 </html>
