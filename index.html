@@ -105,14 +105,23 @@
     .brand-icon {
       background: #a67c6b;
       color: white;
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
       box-shadow: 0 2px 6px rgba(166, 124, 107, 0.2);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .brand h1 {
@@ -142,7 +151,7 @@
       transform: scale(1.05);
     }
 
-    /* search field – clean & minimal */
+    /* search field – clean & minimal, now on left side */
     .search-wrap {
       display: flex;
       align-items: center;
@@ -152,6 +161,8 @@
       gap: 0.4rem;
       border: 1px solid #e2d6ce;
       transition: border 0.2s, box-shadow 0.2s;
+      order: -1;
+      margin-right: auto;
     }
     .search-wrap:focus-within {
       border-color: #a67c6b;
@@ -166,7 +177,7 @@
       background: transparent;
       padding: 0.25rem 0;
       font-size: 0.85rem;
-      width: 110px;
+      width: 120px;
       outline: none;
       color: #2c1810;
     }
@@ -1545,6 +1556,9 @@
         gap: 1rem;
         padding: 1.5rem 0.8rem;
       }
+      .search-wrap input {
+        width: 80px;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -1597,6 +1611,10 @@
       }
       .footer .go-top {
         text-align: center;
+      }
+      .search-wrap input {
+        width: 60px;
+        font-size: 0.7rem;
       }
     }
 
@@ -1721,9 +1739,6 @@
       .bottom-header {
         justify-content: center;
       }
-      .search-wrap input {
-        width: 80px;
-      }
       .carousel-btn {
         width: 36px;
         height: 36px;
@@ -1799,10 +1814,6 @@
       .dot.active {
         width: 18px;
       }
-      .search-wrap input {
-        width: 60px;
-        font-size: 0.7rem;
-      }
       .category-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.6rem;
@@ -1869,7 +1880,9 @@
   <!-- ========== HEADER 1 : TOP ========== -->
   <header class="top-header">
     <div class="brand">
-      <span class="brand-icon"><i class="fas fa-crown"></i></span>
+      <span class="brand-icon">
+        <img src="https://vianta-demo.aamir68599.workers.dev/vanita%20logo.jpg" alt="Vianta Saree Logo" />
+      </span>
       <h1>Vianta<span>Saree</span></h1>
     </div>
     <div class="top-icons">
