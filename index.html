@@ -1,2100 +1,2588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vianta Saree · Silk & Heritage</title>
-  <!-- Font Awesome 5 (free) -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-    }
-
-    body {
-      background: #f9f5f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      width: 100%;
-    }
-
-    .wrapper {
-      max-width: 1440px;
-      width: 100%;
-      background: #ffffff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
-      padding: 0 2rem 2rem 2rem;
-      border-radius: 0 0 2rem 2rem;
-    }
-
-    /* ---- OFFER BANNER ---- */
-    .offer-banner {
-      background: transparent;
-      color: #2c1810;
-      text-align: center;
-      padding: 0.3rem 0.6rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.4px;
-      border-radius: 40px;
-      margin-top: 0.5rem;
-      margin-bottom: 0.1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      font-weight: 400;
-      border: 1px solid #e8dfd9;
-      background: #fcf8f5;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
-    }
-    .offer-banner strong {
-      font-weight: 500;
-      color: #a67c6b;
-      background: transparent;
-      padding: 0 0.2rem;
-      letter-spacing: 0.8px;
-      font-size: 0.85rem;
-    }
-    .offer-banner i {
-      color: #b8a69b;
-      margin: 0 0.1rem;
-      font-size: 0.7rem;
-    }
-    .offer-banner span {
-      background: transparent;
-      padding: 0.1rem 0.5rem;
-      border-radius: 30px;
-      color: #3d2c24;
-      font-weight: 400;
-      font-size: 0.8rem;
-      border: 1px solid #e8dfd9;
-      background: #ffffff;
-    }
-    .offer-banner .highlight {
-      background: #f3ede8;
-      color: #2c1810;
-      border-color: #ddd2ca;
-    }
-    .offer-banner .sep {
-      color: #d6c9c0;
-      font-size: 0.6rem;
-    }
-
-    /* ---- TOP HEADER ---- */
-    .top-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 0 0.2rem 0;
-      border-bottom: 1px solid #f0ebe6;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .brand-icon {
-      background: #a67c6b;
-      color: white;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 2px 6px rgba(166, 124, 107, 0.2);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .brand-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .brand h1 {
-      font-size: 1.7rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: #2c1810;
-    }
-    .brand h1 span {
-      font-weight: 300;
-      color: #a67c6b;
-    }
-
-    .top-icons {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      color: #2c1810;
-      font-size: 1.1rem;
-    }
-    .top-icons i {
-      cursor: default;
-      transition: color 0.2s, transform 0.2s;
-    }
-    .top-icons i:hover {
-      color: #a67c6b;
-      transform: scale(1.05);
-    }
-
-    .search-wrap {
-      display: flex;
-      align-items: center;
-      background: #f3ede8;
-      padding: 0.2rem 0.8rem;
-      border-radius: 40px;
-      gap: 0.4rem;
-      border: 1px solid #e2d6ce;
-      transition: border 0.2s, box-shadow 0.2s;
-      order: -1;
-      margin-right: auto;
-    }
-    .search-wrap:focus-within {
-      border-color: #a67c6b;
-      box-shadow: 0 0 0 3px rgba(166, 124, 107, 0.1);
-    }
-    .search-wrap i {
-      color: #6b5a4f;
-      font-size: 0.85rem;
-    }
-    .search-wrap input {
-      border: none;
-      background: transparent;
-      padding: 0.25rem 0;
-      font-size: 0.85rem;
-      width: 120px;
-      outline: none;
-      color: #2c1810;
-    }
-    .search-wrap input::placeholder {
-      color: #ab988b;
-      font-weight: 300;
-    }
-
-    /* ---- BOTTOM HEADER ---- */
-    .bottom-header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.7rem 0 0.4rem 0;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #f0ebe6;
-    }
-
-    .main-menu {
-      display: flex;
-      gap: 2.2rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: #2c1810;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .main-menu a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s;
-      position: relative;
-      padding: 0.1rem 0;
-    }
-    .main-menu a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0%;
-      height: 2px;
-      background: #a67c6b;
-      transition: width 0.25s ease;
-    }
-    .main-menu a:hover {
-      color: #a67c6b;
-    }
-    .main-menu a:hover::after {
-      width: 100%;
-    }
-
-    .more-dropdown {
-      display: flex;
-      align-items: center;
-      gap: 0.2rem;
-      cursor: default;
-      color: #2c1810;
-      font-weight: 500;
-    }
-    .more-dropdown i {
-      font-size: 0.65rem;
-      margin-left: 0.1rem;
-      color: #7a685c;
-    }
-
-    /* ===== HERO CAROUSEL — FULL WIDTH, CONTAIN (NO CROP) ===== */
-    .hero-carousel {
-      margin-top: 1.5rem;
-      margin-left: -2rem;
-      margin-right: -2rem;
-      position: relative;
-      width: calc(100% + 4rem);
-      height: calc(100vh - 240px);
-      min-height: 420px;
-      max-height: 800px;
-      background: #f5f0eb;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
-      border-radius: 0;
-    }
-
-    .carousel-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-      pointer-events: none;
-    }
-
-    .carousel-slide.active-slide {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .slide-content {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .slide-image {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .slide-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      background: transparent;
-    }
-
-    /* carousel controls */
-    .carousel-controls {
-      position: absolute;
-      bottom: 1.8rem;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      z-index: 10;
-      padding: 0 1rem;
-    }
-
-    .carousel-btn {
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid #d6c9c0;
-      width: 44px;
-      height: 44px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: #2c1810;
-      cursor: pointer;
-      transition: all 0.2s;
-      backdrop-filter: blur(2px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-    .carousel-btn:hover {
-      background: #2c1810;
-      color: white;
-      border-color: #2c1810;
-    }
-
-    .carousel-indicators {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      transition: 0.2s;
-      cursor: pointer;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 0;
-    }
-    .dot.active {
-      background: #2c1810;
-      width: 24px;
-      border-color: #2c1810;
-    }
-
-    /* ===== CATEGORY SECTION ===== */
-    .category-section {
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .category-section .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .category-section .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-    }
-
-    .category-section .section-header a {
-      color: #a67c6b;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .category-section .section-header a:hover {
-      color: #2c1810;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.2rem;
-    }
-
-    .category-card {
-      background: #ffffff;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      border: 2px solid #f0ebe6;
-      aspect-ratio: 1/1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      position: relative;
-    }
-    .category-card:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      border-color: #a67c6b;
-    }
-
-    .category-card .cat-image {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 50%;
-      background: #f5f0eb;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .category-card .cat-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .category-card:hover .cat-image img {
-      transform: scale(1.08);
-    }
-
-    .category-card .cat-info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.4rem 0.3rem;
-      text-align: center;
-      width: 100%;
-      background: linear-gradient(transparent, rgba(0,0,0,0.5));
-      z-index: 1;
-    }
-    .category-card .cat-info h3 {
-      font-size: 0.6rem;
-      font-weight: 600;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-      line-height: 1.2;
-    }
-    .category-card .cat-info .offer-tag {
-      display: inline-block;
-      margin-top: 0.05rem;
-      background: rgba(166, 124, 107, 0.9);
-      color: #ffffff;
-      font-size: 0.4rem;
-      font-weight: 700;
-      padding: 0.05rem 0.4rem;
-      border-radius: 20px;
-      letter-spacing: 0.3px;
-      backdrop-filter: blur(2px);
-    }
-    .category-card .cat-info .offer-tag.light {
-      background: rgba(255, 255, 255, 0.85);
-      color: #2c1810;
-    }
-
-    /* ===== EXTRA OFFER ROW ===== */
-    .offer-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .offer-box {
-      background: #f3ede8;
-      border-radius: 0.8rem;
-      padding: 1.2rem 0.8rem;
-      text-align: center;
-      border: 1px solid #e8dfd9;
-      transition: background 0.2s;
-    }
-    .offer-box:hover {
-      background: #ede5de;
-    }
-    .offer-box .offer-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #a67c6b;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .offer-box .offer-value {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #2c1810;
-      margin-top: 0.2rem;
-    }
-
-    /* ===== NEW ARRIVALS ===== */
-    .new-arrivals {
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .new-arrivals .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .new-arrivals .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-    }
-
-    .new-arrivals .section-header a {
-      color: #a67c6b;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .new-arrivals .section-header a:hover {
-      color: #2c1810;
-    }
-
-    .arrival-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-    }
-
-    .arrival-card {
-      background: #ffffff;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      border: 1px solid #f0ebe6;
-      position: relative;
-    }
-    .arrival-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    .arrival-card .arrival-image {
-      width: 100%;
-      aspect-ratio: 1/1;
-      overflow: hidden;
-      background: #f5f0eb;
-    }
-    .arrival-card .arrival-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .arrival-card:hover .arrival-image img {
-      transform: scale(1.03);
-    }
-
-    .arrival-card .arrival-badge {
-      position: absolute;
-      top: 0.6rem;
-      left: 0.6rem;
-      background: #a67c6b;
-      color: #ffffff;
-      font-size: 0.6rem;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    .arrival-card .arrival-info {
-      padding: 0.7rem 1rem 1rem 1rem;
-      text-align: center;
-    }
-    .arrival-card .arrival-info h4 {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #2c1810;
-      margin-bottom: 0.2rem;
-    }
-    .arrival-card .arrival-info .price {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #a67c6b;
-    }
-    .arrival-card .arrival-info .price .original {
-      font-weight: 400;
-      color: #b7a69b;
-      text-decoration: line-through;
-      font-size: 0.75rem;
-      margin-left: 0.4rem;
-    }
-
-    /* ===== SHOP BY CATEGORY ===== */
-    .shop-category-section {
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .shop-category-section .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .shop-category-section .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-    }
-
-    .shop-category-section .section-header a {
-      color: #a67c6b;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .shop-category-section .section-header a:hover {
-      color: #2c1810;
-    }
-
-    .shop-category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-
-    .shop-category-card {
-      background: #ffffff;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      border: 1px solid #f0ebe6;
-      position: relative;
-    }
-    .shop-category-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    .shop-category-card .shop-image {
-      width: 100%;
-      aspect-ratio: 1/1;
-      overflow: hidden;
-      background: #f5f0eb;
-    }
-    .shop-category-card .shop-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .shop-category-card:hover .shop-image img {
-      transform: scale(1.03);
-    }
-
-    .shop-category-card .shop-info {
-      padding: 0.7rem 1rem 1rem 1rem;
-      text-align: center;
-    }
-    .shop-category-card .shop-info h4 {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #2c1810;
-    }
-
-    /* ===== BOTTOM CAROUSEL - 2 SLIDES ===== */
-    .bottom-carousel {
-      margin-top: 2.5rem;
-      margin-left: -2rem;
-      margin-right: -2rem;
-      position: relative;
-      width: calc(100% + 4rem);
-      height: calc(100vh - 300px);
-      min-height: 350px;
-      max-height: 700px;
-      background: #f5f0eb;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
-      border-radius: 0;
-    }
-
-    .bottom-carousel .carousel-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .bottom-carousel .carousel-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-      pointer-events: none;
-    }
-
-    .bottom-carousel .carousel-slide.active-slide {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .bottom-carousel .slide-content {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .bottom-carousel .slide-image {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .bottom-carousel .slide-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      background: transparent;
-    }
-
-    .bottom-carousel .carousel-controls {
-      position: absolute;
-      bottom: 1.8rem;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      z-index: 10;
-      padding: 0 1rem;
-    }
-
-    .bottom-carousel .carousel-btn {
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid #d6c9c0;
-      width: 44px;
-      height: 44px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: #2c1810;
-      cursor: pointer;
-      transition: all 0.2s;
-      backdrop-filter: blur(2px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-    .bottom-carousel .carousel-btn:hover {
-      background: #2c1810;
-      color: white;
-      border-color: #2c1810;
-    }
-
-    .bottom-carousel .carousel-indicators {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .bottom-carousel .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      transition: 0.2s;
-      cursor: pointer;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 0;
-    }
-    .bottom-carousel .dot.active {
-      background: #2c1810;
-      width: 24px;
-      border-color: #2c1810;
-    }
-
-    /* ===== IN THE SPOTLIGHT ===== */
-    .spotlight-section {
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .spotlight-section .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .spotlight-section .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-    }
-
-    .spotlight-section .section-header a {
-      color: #a67c6b;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .spotlight-section .section-header a:hover {
-      color: #2c1810;
-    }
-
-    .spotlight-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-    }
-
-    .spotlight-card {
-      background: #ffffff;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      border: 1px solid #f0ebe6;
-      position: relative;
-    }
-    .spotlight-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    .spotlight-card .spotlight-image {
-      width: 100%;
-      aspect-ratio: 1/1;
-      overflow: hidden;
-      background: #f5f0eb;
-    }
-    .spotlight-card .spotlight-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .spotlight-card:hover .spotlight-image img {
-      transform: scale(1.03);
-    }
-
-    .spotlight-card .spotlight-badge {
-      position: absolute;
-      top: 0.6rem;
-      left: 0.6rem;
-      background: #a67c6b;
-      color: #ffffff;
-      font-size: 0.6rem;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    .spotlight-card .spotlight-info {
-      padding: 0.7rem 1rem 1rem 1rem;
-      text-align: center;
-    }
-    .spotlight-card .spotlight-info h4 {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #2c1810;
-      margin-bottom: 0.2rem;
-      line-height: 1.3;
-    }
-    .spotlight-card .spotlight-info .offer-tag-spotlight {
-      display: inline-block;
-      background: #e8dfd9;
-      color: #2c1810;
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 0.15rem 0.6rem;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-    .spotlight-card .spotlight-info .offer-tag-spotlight.highlight {
-      background: #a67c6b;
-      color: #ffffff;
-    }
-
-    /* ---- VIDEO SECTION ---- */
-    .video-section {
-      margin-top: 2.5rem;
-      margin-left: -2rem;
-      margin-right: -2rem;
-      width: calc(100% + 4rem);
-      background: #0f0c0a;
-      aspect-ratio: 16 / 9;
-      max-height: 800px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .video-section video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: #0f0c0a;
-      display: block;
-    }
-
-    /* ===== ALL PRODUCTS ===== */
-    .all-products-section {
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .all-products-section .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .all-products-section .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-    }
-
-    .all-products-section .section-header a {
-      color: #a67c6b;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .all-products-section .section-header a:hover {
-      color: #2c1810;
-    }
-
-    .all-products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-    }
-
-    .all-product-card {
-      background: #ffffff;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      border: 1px solid #f0ebe6;
-      position: relative;
-    }
-    .all-product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    .all-product-card .product-image {
-      width: 100%;
-      aspect-ratio: 1/1;
-      overflow: hidden;
-      background: #f5f0eb;
-    }
-    .all-product-card .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .all-product-card:hover .product-image img {
-      transform: scale(1.03);
-    }
-
-    .all-product-card .product-badge {
-      position: absolute;
-      top: 0.6rem;
-      left: 0.6rem;
-      background: #a67c6b;
-      color: #ffffff;
-      font-size: 0.6rem;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    .all-product-card .product-info {
-      padding: 0.7rem 1rem 1rem 1rem;
-      text-align: center;
-    }
-    .all-product-card .product-info h4 {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #2c1810;
-      margin-bottom: 0.2rem;
-    }
-    .all-product-card .product-info .price {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #a67c6b;
-    }
-    .all-product-card .product-info .price .original {
-      font-weight: 400;
-      color: #b7a69b;
-      text-decoration: line-through;
-      font-size: 0.75rem;
-      margin-left: 0.4rem;
-    }
-
-    /* ===== EXTRA BOTTOM CAROUSEL (2 slides) ===== */
-    .extra-bottom-carousel {
-      margin-top: 2.5rem;
-      margin-left: -2rem;
-      margin-right: -2rem;
-      position: relative;
-      width: calc(100% + 4rem);
-      height: calc(100vh - 300px);
-      min-height: 350px;
-      max-height: 700px;
-      background: #f5f0eb;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
-      border-radius: 0;
-    }
-
-    .extra-bottom-carousel .carousel-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .extra-bottom-carousel .carousel-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-      pointer-events: none;
-    }
-
-    .extra-bottom-carousel .carousel-slide.active-slide {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .extra-bottom-carousel .slide-content {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .extra-bottom-carousel .slide-image {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .extra-bottom-carousel .slide-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      background: transparent;
-    }
-
-    .extra-bottom-carousel .carousel-controls {
-      position: absolute;
-      bottom: 1.8rem;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      z-index: 10;
-      padding: 0 1rem;
-    }
-
-    .extra-bottom-carousel .carousel-btn {
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid #d6c9c0;
-      width: 44px;
-      height: 44px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: #2c1810;
-      cursor: pointer;
-      transition: all 0.2s;
-      backdrop-filter: blur(2px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-    .extra-bottom-carousel .carousel-btn:hover {
-      background: #2c1810;
-      color: white;
-      border-color: #2c1810;
-    }
-
-    .extra-bottom-carousel .carousel-indicators {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .extra-bottom-carousel .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      transition: 0.2s;
-      cursor: pointer;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 0;
-    }
-    .extra-bottom-carousel .dot.active {
-      background: #2c1810;
-      width: 24px;
-      border-color: #2c1810;
-    }
-
-    /* ===== TESTIMONIALS ===== */
-    .testimonials-section {
-      margin-top: 2.5rem;
-      padding: 0 0.5rem;
-    }
-
-    .testimonials-section .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .testimonials-section .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-    }
-
-    .testimonials-section .section-header a {
-      color: #a67c6b;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .testimonials-section .section-header a:hover {
-      color: #2c1810;
-    }
-
-    .testimonials-carousel {
-      position: relative;
-      width: 100%;
-      background: #faf6f2;
-      border-radius: 1.5rem;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
-      border: 1px solid #f0ebe6;
-      overflow: hidden;
-    }
-
-    .testimonials-carousel .carousel-container {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 240px;
-    }
-
-    .testimonials-carousel .carousel-slide {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0.5rem 1rem;
-      width: 100%;
-    }
-
-    .testimonials-carousel .carousel-slide.active-slide {
-      display: flex;
-      animation: fadeIn 0.6s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0.3; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .testimonial-avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 0.8rem;
-      border: 3px solid #a67c6b;
-      flex-shrink: 0;
-      background: #ede5de;
-    }
-
-    .testimonial-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .testimonial-stars {
-      color: #f5a623;
-      font-size: 1.1rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.4rem;
-    }
-
-    .testimonial-stars .far {
-      color: #d6c9c0;
-    }
-
-    .testimonial-text {
-      font-size: 1rem;
-      color: #2c1810;
-      font-weight: 400;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto 0.4rem;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #a67c6b;
-      letter-spacing: 0.3px;
-    }
-
-    .testimonial-source {
-      font-size: 0.75rem;
-      color: #b7a69b;
-      margin-top: 0.1rem;
-    }
-
-    .testimonials-carousel .carousel-controls {
-      position: relative;
-      bottom: auto;
-      margin-top: 1.2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      padding: 0;
-    }
-
-    .testimonials-carousel .carousel-btn {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid #d6c9c0;
-      width: 40px;
-      height: 40px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      color: #2c1810;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-    .testimonials-carousel .carousel-btn:hover {
-      background: #2c1810;
-      color: white;
-      border-color: #2c1810;
-    }
-
-    .testimonials-carousel .carousel-indicators {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .testimonials-carousel .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 20px;
-      background: #d6c9c0;
-      transition: 0.2s;
-      cursor: pointer;
-      border: none;
-      padding: 0;
-    }
-    .testimonials-carousel .dot.active {
-      background: #a67c6b;
-      width: 24px;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      margin-top: 2.5rem;
-      padding: 2rem 1rem 1.5rem 1rem;
-      background: #faf6f2;
-      border-radius: 1.5rem;
-      border: 1px solid #f0ebe6;
-      display: grid;
-      grid-template-columns: 1.8fr 1fr 1.2fr 1.5fr;
-      gap: 1.5rem;
-    }
-
-    .footer h4 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #2c1810;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.8rem;
-      text-transform: uppercase;
-      border-bottom: 2px solid #a67c6b;
-      padding-bottom: 0.3rem;
-      display: inline-block;
-    }
-
-    .footer ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    .footer ul li a {
-      text-decoration: none;
-      color: #4d3a30;
-      font-size: 0.8rem;
-      transition: color 0.2s;
-    }
-
-    .footer ul li a:hover {
-      color: #a67c6b;
-    }
-
-    .footer .brand-footer {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .footer .brand-footer .brand-name {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #2c1810;
-      margin-bottom: 0.3rem;
-    }
-
-    .footer .brand-footer .brand-name span {
-      color: #a67c6b;
-      font-weight: 300;
-    }
-
-    .footer .brand-footer p {
-      font-size: 0.8rem;
-      color: #5d4a3e;
-      line-height: 1.5;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer .brand-footer .mse-tag {
-      display: inline-block;
-      background: #e8dfd9;
-      padding: 0.1rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.65rem;
-      color: #2c1810;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      width: fit-content;
-    }
-
-    .footer .contact-info p {
-      font-size: 0.8rem;
-      color: #4d3a30;
-      margin-bottom: 0.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .footer .contact-info i {
-      color: #a67c6b;
-      width: 18px;
-      font-size: 0.85rem;
-    }
-
-    .footer .payment-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer .payment-icons span {
-      background: #ffffff;
-      border: 1px solid #e2d6ce;
-      border-radius: 8px;
-      padding: 0.2rem 0.7rem;
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: #2c1810;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .footer .payment-icons span i {
-      font-size: 0.8rem;
-    }
-
-    .footer .copyright {
-      grid-column: 1 / -1;
-      text-align: center;
-      font-size: 0.7rem;
-      color: #aa9b91;
-      border-top: 1px solid #e8dfd9;
-      padding-top: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer .copyright a {
-      color: #a67c6b;
-      text-decoration: none;
-    }
-
-    .footer .go-top {
-      text-align: right;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    .footer .go-top a {
-      color: #a67c6b;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .footer .go-top a:hover {
-      color: #2c1810;
-    }
-
-    /* ---- responsive ---- */
-    @media screen and (max-width: 1024px) {
-      .spotlight-grid { grid-template-columns: repeat(2, 1fr); }
-      .all-products-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-      .category-grid { grid-template-columns: repeat(3, 1fr); }
-      .offer-row { grid-template-columns: repeat(2, 1fr); }
-      .arrival-grid { grid-template-columns: repeat(2, 1fr); }
-      .shop-category-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media screen and (max-width: 860px) {
-      .wrapper { padding: 0 1rem 1.5rem 1rem; }
-      .hero-carousel { margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem); height: calc(100vh - 280px); min-height: 320px; max-height: 600px; }
-      .main-menu { gap: 1.2rem; font-size: 0.8rem; }
-      .top-header { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
-      .bottom-header { justify-content: center; }
-      .carousel-btn { width: 36px; height: 36px; font-size: 0.9rem; }
-      .category-grid { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
-      .offer-row { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-      .arrival-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-      .shop-category-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-      .spotlight-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-      .all-products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-      .testimonials-carousel { padding: 1.5rem 0.8rem; }
-      .testimonial-text { font-size: 0.9rem; }
-      .footer { grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem 0.8rem; }
-      .search-wrap input { width: 80px; }
-      .video-section { margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem); }
-      .bottom-carousel { margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem); height: calc(100vh - 300px); min-height: 280px; max-height: 500px; }
-      .bottom-carousel .carousel-btn { width: 36px; height: 36px; font-size: 0.9rem; }
-      .extra-bottom-carousel { margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem); height: calc(100vh - 300px); min-height: 280px; max-height: 500px; }
-      .extra-bottom-carousel .carousel-btn { width: 36px; height: 36px; font-size: 0.9rem; }
-    }
-
-    @media screen and (max-width: 480px) {
-      .wrapper { padding: 0 0.5rem 1.5rem 0.5rem; }
-      .hero-carousel { margin-left: -0.5rem; margin-right: -0.5rem; width: calc(100% + 1rem); height: calc(100vh - 260px); min-height: 260px; max-height: 450px; }
-      .main-menu { gap: 0.8rem; font-size: 0.7rem; }
-      .brand h1 { font-size: 1.3rem; }
-      .offer-banner { font-size: 0.65rem; padding: 0.2rem 0.4rem; gap: 0.2rem; }
-      .offer-banner span { padding: 0.05rem 0.4rem; font-size: 0.65rem; }
-      .offer-banner strong { font-size: 0.7rem; }
-      .carousel-controls { bottom: 1rem; gap: 0.8rem; }
-      .carousel-btn { width: 32px; height: 32px; font-size: 0.75rem; }
-      .dot { width: 7px; height: 7px; }
-      .dot.active { width: 18px; }
-      .category-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-      .offer-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-      .arrival-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-      .shop-category-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-      .spotlight-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-      .all-products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-      .spotlight-section .section-header h2 { font-size: 1.1rem; }
-      .spotlight-card .spotlight-info h4 { font-size: 0.7rem; }
-      .spotlight-card .spotlight-info .offer-tag-spotlight { font-size: 0.5rem; padding: 0.1rem 0.4rem; }
-      .all-products-section .section-header h2 { font-size: 1.1rem; }
-      .all-product-card .product-info h4 { font-size: 0.7rem; }
-      .all-product-card .product-info .price { font-size: 0.75rem; }
-      .testimonials-carousel { padding: 1rem 0.5rem; }
-      .testimonial-text { font-size: 0.8rem; }
-      .testimonial-avatar { width: 56px; height: 56px; }
-      .testimonials-carousel .carousel-btn { width: 32px; height: 32px; font-size: 0.75rem; }
-      .footer { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem 0.6rem; }
-      .footer .go-top { text-align: center; }
-      .search-wrap input { width: 60px; font-size: 0.7rem; }
-      .video-section { margin-left: -0.5rem; margin-right: -0.5rem; width: calc(100% + 1rem); aspect-ratio: 16 / 9; }
-      .bottom-carousel { margin-left: -0.5rem; margin-right: -0.5rem; width: calc(100% + 1rem); height: calc(100vh - 260px); min-height: 220px; max-height: 400px; }
-      .bottom-carousel .carousel-btn { width: 32px; height: 32px; font-size: 0.75rem; }
-      .bottom-carousel .dot { width: 7px; height: 7px; }
-      .bottom-carousel .dot.active { width: 18px; }
-      .bottom-carousel .carousel-controls { bottom: 1rem; gap: 0.8rem; }
-      .extra-bottom-carousel { margin-left: -0.5rem; margin-right: -0.5rem; width: calc(100% + 1rem); height: calc(100vh - 260px); min-height: 220px; max-height: 400px; }
-      .extra-bottom-carousel .carousel-btn { width: 32px; height: 32px; font-size: 0.75rem; }
-      .extra-bottom-carousel .dot { width: 7px; height: 7px; }
-      .extra-bottom-carousel .dot.active { width: 18px; }
-      .extra-bottom-carousel .carousel-controls { bottom: 1rem; gap: 0.8rem; }
-      .category-section .section-header h2,
-      .offer-row,
-      .new-arrivals .section-header h2,
-      .shop-category-section .section-header h2 { font-size: 1.1rem; }
-      .category-card .cat-info h3 { font-size: 0.5rem; }
-      .category-card .cat-info .offer-tag { font-size: 0.35rem; }
-      .arrival-card .arrival-info h4 { font-size: 0.7rem; }
-      .arrival-card .arrival-info .price { font-size: 0.75rem; }
-      .shop-category-card .shop-info h4 { font-size: 0.7rem; }
-      .offer-box .offer-value { font-size: 0.9rem; }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vianta Saree · Silk & Heritage</title>
+    <!-- Font Awesome 5 (free) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #f7f2ed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .wrapper {
+            max-width: 1440px;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.03);
+            padding: 0 2.5rem 2.5rem 2.5rem;
+            border-radius: 0 0 2.5rem 2.5rem;
+        }
+
+        /* ===== OFFER BANNER ===== */
+        .offer-banner {
+            background: #fcf8f5;
+            color: #2c1810;
+            text-align: center;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.4px;
+            border-radius: 60px;
+            margin-top: 0.75rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            font-weight: 400;
+            border: 1px solid #e8dfd9;
+            background: #fcf8f5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s;
+        }
+        .offer-banner:hover {
+            border-color: #d6c9c0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+        .offer-banner strong {
+            font-weight: 600;
+            color: #a67c6b;
+            background: transparent;
+            padding: 0 0.2rem;
+            letter-spacing: 0.8px;
+            font-size: 0.85rem;
+        }
+        .offer-banner i {
+            color: #b8a69b;
+            margin: 0 0.1rem;
+            font-size: 0.7rem;
+        }
+        .offer-banner span {
+            background: transparent;
+            padding: 0.15rem 0.7rem;
+            border-radius: 40px;
+            color: #3d2c24;
+            font-weight: 400;
+            font-size: 0.8rem;
+            border: 1px solid #e8dfd9;
+            background: #ffffff;
+            transition: all 0.2s;
+        }
+        .offer-banner span:hover {
+            background: #f3ede8;
+            border-color: #d6c9c0;
+        }
+        .offer-banner .highlight {
+            background: #f3ede8;
+            color: #2c1810;
+            border-color: #ddd2ca;
+        }
+        .offer-banner .sep {
+            color: #d6c9c0;
+            font-size: 0.5rem;
+        }
+
+        /* ===== TOP HEADER ===== */
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0 0.4rem 0;
+            border-bottom: 1px solid #f0ebe6;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .brand-icon {
+            background: #a67c6b;
+            color: white;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(166, 124, 107, 0.25);
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .brand-icon:hover {
+            transform: scale(1.05);
+        }
+        .brand-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: #2c1810;
+        }
+        .brand h1 span {
+            font-weight: 300;
+            color: #a67c6b;
+        }
+
+        .top-icons {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            color: #2c1810;
+            font-size: 1.15rem;
+        }
+        .top-icons i {
+            cursor: default;
+            transition: color 0.25s, transform 0.25s;
+            position: relative;
+        }
+        .top-icons i:hover {
+            color: #a67c6b;
+            transform: scale(1.08);
+        }
+        .top-icons .badge-dot {
+            position: relative;
+        }
+        .top-icons .badge-dot::after {
+            content: '3';
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            background: #a67c6b;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            padding: 0.1rem 0.35rem;
+            border-radius: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            background: #f3ede8;
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            gap: 0.5rem;
+            border: 1px solid #e2d6ce;
+            transition: border 0.25s, box-shadow 0.25s, background 0.25s;
+            order: -1;
+            margin-right: auto;
+        }
+        .search-wrap:focus-within {
+            border-color: #a67c6b;
+            box-shadow: 0 0 0 4px rgba(166, 124, 107, 0.1);
+            background: #ffffff;
+        }
+        .search-wrap i {
+            color: #6b5a4f;
+            font-size: 0.85rem;
+        }
+        .search-wrap input {
+            border: none;
+            background: transparent;
+            padding: 0.3rem 0;
+            font-size: 0.85rem;
+            width: 130px;
+            outline: none;
+            color: #2c1810;
+        }
+        .search-wrap input::placeholder {
+            color: #ab988b;
+            font-weight: 300;
+        }
+
+        /* ===== BOTTOM HEADER ===== */
+        .bottom-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.6rem 0 0.3rem 0;
+            border-bottom: 1px solid #f0ebe6;
+            flex-wrap: wrap;
+        }
+
+        .main-menu {
+            display: flex;
+            gap: 2.4rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #2c1810;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .main-menu a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.25s;
+            position: relative;
+            padding: 0.15rem 0;
+            font-weight: 500;
+        }
+        .main-menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 2.5px;
+            background: #a67c6b;
+            transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 4px;
+        }
+        .main-menu a:hover {
+            color: #a67c6b;
+        }
+        .main-menu a:hover::after {
+            width: 100%;
+        }
+        .main-menu a.active {
+            color: #a67c6b;
+        }
+        .main-menu a.active::after {
+            width: 100%;
+        }
+
+        .more-dropdown {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: default;
+            color: #2c1810;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .more-dropdown:hover {
+            color: #a67c6b;
+        }
+        .more-dropdown i {
+            font-size: 0.6rem;
+            margin-left: 0.1rem;
+            color: #7a685c;
+            transition: transform 0.2s;
+        }
+        .more-dropdown:hover i {
+            transform: rotate(180deg);
+            color: #a67c6b;
+        }
+
+        /* ===== HERO CAROUSEL ===== */
+        .hero-carousel {
+            margin-top: 1.8rem;
+            margin-left: -2.5rem;
+            margin-right: -2.5rem;
+            position: relative;
+            width: calc(100% + 5rem);
+            height: calc(100vh - 240px);
+            min-height: 460px;
+            max-height: 820px;
+            background: #f5f0eb;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            border-radius: 0;
+        }
+
+        .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .carousel-slide.active-slide {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            background: transparent;
+            transition: transform 0.6s ease;
+        }
+        .carousel-slide.active-slide .slide-image img {
+            transform: scale(1.01);
+        }
+
+        /* carousel controls */
+        .carousel-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .carousel-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #d6c9c0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #2c1810;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+        .carousel-btn:hover {
+            background: #2c1810;
+            color: white;
+            border-color: #2c1810;
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .carousel-btn:active {
+            transform: scale(0.94);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 0.7rem;
+            align-items: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            padding: 0;
+            flex-shrink: 0;
+        }
+        .dot.active {
+            background: #2c1810;
+            width: 28px;
+            border-color: #2c1810;
+        }
+        .dot:hover {
+            transform: scale(1.15);
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.6rem;
+            padding: 0 0.2rem;
+        }
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #2c1810;
+            letter-spacing: 0.8px;
+            position: relative;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 40px;
+            height: 3px;
+            background: #a67c6b;
+            border-radius: 4px;
+        }
+        .section-header a {
+            color: #a67c6b;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .section-header a:hover {
+            color: #2c1810;
+        }
+        .section-header a i {
+            font-size: 0.7rem;
+            transition: transform 0.25s;
+        }
+        .section-header a:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ===== CATEGORY SECTION ===== */
+        .category-section {
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.4rem;
+        }
+
+        .category-card {
+            background: #ffffff;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+            cursor: pointer;
+            border: 2px solid #f0ebe6;
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+            text-decoration: none;
+        }
+        .category-card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+            border-color: #a67c6b;
+        }
+
+        .category-card .cat-image {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            background: #f5f0eb;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .category-card .cat-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .category-card:hover .cat-image img {
+            transform: scale(1.1);
+        }
+
+        .category-card .cat-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.6rem 0.3rem 0.5rem;
+            text-align: center;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+            z-index: 1;
+            border-radius: 0 0 50% 50%;
+        }
+        .category-card .cat-info h3 {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            line-height: 1.2;
+        }
+        .category-card .cat-info .offer-tag {
+            display: inline-block;
+            margin-top: 0.1rem;
+            background: rgba(166, 124, 107, 0.92);
+            color: #ffffff;
+            font-size: 0.45rem;
+            font-weight: 700;
+            padding: 0.08rem 0.6rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        .category-card .cat-info .offer-tag.light {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c1810;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== OFFER ROW ===== */
+        .offer-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .offer-box {
+            background: #f8f3ef;
+            border-radius: 1.2rem;
+            padding: 1.4rem 0.8rem;
+            text-align: center;
+            border: 1px solid #e8dfd9;
+            transition: all 0.3s ease;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+        .offer-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(166, 124, 107, 0.04), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .offer-box:hover {
+            background: #f3ebe5;
+            border-color: #d6c9c0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+        .offer-box:hover::before {
+            opacity: 1;
+        }
+        .offer-box .offer-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #a67c6b;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        .offer-box .offer-value {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #2c1810;
+            margin-top: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== NEW ARRIVALS ===== */
+        .new-arrivals {
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .arrival-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+        }
+
+        .arrival-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: 1px solid #f0ebe6;
+            position: relative;
+        }
+        .arrival-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+            border-color: #e2d6ce;
+        }
+
+        .arrival-card .arrival-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #f5f0eb;
+        }
+        .arrival-card .arrival-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .arrival-card:hover .arrival-image img {
+            transform: scale(1.05);
+        }
+
+        .arrival-card .arrival-badge {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: #a67c6b;
+            color: #ffffff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 2px 10px rgba(166, 124, 107, 0.3);
+        }
+
+        .arrival-card .arrival-info {
+            padding: 0.8rem 1rem 1.1rem 1rem;
+            text-align: center;
+        }
+        .arrival-card .arrival-info h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c1810;
+            margin-bottom: 0.2rem;
+        }
+        .arrival-card .arrival-info .price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #a67c6b;
+        }
+        .arrival-card .arrival-info .price .original {
+            font-weight: 400;
+            color: #b7a69b;
+            text-decoration: line-through;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        /* ===== SHOP BY CATEGORY ===== */
+        .shop-category-section {
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .shop-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        .shop-category-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: 1px solid #f0ebe6;
+            position: relative;
+        }
+        .shop-category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+            border-color: #e2d6ce;
+        }
+
+        .shop-category-card .shop-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #f5f0eb;
+        }
+        .shop-category-card .shop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .shop-category-card:hover .shop-image img {
+            transform: scale(1.05);
+        }
+
+        .shop-category-card .shop-info {
+            padding: 0.8rem 1rem 1.1rem 1rem;
+            text-align: center;
+        }
+        .shop-category-card .shop-info h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c1810;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== BOTTOM CAROUSEL ===== */
+        .bottom-carousel {
+            margin-top: 2.8rem;
+            margin-left: -2.5rem;
+            margin-right: -2.5rem;
+            position: relative;
+            width: calc(100% + 5rem);
+            height: calc(100vh - 300px);
+            min-height: 380px;
+            max-height: 720px;
+            background: #f5f0eb;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            border-radius: 0;
+        }
+
+        .bottom-carousel .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bottom-carousel .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .bottom-carousel .carousel-slide.active-slide {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .bottom-carousel .slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bottom-carousel .slide-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .bottom-carousel .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            background: transparent;
+            transition: transform 0.6s ease;
+        }
+        .bottom-carousel .carousel-slide.active-slide .slide-image img {
+            transform: scale(1.01);
+        }
+
+        .bottom-carousel .carousel-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .bottom-carousel .carousel-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #d6c9c0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #2c1810;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+        .bottom-carousel .carousel-btn:hover {
+            background: #2c1810;
+            color: white;
+            border-color: #2c1810;
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .bottom-carousel .carousel-btn:active {
+            transform: scale(0.94);
+        }
+
+        .bottom-carousel .carousel-indicators {
+            display: flex;
+            gap: 0.7rem;
+            align-items: center;
+        }
+
+        .bottom-carousel .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            padding: 0;
+            flex-shrink: 0;
+        }
+        .bottom-carousel .dot.active {
+            background: #2c1810;
+            width: 28px;
+            border-color: #2c1810;
+        }
+        .bottom-carousel .dot:hover {
+            transform: scale(1.15);
+        }
+
+        /* ===== SPOTLIGHT ===== */
+        .spotlight-section {
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+        }
+
+        .spotlight-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: 1px solid #f0ebe6;
+            position: relative;
+        }
+        .spotlight-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+            border-color: #e2d6ce;
+        }
+
+        .spotlight-card .spotlight-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #f5f0eb;
+        }
+        .spotlight-card .spotlight-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .spotlight-card:hover .spotlight-image img {
+            transform: scale(1.05);
+        }
+
+        .spotlight-card .spotlight-badge {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: #a67c6b;
+            color: #ffffff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 2px 10px rgba(166, 124, 107, 0.3);
+        }
+
+        .spotlight-card .spotlight-info {
+            padding: 0.8rem 1rem 1.1rem 1rem;
+            text-align: center;
+        }
+        .spotlight-card .spotlight-info h4 {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2c1810;
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+            letter-spacing: 0.3px;
+        }
+        .spotlight-card .spotlight-info .offer-tag-spotlight {
+            display: inline-block;
+            background: #e8dfd9;
+            color: #2c1810;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.6px;
+        }
+        .spotlight-card .spotlight-info .offer-tag-spotlight.highlight {
+            background: #a67c6b;
+            color: #ffffff;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            margin-top: 2.8rem;
+            margin-left: -2.5rem;
+            margin-right: -2.5rem;
+            width: calc(100% + 5rem);
+            background: #0f0c0a;
+            aspect-ratio: 16 / 9;
+            max-height: 820px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #0f0c0a;
+            display: block;
+        }
+
+        /* ===== ALL PRODUCTS ===== */
+        .all-products-section {
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .all-products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+        }
+
+        .all-product-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: 1px solid #f0ebe6;
+            position: relative;
+        }
+        .all-product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+            border-color: #e2d6ce;
+        }
+
+        .all-product-card .product-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #f5f0eb;
+        }
+        .all-product-card .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .all-product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .all-product-card .product-badge {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: #a67c6b;
+            color: #ffffff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 2px 10px rgba(166, 124, 107, 0.3);
+        }
+
+        .all-product-card .product-info {
+            padding: 0.8rem 1rem 1.1rem 1rem;
+            text-align: center;
+        }
+        .all-product-card .product-info h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c1810;
+            margin-bottom: 0.2rem;
+        }
+        .all-product-card .product-info .price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #a67c6b;
+        }
+        .all-product-card .product-info .price .original {
+            font-weight: 400;
+            color: #b7a69b;
+            text-decoration: line-through;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        /* ===== EXTRA BOTTOM CAROUSEL ===== */
+        .extra-bottom-carousel {
+            margin-top: 2.8rem;
+            margin-left: -2.5rem;
+            margin-right: -2.5rem;
+            position: relative;
+            width: calc(100% + 5rem);
+            height: calc(100vh - 300px);
+            min-height: 380px;
+            max-height: 720px;
+            background: #f5f0eb;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            border-radius: 0;
+        }
+
+        .extra-bottom-carousel .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .extra-bottom-carousel .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .extra-bottom-carousel .carousel-slide.active-slide {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .extra-bottom-carousel .slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .extra-bottom-carousel .slide-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .extra-bottom-carousel .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            background: transparent;
+            transition: transform 0.6s ease;
+        }
+        .extra-bottom-carousel .carousel-slide.active-slide .slide-image img {
+            transform: scale(1.01);
+        }
+
+        .extra-bottom-carousel .carousel-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .extra-bottom-carousel .carousel-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #d6c9c0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #2c1810;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+        .extra-bottom-carousel .carousel-btn:hover {
+            background: #2c1810;
+            color: white;
+            border-color: #2c1810;
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .extra-bottom-carousel .carousel-btn:active {
+            transform: scale(0.94);
+        }
+
+        .extra-bottom-carousel .carousel-indicators {
+            display: flex;
+            gap: 0.7rem;
+            align-items: center;
+        }
+
+        .extra-bottom-carousel .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            padding: 0;
+            flex-shrink: 0;
+        }
+        .extra-bottom-carousel .dot.active {
+            background: #2c1810;
+            width: 28px;
+            border-color: #2c1810;
+        }
+        .extra-bottom-carousel .dot:hover {
+            transform: scale(1.15);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            margin-top: 2.8rem;
+            padding: 0 0.2rem;
+        }
+
+        .testimonials-carousel {
+            position: relative;
+            width: 100%;
+            background: #faf6f2;
+            border-radius: 1.8rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f0ebe6;
+            overflow: hidden;
+        }
+
+        .testimonials-carousel .carousel-container {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 240px;
+        }
+
+        .testimonials-carousel .carousel-slide {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            width: 100%;
+        }
+
+        .testimonials-carousel .carousel-slide.active-slide {
+            display: flex;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0.3;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+            border: 3px solid #a67c6b;
+            flex-shrink: 0;
+            background: #ede5de;
+            box-shadow: 0 4px 16px rgba(166, 124, 107, 0.15);
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .testimonial-stars {
+            color: #f5a623;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-stars .far {
+            color: #d6c9c0;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: #2c1810;
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto 0.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #a67c6b;
+            letter-spacing: 0.4px;
+        }
+
+        .testimonial-source {
+            font-size: 0.75rem;
+            color: #b7a69b;
+            margin-top: 0.1rem;
+        }
+
+        .testimonials-carousel .carousel-controls {
+            position: relative;
+            bottom: auto;
+            margin-top: 1.4rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            padding: 0;
+        }
+
+        .testimonials-carousel .carousel-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #d6c9c0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #2c1810;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+        .testimonials-carousel .carousel-btn:hover {
+            background: #2c1810;
+            color: white;
+            border-color: #2c1810;
+            transform: scale(1.06);
+        }
+        .testimonials-carousel .carousel-btn:active {
+            transform: scale(0.94);
+        }
+
+        .testimonials-carousel .carousel-indicators {
+            display: flex;
+            gap: 0.7rem;
+            align-items: center;
+        }
+
+        .testimonials-carousel .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 30px;
+            background: #d6c9c0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            flex-shrink: 0;
+        }
+        .testimonials-carousel .dot.active {
+            background: #a67c6b;
+            width: 28px;
+        }
+        .testimonials-carousel .dot:hover {
+            transform: scale(1.15);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            margin-top: 2.8rem;
+            padding: 2.5rem 1.5rem 1.8rem 1.5rem;
+            background: #faf6f2;
+            border-radius: 1.8rem;
+            border: 1px solid #f0ebe6;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1.2fr 1.5fr;
+            gap: 1.8rem;
+        }
+
+        .footer h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2c1810;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            border-bottom: 2.5px solid #a67c6b;
+            padding-bottom: 0.35rem;
+            display: inline-block;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: #4d3a30;
+            font-size: 0.8rem;
+            transition: color 0.25s, padding-left 0.25s;
+            display: inline-block;
+        }
+
+        .footer ul li a:hover {
+            color: #a67c6b;
+            padding-left: 4px;
+        }
+
+        .footer .brand-footer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer .brand-footer .brand-name {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #2c1810;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
+        }
+
+        .footer .brand-footer .brand-name span {
+            color: #a67c6b;
+            font-weight: 300;
+        }
+
+        .footer .brand-footer p {
+            font-size: 0.8rem;
+            color: #5d4a3e;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer .brand-footer .mse-tag {
+            display: inline-block;
+            background: #e8dfd9;
+            padding: 0.15rem 1rem;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            color: #2c1810;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            width: fit-content;
+            transition: background 0.25s;
+        }
+        .footer .brand-footer .mse-tag:hover {
+            background: #d6c9c0;
+        }
+
+        .footer .contact-info p {
+            font-size: 0.8rem;
+            color: #4d3a30;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer .contact-info i {
+            color: #a67c6b;
+            width: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer .payment-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+
+        .footer .payment-icons span {
+            background: #ffffff;
+            border: 1px solid #e2d6ce;
+            border-radius: 10px;
+            padding: 0.25rem 0.9rem;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #2c1810;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.2s;
+        }
+        .footer .payment-icons span:hover {
+            background: #f3ede8;
+            border-color: #d6c9c0;
+        }
+        .footer .payment-icons span i {
+            font-size: 0.85rem;
+        }
+
+        .footer .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #aa9b91;
+            border-top: 1px solid #e8dfd9;
+            padding-top: 1.2rem;
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .footer .copyright a {
+            color: #a67c6b;
+            text-decoration: none;
+        }
+        .footer .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .go-top {
+            text-align: right;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .footer .go-top a {
+            color: #a67c6b;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.25s, transform 0.25s;
+        }
+        .footer .go-top a:hover {
+            color: #2c1810;
+            transform: translateY(-2px);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media screen and (max-width: 1200px) {
+            .wrapper {
+                padding: 0 1.8rem 1.8rem 1.8rem;
+            }
+            .hero-carousel {
+                margin-left: -1.8rem;
+                margin-right: -1.8rem;
+                width: calc(100% + 3.6rem);
+            }
+            .bottom-carousel {
+                margin-left: -1.8rem;
+                margin-right: -1.8rem;
+                width: calc(100% + 3.6rem);
+            }
+            .extra-bottom-carousel {
+                margin-left: -1.8rem;
+                margin-right: -1.8rem;
+                width: calc(100% + 3.6rem);
+            }
+            .video-section {
+                margin-left: -1.8rem;
+                margin-right: -1.8rem;
+                width: calc(100% + 3.6rem);
+            }
+            .footer {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .arrival-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .shop-category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .spotlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .all-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .offer-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .main-menu {
+                gap: 1.4rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media screen and (max-width: 860px) {
+            .wrapper {
+                padding: 0 1rem 1.5rem 1rem;
+            }
+            .hero-carousel {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                width: calc(100% + 2rem);
+                height: calc(100vh - 280px);
+                min-height: 340px;
+                max-height: 600px;
+            }
+            .bottom-carousel {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                width: calc(100% + 2rem);
+                height: calc(100vh - 300px);
+                min-height: 300px;
+                max-height: 500px;
+            }
+            .extra-bottom-carousel {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                width: calc(100% + 2rem);
+                height: calc(100vh - 300px);
+                min-height: 300px;
+                max-height: 500px;
+            }
+            .video-section {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                width: calc(100% + 2rem);
+            }
+            .top-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .bottom-header {
+                justify-content: center;
+            }
+            .search-wrap {
+                order: 0;
+                margin-right: 0;
+                width: 100%;
+            }
+            .search-wrap input {
+                width: 100%;
+            }
+            .main-menu {
+                gap: 1rem;
+                font-size: 0.7rem;
+            }
+            .brand h1 {
+                font-size: 1.5rem;
+            }
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.95rem;
+            }
+            .bottom-carousel .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.95rem;
+            }
+            .extra-bottom-carousel .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.95rem;
+            }
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.8rem;
+            }
+            .offer-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .arrival-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .shop-category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .spotlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .all-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .testimonials-carousel {
+                padding: 1.5rem 1rem;
+            }
+            .testimonial-text {
+                font-size: 0.92rem;
+            }
+            .footer {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+                padding: 1.5rem 0.8rem;
+            }
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+            .section-header h2::after {
+                width: 30px;
+            }
+            .offer-banner {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+                gap: 0.3rem;
+            }
+            .offer-banner span {
+                font-size: 0.7rem;
+                padding: 0.1rem 0.5rem;
+            }
+            .offer-banner strong {
+                font-size: 0.75rem;
+            }
+            .offer-box .offer-value {
+                font-size: 1rem;
+            }
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+            .dot.active {
+                width: 22px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .wrapper {
+                padding: 0 0.5rem 1rem 0.5rem;
+            }
+            .hero-carousel {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+                width: calc(100% + 1rem);
+                height: calc(100vh - 260px);
+                min-height: 260px;
+                max-height: 440px;
+            }
+            .bottom-carousel {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+                width: calc(100% + 1rem);
+                height: calc(100vh - 260px);
+                min-height: 240px;
+                max-height: 400px;
+            }
+            .extra-bottom-carousel {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+                width: calc(100% + 1rem);
+                height: calc(100vh - 260px);
+                min-height: 240px;
+                max-height: 400px;
+            }
+            .video-section {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+                width: calc(100% + 1rem);
+                aspect-ratio: 16 / 9;
+            }
+            .brand h1 {
+                font-size: 1.2rem;
+            }
+            .brand-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+            .top-icons {
+                gap: 0.8rem;
+                font-size: 1rem;
+            }
+            .top-icons .badge-dot::after {
+                font-size: 0.4rem;
+                padding: 0.05rem 0.25rem;
+                top: -5px;
+                right: -6px;
+            }
+            .search-wrap {
+                padding: 0.2rem 0.7rem;
+            }
+            .search-wrap input {
+                font-size: 0.75rem;
+                padding: 0.2rem 0;
+            }
+            .search-wrap i {
+                font-size: 0.75rem;
+            }
+            .main-menu {
+                gap: 0.6rem;
+                font-size: 0.6rem;
+                letter-spacing: 0.4px;
+            }
+            .more-dropdown i {
+                font-size: 0.5rem;
+            }
+            .carousel-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.75rem;
+            }
+            .bottom-carousel .carousel-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.75rem;
+            }
+            .extra-bottom-carousel .carousel-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.75rem;
+            }
+            .carousel-controls {
+                bottom: 1rem;
+                gap: 0.8rem;
+                padding: 0 0.8rem;
+            }
+            .bottom-carousel .carousel-controls {
+                bottom: 1rem;
+                gap: 0.8rem;
+                padding: 0 0.8rem;
+            }
+            .extra-bottom-carousel .carousel-controls {
+                bottom: 1rem;
+                gap: 0.8rem;
+                padding: 0 0.8rem;
+            }
+            .dot {
+                width: 7px;
+                height: 7px;
+            }
+            .dot.active {
+                width: 18px;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .category-card .cat-info h3 {
+                font-size: 0.5rem;
+            }
+            .category-card .cat-info .offer-tag {
+                font-size: 0.35rem;
+                padding: 0.05rem 0.4rem;
+            }
+            .offer-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .offer-box {
+                padding: 1rem 0.5rem;
+            }
+            .offer-box .offer-label {
+                font-size: 0.6rem;
+            }
+            .offer-box .offer-value {
+                font-size: 0.85rem;
+            }
+            .arrival-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .arrival-card .arrival-info h4 {
+                font-size: 0.7rem;
+            }
+            .arrival-card .arrival-info .price {
+                font-size: 0.75rem;
+            }
+            .arrival-card .arrival-info .price .original {
+                font-size: 0.65rem;
+            }
+            .arrival-card .arrival-badge {
+                font-size: 0.5rem;
+                padding: 0.15rem 0.6rem;
+                top: 0.5rem;
+                left: 0.5rem;
+            }
+            .shop-category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .shop-category-card .shop-info h4 {
+                font-size: 0.7rem;
+            }
+            .spotlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .spotlight-card .spotlight-info h4 {
+                font-size: 0.65rem;
+            }
+            .spotlight-card .spotlight-info .offer-tag-spotlight {
+                font-size: 0.5rem;
+                padding: 0.1rem 0.5rem;
+            }
+            .spotlight-card .spotlight-badge {
+                font-size: 0.5rem;
+                padding: 0.15rem 0.6rem;
+                top: 0.5rem;
+                left: 0.5rem;
+            }
+            .all-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .all-product-card .product-info h4 {
+                font-size: 0.7rem;
+            }
+            .all-product-card .product-info .price {
+                font-size: 0.75rem;
+            }
+            .all-product-card .product-info .price .original {
+                font-size: 0.65rem;
+            }
+            .all-product-card .product-badge {
+                font-size: 0.5rem;
+                padding: 0.15rem 0.6rem;
+                top: 0.5rem;
+                left: 0.5rem;
+            }
+            .section-header {
+                margin-bottom: 1rem;
+            }
+            .section-header h2 {
+                font-size: 1.1rem;
+            }
+            .section-header h2::after {
+                width: 24px;
+                bottom: -3px;
+            }
+            .section-header a {
+                font-size: 0.7rem;
+            }
+            .testimonials-carousel {
+                padding: 1rem 0.5rem;
+                border-radius: 1.2rem;
+            }
+            .testimonial-text {
+                font-size: 0.8rem;
+            }
+            .testimonial-avatar {
+                width: 60px;
+                height: 60px;
+            }
+            .testimonial-stars {
+                font-size: 0.95rem;
+            }
+            .testimonial-author {
+                font-size: 0.8rem;
+            }
+            .testimonials-carousel .carousel-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.75rem;
+            }
+            .testimonials-carousel .carousel-controls {
+                gap: 0.8rem;
+                margin-top: 1rem;
+            }
+            .testimonials-carousel .dot {
+                width: 7px;
+                height: 7px;
+            }
+            .testimonials-carousel .dot.active {
+                width: 18px;
+            }
+            .footer {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                padding: 1.2rem 0.6rem;
+                border-radius: 1.2rem;
+            }
+            .footer .go-top {
+                text-align: center;
+            }
+            .footer .brand-footer .brand-name {
+                font-size: 1.1rem;
+            }
+            .footer .contact-info p {
+                font-size: 0.7rem;
+            }
+            .footer .payment-icons span {
+                font-size: 0.55rem;
+                padding: 0.15rem 0.6rem;
+            }
+            .footer .copyright {
+                font-size: 0.6rem;
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .offer-banner {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.4rem;
+                gap: 0.2rem;
+                border-radius: 40px;
+            }
+            .offer-banner span {
+                font-size: 0.6rem;
+                padding: 0.05rem 0.4rem;
+            }
+            .offer-banner strong {
+                font-size: 0.65rem;
+            }
+            .offer-banner i {
+                font-size: 0.55rem;
+            }
+            .offer-banner .sep {
+                font-size: 0.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="wrapper">
+    <div class="wrapper">
 
-  <!-- ===== OFFER BANNER ===== -->
-  <div class="offer-banner">
-    <i class="fas fa-tag" style="color:#a67c6b;"></i>
-    <strong>OFFER</strong>
-    <span class="highlight">UP TO 30% OFF</span>
-    <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
-    <span>NEW SEASON</span>
-    <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
-    <span>ETHNIC WEAR</span>
-  </div>
-
-  <!-- ========== HEADER 1 : TOP ========== -->
-  <header class="top-header">
-    <div class="brand">
-      <span class="brand-icon">
-        <img src="https://vianta-demo.aamir68599.workers.dev/vanita%20logo.jpg" alt="Vianta Saree Logo" />
-      </span>
-      <h1>Vianta<span>Saree</span></h1>
-    </div>
-    <div class="top-icons">
-      <div class="search-wrap">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search..." />
-      </div>
-      <i class="fas fa-user-circle"></i>
-      <i class="fas fa-heart"></i>
-      <i class="fas fa-shopping-bag"></i>
-    </div>
-  </header>
-
-  <!-- ========== HEADER 2 : BOTTOM (menu CENTERED) ========== -->
-  <header class="bottom-header">
-    <nav class="main-menu">
-      <a href="#">HOME</a>
-      <a href="#">LEHENGA</a>
-      <a href="#">BEST SELLING</a>
-      <a href="#">ALL PRODUCTS</a>
-      <a href="#">COTTON SAREE</a>
-      <a href="#">KANJIVERAM SILK</a>
-      <span class="more-dropdown">
-        More <i class="fas fa-chevron-down"></i>
-      </span>
-    </nav>
-  </header>
-
-  <!-- ========== HERO : FULL COVER CAROUSEL (4 Slides - NO CROP) ========== -->
-  <section class="hero-carousel">
-    <div class="carousel-container" id="carouselContainer">
-      <div class="carousel-slide active-slide" data-index="0">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="South Silk" />
-          </div>
+        <!-- ===== OFFER BANNER ===== -->
+        <div class="offer-banner">
+            <i class="fas fa-tag" style="color:#a67c6b;"></i>
+            <strong>OFFER</strong>
+            <span class="highlight">UP TO 30% OFF</span>
+            <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
+            <span>NEW SEASON</span>
+            <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
+            <span>ETHNIC WEAR</span>
         </div>
-      </div>
-      <div class="carousel-slide" data-index="1">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" />
-          </div>
+
+        <!-- ========== HEADER 1 : TOP ========== -->
+        <header class="top-header">
+            <div class="brand">
+                <span class="brand-icon">
+                    <img src="https://vianta-demo.aamir68599.workers.dev/vanita%20logo.jpg" alt="Vianta Saree Logo" />
+                </span>
+                <h1>Vianta<span>Saree</span></h1>
+            </div>
+            <div class="top-icons">
+                <div class="search-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search..." />
+                </div>
+                <i class="fas fa-user-circle"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-bag badge-dot"></i>
+            </div>
+        </header>
+
+        <!-- ========== HEADER 2 : BOTTOM (menu CENTERED) ========== -->
+        <header class="bottom-header">
+            <nav class="main-menu">
+                <a href="#" class="active">HOME</a>
+                <a href="#">LEHENGA</a>
+                <a href="#">BEST SELLING</a>
+                <a href="#">ALL PRODUCTS</a>
+                <a href="#">COTTON SAREE</a>
+                <a href="#">KANJIVERAM SILK</a>
+                <span class="more-dropdown">
+                    More <i class="fas fa-chevron-down"></i>
+                </span>
+            </nav>
+        </header>
+
+        <!-- ========== HERO : FULL COVER CAROUSEL (4 Slides) ========== -->
+        <section class="hero-carousel">
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-slide active-slide" data-index="0">
+                    <div class="slide-content">
+                        <div class="slide-image">
+                            <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="South Silk" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide" data-index="1">
+                    <div class="slide-content">
+                        <div class="slide-image">
+                            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide" data-index="2">
+                    <div class="slide-content">
+                        <div class="slide-image">
+                            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide" data-index="3">
+                    <div class="slide-content">
+                        <div class="slide-image">
+                            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-indicators">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                </div>
+                <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ========== CATEGORY SECTION ========== -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>CATEGORY</h2>
+                <a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="category-grid">
+                <!-- HALF SAREE - Link to /half-saree page -->
+                <a href="https://vianta-demo.aamir68599.workers.dev/half-saree" style="text-decoration: none; display: block;">
+                    <div class="category-card">
+                        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/saree%20image.jpg" alt="Half Saree" /></div>
+                        <div class="cat-info"><h3>HALF SAREE</h3><span class="offer-tag">60% OFF</span></div>
+                    </div>
+                </a>
+                <!-- LEHENGA -->
+                <div class="category-card">
+                    <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/saree%20image%202%20(1).jpg" alt="Lehenga" /></div>
+                    <div class="cat-info"><h3>LEHENGA</h3><span class="offer-tag light">60% OFF</span></div>
+                </div>
+                <!-- BANARASI SILK -->
+                <div class="category-card">
+                    <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/images31%20(1).jpg" alt="Banarasi Silk" /></div>
+                    <div class="cat-info"><h3>BANARASI SILK</h3><span class="offer-tag">60% OFF</span></div>
+                </div>
+                <!-- KANCHIPURAM -->
+                <div class="category-card">
+                    <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/silk%20saree%20(1).jpg" alt="Kanchipuram Silk" /></div>
+                    <div class="cat-info"><h3>KANCHIPURAM</h3><span class="offer-tag light">60% OFF</span></div>
+                </div>
+                <!-- COTTON SILK -->
+                <div class="category-card">
+                    <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/cotton%20(1).jpg" alt="Cotton Silk" /></div>
+                    <div class="cat-info"><h3>COTTON SILK</h3><span class="offer-tag">60% OFF</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EXTRA OFFER ROW ========== -->
+        <div class="offer-row">
+            <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">HALF SAREE</div></div>
+            <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">LEHENGA</div></div>
+            <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">BANARASI SILK</div></div>
+            <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">KANCHIPURAM</div></div>
         </div>
-      </div>
-      <div class="carousel-slide" data-index="2">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" />
-          </div>
-        </div>
-      </div>
-      <div class="carousel-slide" data-index="3">
-        <div class="slide-content">
-          <div class="slide-image">
-            <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-      <div class="carousel-indicators">
-        <button class="dot active" data-index="0"></button>
-        <button class="dot" data-index="1"></button>
-        <button class="dot" data-index="2"></button>
-        <button class="dot" data-index="3"></button>
-      </div>
-      <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
 
-  <!-- ========== CATEGORY SECTION ========== -->
-  <section class="category-section">
-    <div class="section-header">
-      <h2>CATEGORY</h2>
-      <a href="#">VIEW ALL →</a>
-    </div>
-    <div class="category-grid">
-      <!-- HALF SAREE - Link to /half-saree page -->
-      <a href="https://vianta-demo.aamir68599.workers.dev/half-saree" style="text-decoration: none; display: block;">
-        <div class="category-card">
-          <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/saree%20image.jpg" alt="Half Saree" /></div>
-          <div class="cat-info"><h3>HALF SAREE</h3><span class="offer-tag">60% OFF</span></div>
-        </div>
-      </a>
-      <!-- LEHENGA -->
-      <div class="category-card">
-        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/saree%20image%202%20(1).jpg" alt="Lehenga" /></div>
-        <div class="cat-info"><h3>LEHENGA</h3><span class="offer-tag light">60% OFF</span></div>
-      </div>
-      <!-- BANARASI SILK -->
-      <div class="category-card">
-        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/images31%20(1).jpg" alt="Banarasi Silk" /></div>
-        <div class="cat-info"><h3>BANARASI SILK</h3><span class="offer-tag">60% OFF</span></div>
-      </div>
-      <!-- KANCHIPURAM -->
-      <div class="category-card">
-        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/silk%20saree%20(1).jpg" alt="Kanchipuram Silk" /></div>
-        <div class="cat-info"><h3>KANCHIPURAM</h3><span class="offer-tag light">60% OFF</span></div>
-      </div>
-      <!-- COTTON SILK -->
-      <div class="category-card">
-        <div class="cat-image"><img src="https://vianta-demo.aamir68599.workers.dev/cotton%20(1).jpg" alt="Cotton Silk" /></div>
-        <div class="cat-info"><h3>COTTON SILK</h3><span class="offer-tag">60% OFF</span></div>
-      </div>
-    </div>
-  </section>
+        <!-- ========== NEW ARRIVALS ========== -->
+        <section class="new-arrivals">
+            <div class="section-header"><h2>NEW ARRIVALS</h2><a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a></div>
+            <div class="arrival-grid">
+                <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="New Arrival 1" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Silk Saree</h4><div class="price">₹2,499 <span class="original">₹4,999</span></div></div></div>
+                <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="New Arrival 2" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Maheshwari Silk</h4><div class="price">₹3,199 <span class="original">₹6,499</span></div></div></div>
+                <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="New Arrival 3" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Banarasi Silk</h4><div class="price">₹4,999 <span class="original">₹9,999</span></div></div></div>
+                <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="New Arrival 4" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Kanchipuram Silk</h4><div class="price">₹5,999 <span class="original">₹12,999</span></div></div></div>
+            </div>
+        </section>
 
-  <!-- ========== EXTRA OFFER ROW ========== -->
-  <div class="offer-row">
-    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">HALF SAREE</div></div>
-    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">LEHENGA</div></div>
-    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">BANARASI SILK</div></div>
-    <div class="offer-box"><div class="offer-label">Extra 60% OFF</div><div class="offer-value">KANCHIPURAM</div></div>
-  </div>
+        <!-- ========== SHOP BY CATEGORY ========== -->
+        <section class="shop-category-section">
+            <div class="section-header"><h2>SHOP BY CATEGORY</h2><a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a></div>
+            <div class="shop-category-grid">
+                <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+                <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+                <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+                <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
+            </div>
+        </section>
 
-  <!-- ========== NEW ARRIVALS ========== -->
-  <section class="new-arrivals">
-    <div class="section-header"><h2>NEW ARRIVALS</h2><a href="#">VIEW ALL →</a></div>
-    <div class="arrival-grid">
-      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="New Arrival 1" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Silk Saree</h4><div class="price">₹2,499 <span class="original">₹4,999</span></div></div></div>
-      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="New Arrival 2" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Maheshwari Silk</h4><div class="price">₹3,199 <span class="original">₹6,499</span></div></div></div>
-      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="New Arrival 3" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Banarasi Silk</h4><div class="price">₹4,999 <span class="original">₹9,999</span></div></div></div>
-      <div class="arrival-card"><div class="arrival-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="New Arrival 4" /></div><span class="arrival-badge">NEW</span><div class="arrival-info"><h4>Kanchipuram Silk</h4><div class="price">₹5,999 <span class="original">₹12,999</span></div></div></div>
-    </div>
-  </section>
+        <!-- ========== BOTTOM CAROUSEL (2 slides) ========== -->
+        <section class="bottom-carousel" id="bottomCarousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active-slide" data-index="0"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/shine%20with%20sher%20image.webp" alt="Shine with Sher" /></div></div></div>
+                <div class="carousel-slide" data-index="1"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/conquer%20image.webp" alt="Conquer" /></div></div></div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="bottomPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-indicators"><button class="dot active" data-index="0"></button><button class="dot" data-index="1"></button></div>
+                <button class="carousel-btn" id="bottomNextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
 
-  <!-- ========== SHOP BY CATEGORY ========== -->
-  <section class="shop-category-section">
-    <div class="section-header"><h2>SHOP BY CATEGORY</h2><a href="#">VIEW ALL →</a></div>
-    <div class="shop-category-grid">
-      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
-      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
-      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
-      <div class="shop-category-card"><div class="shop-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Traders7" /></div><div class="shop-info"><h4>Traders7</h4></div></div>
-    </div>
-  </section>
+        <!-- ========== IN THE SPOTLIGHT ========== -->
+        <section class="spotlight-section">
+            <div class="section-header"><h2>IN THE SPOTLIGHT</h2><a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a></div>
+            <div class="spotlight-grid">
+                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Kanjivaram Silk Zari Half Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
+                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
+                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Kanjivaram Silk Zari Half Saree Lehenga" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE LEH</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
+                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
+            </div>
+        </section>
 
-  <!-- ========== BOTTOM CAROUSEL (2 slides) ========== -->
-  <section class="bottom-carousel" id="bottomCarousel">
-    <div class="carousel-container">
-      <div class="carousel-slide active-slide" data-index="0"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/shine%20with%20sher%20image.webp" alt="Shine with Sher" /></div></div></div>
-      <div class="carousel-slide" data-index="1"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/conquer%20image.webp" alt="Conquer" /></div></div></div>
-    </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="bottomPrevBtn"><i class="fas fa-chevron-left"></i></button>
-      <div class="carousel-indicators"><button class="dot active" data-index="0"></button><button class="dot" data-index="1"></button></div>
-      <button class="carousel-btn" id="bottomNextBtn"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
+        <!-- ========== VIDEO SECTION ========== -->
+        <section class="video-section">
+            <video src="https://vianta-demo.aamir68599.workers.dev/video%201.mp4" muted autoplay loop playsinline></video>
+        </section>
 
-  <!-- ========== IN THE SPOTLIGHT ========== -->
-  <section class="spotlight-section">
-    <div class="section-header"><h2>IN THE SPOTLIGHT</h2><a href="#">VIEW ALL →</a></div>
-    <div class="spotlight-grid">
-      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Kanjivaram Silk Zari Half Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
-      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
-      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Kanjivaram Silk Zari Half Saree Lehenga" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE LEH</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
-      <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
-    </div>
-  </section>
+        <!-- ========== ALL PRODUCTS ========== -->
+        <section class="all-products-section">
+            <div class="section-header"><h2>ALL PRODUCTS</h2><a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a></div>
+            <div class="all-products-grid">
+                <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Product 1" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Silk Saree</h4><div class="price">₹2,499 <span class="original">₹4,999</span></div></div></div>
+                <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Product 2" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Maheshwari Silk</h4><div class="price">₹3,199 <span class="original">₹6,499</span></div></div></div>
+                <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Product 3" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Banarasi Silk</h4><div class="price">₹4,999 <span class="original">₹9,999</span></div></div></div>
+                <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Product 4" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Kanchipuram Silk</h4><div class="price">₹5,999 <span class="original">₹12,999</span></div></div></div>
+            </div>
+        </section>
 
-  <!-- ========== VIDEO SECTION ========== -->
-  <section class="video-section">
-    <video src="https://vianta-demo.aamir68599.workers.dev/video%201.mp4" muted autoplay loop playsinline></video>
-  </section>
+        <!-- ========== EXTRA BOTTOM CAROUSEL (2 slides) ========== -->
+        <section class="extra-bottom-carousel" id="extraBottomCarousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active-slide" data-index="0"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/image%2020.webp" alt="Extra Carousel 1" /></div></div></div>
+                <div class="carousel-slide" data-index="1"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/image%2021.webp" alt="Extra Carousel 2" /></div></div></div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="extraPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-indicators"><button class="dot active" data-index="0"></button><button class="dot" data-index="1"></button></div>
+                <button class="carousel-btn" id="extraNextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
 
-  <!-- ========== ALL PRODUCTS ========== -->
-  <section class="all-products-section">
-    <div class="section-header"><h2>ALL PRODUCTS</h2><a href="#">VIEW ALL →</a></div>
-    <div class="all-products-grid">
-      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Product 1" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Silk Saree</h4><div class="price">₹2,499 <span class="original">₹4,999</span></div></div></div>
-      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Product 2" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Maheshwari Silk</h4><div class="price">₹3,199 <span class="original">₹6,499</span></div></div></div>
-      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Product 3" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Banarasi Silk</h4><div class="price">₹4,999 <span class="original">₹9,999</span></div></div></div>
-      <div class="all-product-card"><div class="product-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Product 4" /></div><span class="product-badge">Extra 50% OFF</span><div class="product-info"><h4>Kanchipuram Silk</h4><div class="price">₹5,999 <span class="original">₹12,999</span></div></div></div>
-    </div>
-  </section>
+        <!-- ========== TESTIMONIALS ========== -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2>⭐ Google Reviews</h2>
+                <a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active-slide" data-index="0">
+                        <div class="testimonial-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Priya+Sharma&background=a67c6b&color=fff&size=72" alt="Priya Sharma" />
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Absolutely stunning sarees! The quality of the silk is unmatched and the designs are so elegant. My wedding trousseau was incomplete without Vianta. Highly recommend!"</p>
+                        <p class="testimonial-author">— Priya Sharma</p>
+                        <p class="testimonial-source">Google Review · 5 stars</p>
+                    </div>
+                    <div class="carousel-slide" data-index="1">
+                        <div class="testimonial-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Ananya+Reddy&background=a67c6b&color=fff&size=72" alt="Ananya Reddy" />
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I ordered a Kanchipuram silk saree and it exceeded my expectations. The craftsmanship is divine and the color is even richer in person. Will definitely shop again!"</p>
+                        <p class="testimonial-author">— Ananya Reddy</p>
+                        <p class="testimonial-source">Google Review · 5 stars</p>
+                    </div>
+                    <div class="carousel-slide" data-index="2">
+                        <div class="testimonial-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Meera+Patel&background=a67c6b&color=fff&size=72" alt="Meera Patel" />
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Beautiful collection of Banarasi sarees. The packaging was premium and delivery was quick. I felt like a queen wearing their saree at my sister's wedding. Thank you!"</p>
+                        <p class="testimonial-author">— Meera Patel</p>
+                        <p class="testimonial-source">Google Review · 4.5 stars</p>
+                    </div>
+                    <div class="carousel-slide" data-index="3">
+                        <div class="testimonial-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Sneha+Desai&background=a67c6b&color=fff&size=72" alt="Sneha Desai" />
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Vianta Saree is my new go-to for ethnic wear. The half sarees are so trendy and the fabric is super comfortable. Got so many compliments at the family gathering!"</p>
+                        <p class="testimonial-author">— Sneha Desai</p>
+                        <p class="testimonial-source">Google Review · 5 stars</p>
+                    </div>
+                    <div class="carousel-slide" data-index="4">
+                        <div class="testimonial-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Kavita+Menon&background=a67c6b&color=fff&size=72" alt="Kavita Menon" />
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The best online saree shopping experience ever! The website is easy to navigate, the prices are fair, and the quality is top-notch. Love every piece I ordered."</p>
+                        <p class="testimonial-author">— Kavita Menon</p>
+                        <p class="testimonial-source">Google Review · 5 stars</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="testPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-indicators">
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                        <button class="dot" data-index="3"></button>
+                        <button class="dot" data-index="4"></button>
+                    </div>
+                    <button class="carousel-btn" id="testNextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
 
-  <!-- ========== EXTRA BOTTOM CAROUSEL (2 slides) ========== -->
-  <section class="extra-bottom-carousel" id="extraBottomCarousel">
-    <div class="carousel-container">
-      <div class="carousel-slide active-slide" data-index="0"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/image%2020.webp" alt="Extra Carousel 1" /></div></div></div>
-      <div class="carousel-slide" data-index="1"><div class="slide-content"><div class="slide-image"><img src="https://vianta-demo.aamir68599.workers.dev/image%2021.webp" alt="Extra Carousel 2" /></div></div></div>
-    </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="extraPrevBtn"><i class="fas fa-chevron-left"></i></button>
-      <div class="carousel-indicators"><button class="dot active" data-index="0"></button><button class="dot" data-index="1"></button></div>
-      <button class="carousel-btn" id="extraNextBtn"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer">
+            <div class="brand-footer">
+                <div class="brand-name">VIANTA <span>SAREE</span></div>
+                <p>Welcome to VIANTA SAREE (VR2 ENTERPRISE) website, we are an MSE based out of India. We aim to deliver high-quality products to our customers.</p>
+                <span class="mse-tag"><i class="fas fa-building"></i> MSE Enterprise</span>
+            </div>
+            <div>
+                <h4>Most searched</h4>
+                <ul>
+                    <li><a href="#">Kanjivaram Saree</a></li>
+                    <li><a href="#">Cotton Saree</a></li>
+                    <li><a href="#">Lehenga</a></li>
+                    <li><a href="#">Wedding Collection</a></li>
+                    <li><a href="#">Banarasi Lehenga Choli</a></li>
+                    <li><a href="#">Banarasi Silk</a></li>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">Banarasi Saree</a></li>
+                    <li><a href="#">Best Selling</a></li>
+                    <li><a href="#">Kanchipuram</a></li>
+                    <li><a href="#">Cotton Saree</a></li>
+                    <li><a href="#">Kanjivaram Silk Saree</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Maheshwari Silk Saree</a></li>
+                    <li><a href="#">In the Spotlight</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Privacy Policy</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Terms &amp; condition</a></li>
+                </ul>
+                <h4 style="margin-top:1rem;">All Products</h4>
+                <ul>
+                    <li><a href="#">PhonePe</a></li>
+                    <li><a href="#">G Pay</a></li>
+                    <li><a href="#">Paytm</a></li>
+                    <li><a href="#">RuPay</a></li>
+                    <li><a href="#">Visa</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone-alt"></i> +91-9586146460</p>
+                <p><i class="fab fa-whatsapp"></i> +91-9586146460</p>
+                <p><i class="fas fa-clock"></i> Customer Support: 24/7</p>
+                <p><i class="fas fa-envelope"></i> viantasaree@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> SURAT GUJARAT / 394101</p>
+                <div class="payment-icons">
+                    <span><i class="fas fa-phone"></i> PhonePe</span>
+                    <span><i class="fas fa-google-pay"></i> G Pay</span>
+                    <span><i class="fas fa-paypal"></i> Paytm</span>
+                    <span><i class="fas fa-credit-card"></i> RuPay</span>
+                    <span><i class="fas fa-credit-card"></i> Visa</span>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>© 2026 VIANTA SAREE. All rights reserved.</span>
+                <span>|</span>
+                <span>Saturday, August 01, 2026</span>
+                <span>|</span>
+                <span>3:59 PM</span>
+            </div>
+            <div class="go-top">
+                <a href="#"><i class="fas fa-arrow-up"></i> GO TO TOP</a>
+            </div>
+        </footer>
 
-  <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials-section">
-    <div class="section-header">
-      <h2>⭐ Google Reviews</h2>
-      <a href="#">VIEW ALL →</a>
     </div>
-    <div class="testimonials-carousel" id="testimonialsCarousel">
-      <div class="carousel-container">
-        <div class="carousel-slide active-slide" data-index="0">
-          <div class="testimonial-avatar">
-            <img src="https://ui-avatars.com/api/?name=Priya+Sharma&background=a67c6b&color=fff&size=72" alt="Priya Sharma" />
-          </div>
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Absolutely stunning sarees! The quality of the silk is unmatched and the designs are so elegant. My wedding trousseau was incomplete without Vianta. Highly recommend!"</p>
-          <p class="testimonial-author">— Priya Sharma</p>
-          <p class="testimonial-source">Google Review · 5 stars</p>
-        </div>
-        <div class="carousel-slide" data-index="1">
-          <div class="testimonial-avatar">
-            <img src="https://ui-avatars.com/api/?name=Ananya+Reddy&background=a67c6b&color=fff&size=72" alt="Ananya Reddy" />
-          </div>
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"I ordered a Kanchipuram silk saree and it exceeded my expectations. The craftsmanship is divine and the color is even richer in person. Will definitely shop again!"</p>
-          <p class="testimonial-author">— Ananya Reddy</p>
-          <p class="testimonial-source">Google Review · 5 stars</p>
-        </div>
-        <div class="carousel-slide" data-index="2">
-          <div class="testimonial-avatar">
-            <img src="https://ui-avatars.com/api/?name=Meera+Patel&background=a67c6b&color=fff&size=72" alt="Meera Patel" />
-          </div>
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-          <p class="testimonial-text">"Beautiful collection of Banarasi sarees. The packaging was premium and delivery was quick. I felt like a queen wearing their saree at my sister's wedding. Thank you!"</p>
-          <p class="testimonial-author">— Meera Patel</p>
-          <p class="testimonial-source">Google Review · 4.5 stars</p>
-        </div>
-        <div class="carousel-slide" data-index="3">
-          <div class="testimonial-avatar">
-            <img src="https://ui-avatars.com/api/?name=Sneha+Desai&background=a67c6b&color=fff&size=72" alt="Sneha Desai" />
-          </div>
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Vianta Saree is my new go-to for ethnic wear. The half sarees are so trendy and the fabric is super comfortable. Got so many compliments at the family gathering!"</p>
-          <p class="testimonial-author">— Sneha Desai</p>
-          <p class="testimonial-source">Google Review · 5 stars</p>
-        </div>
-        <div class="carousel-slide" data-index="4">
-          <div class="testimonial-avatar">
-            <img src="https://ui-avatars.com/api/?name=Kavita+Menon&background=a67c6b&color=fff&size=72" alt="Kavita Menon" />
-          </div>
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"The best online saree shopping experience ever! The website is easy to navigate, the prices are fair, and the quality is top-notch. Love every piece I ordered."</p>
-          <p class="testimonial-author">— Kavita Menon</p>
-          <p class="testimonial-source">Google Review · 5 stars</p>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="testPrevBtn"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-indicators">
-          <button class="dot active" data-index="0"></button>
-          <button class="dot" data-index="1"></button>
-          <button class="dot" data-index="2"></button>
-          <button class="dot" data-index="3"></button>
-          <button class="dot" data-index="4"></button>
-        </div>
-        <button class="carousel-btn" id="testNextBtn"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="brand-footer">
-      <div class="brand-name">VIANTA <span>SAREE</span></div>
-      <p>Welcome to VIANTA SAREE (VR2 ENTERPRISE) website, we are an MSE based out of India. We aim to deliver high-quality products to our customers.</p>
-      <span class="mse-tag"><i class="fas fa-building"></i> MSE Enterprise</span>
-    </div>
-    <div>
-      <h4>Most searched</h4>
-      <ul>
-        <li><a href="#">Kanjivaram Saree</a></li>
-        <li><a href="#">Cotton Saree</a></li>
-        <li><a href="#">Lehenga</a></li>
-        <li><a href="#">Wedding Collection</a></li>
-        <li><a href="#">Banarasi Lehenga Choli</a></li>
-        <li><a href="#">Banarasi Silk</a></li>
-        <li><a href="#">All Products</a></li>
-        <li><a href="#">Banarasi Saree</a></li>
-        <li><a href="#">Best Selling</a></li>
-        <li><a href="#">Kanchipuram</a></li>
-        <li><a href="#">Cotton Saree</a></li>
-        <li><a href="#">Kanjivaram Silk Saree</a></li>
-        <li><a href="#">New Arrivals</a></li>
-        <li><a href="#">Maheshwari Silk Saree</a></li>
-        <li><a href="#">In the Spotlight</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Privacy Policy</h4>
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Return Policy</a></li>
-        <li><a href="#">Shipping Policy</a></li>
-        <li><a href="#">Terms &amp; condition</a></li>
-      </ul>
-      <h4 style="margin-top:1rem;">All Products</h4>
-      <ul>
-        <li><a href="#">PhonePe</a></li>
-        <li><a href="#">G Pay</a></li>
-        <li><a href="#">Paytm</a></li>
-        <li><a href="#">RuPay</a></li>
-        <li><a href="#">Visa</a></li>
-      </ul>
-    </div>
-    <div class="contact-info">
-      <h4>Contact Us</h4>
-      <p><i class="fas fa-phone-alt"></i> +91-9586146460</p>
-      <p><i class="fab fa-whatsapp"></i> +91-9586146460</p>
-      <p><i class="fas fa-clock"></i> Customer Support: 24/7</p>
-      <p><i class="fas fa-envelope"></i> viantasaree@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> SURAT GUJARAT / 394101</p>
-      <div class="payment-icons">
-        <span><i class="fas fa-phone"></i> PhonePe</span>
-        <span><i class="fas fa-google-pay"></i> G Pay</span>
-        <span><i class="fas fa-paypal"></i> Paytm</span>
-        <span><i class="fas fa-credit-card"></i> RuPay</span>
-        <span><i class="fas fa-credit-card"></i> Visa</span>
-      </div>
-    </div>
-    <div class="copyright">
-      <span>© 2026 VIANTA SAREE. All rights reserved.</span>
-      <span style="margin:0 0.5rem;">|</span>
-      <span>Saturday, August 01, 2026</span>
-      <span style="margin:0 0.5rem;">|</span>
-      <span>3:59 PM</span>
-    </div>
-    <div class="go-top">
-      <a href="#"><i class="fas fa-arrow-up"></i> GO TO TOP</a>
-    </div>
-  </footer>
+    <script>
+        (function() {
+            // ----- HERO CAROUSEL (4 slides) -----
+            const slides = document.querySelectorAll('.hero-carousel .carousel-slide');
+            const dots = document.querySelectorAll('.hero-carousel .dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let autoSlideInterval = null;
+            const AUTO_SLIDE_DELAY = 3000;
 
-</div>
+            function showSlide(index) {
+                slides.forEach(function(slide) { slide.classList.remove('active-slide'); });
+                if (slides[index]) slides[index].classList.add('active-slide');
+                dots.forEach(function(dot, i) { i === index ? dot.classList.add('active') : dot.classList.remove(
+                    'active'); });
+                currentIndex = index;
+            }
 
-<script>
-  (function() {
-    // ----- HERO CAROUSEL (4 slides) -----
-    const slides = document.querySelectorAll('.hero-carousel .carousel-slide');
-    const dots = document.querySelectorAll('.hero-carousel .dot');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    let autoSlideInterval = null;
-    const AUTO_SLIDE_DELAY = 3000;
+            function nextSlide() { showSlide((currentIndex + 1) % totalSlides); }
 
-    function showSlide(index) {
-      slides.forEach(function(slide) { slide.classList.remove('active-slide'); });
-      if (slides[index]) slides[index].classList.add('active-slide');
-      dots.forEach(function(dot, i) { i === index ? dot.classList.add('active') : dot.classList.remove('active'); });
-      currentIndex = index;
-    }
-    function nextSlide() { showSlide((currentIndex + 1) % totalSlides); }
-    function prevSlide() { showSlide((currentIndex - 1 + totalSlides) % totalSlides); }
-    function startAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval); autoSlideInterval = setInterval(nextSlide, AUTO_SLIDE_DELAY); }
-    function resetAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval); startAutoSlide(); }
-    nextBtn.addEventListener('click', function() { nextSlide(); resetAutoSlide(); });
-    prevBtn.addEventListener('click', function() { prevSlide(); resetAutoSlide(); });
-    dots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        var index = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(index) && index !== currentIndex) { showSlide(index); resetAutoSlide(); }
-      });
-    });
-    showSlide(0);
-    startAutoSlide();
+            function prevSlide() { showSlide((currentIndex - 1 + totalSlides) % totalSlides); }
 
-    // ----- BOTTOM CAROUSEL (2 slides) -----
-    const bSlides = document.querySelectorAll('.bottom-carousel .carousel-slide');
-    const bDots = document.querySelectorAll('.bottom-carousel .dot');
-    const bPrev = document.getElementById('bottomPrevBtn');
-    const bNext = document.getElementById('bottomNextBtn');
-    let bIdx = 0;
-    const bTotal = bSlides.length;
-    let bAuto = null;
-    function showB(idx) {
-      bSlides.forEach(function(s) { s.classList.remove('active-slide'); });
-      if (bSlides[idx]) bSlides[idx].classList.add('active-slide');
-      bDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
-      bIdx = idx;
-    }
-    function nextB() { showB((bIdx + 1) % bTotal); }
-    function prevB() { showB((bIdx - 1 + bTotal) % bTotal); }
-    function startB() { if (bAuto) clearInterval(bAuto); bAuto = setInterval(nextB, 3000); }
-    function resetB() { if (bAuto) clearInterval(bAuto); startB(); }
-    bNext.addEventListener('click', function() { nextB(); resetB(); });
-    bPrev.addEventListener('click', function() { prevB(); resetB(); });
-    bDots.forEach(function(d) {
-      d.addEventListener('click', function() {
-        var idx = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(idx) && idx !== bIdx) { showB(idx); resetB(); }
-      });
-    });
-    showB(0);
-    startB();
+            function startAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(nextSlide, AUTO_SLIDE_DELAY); }
 
-    // ----- EXTRA BOTTOM CAROUSEL (2 slides) -----
-    const eSlides = document.querySelectorAll('.extra-bottom-carousel .carousel-slide');
-    const eDots = document.querySelectorAll('.extra-bottom-carousel .dot');
-    const ePrev = document.getElementById('extraPrevBtn');
-    const eNext = document.getElementById('extraNextBtn');
-    let eIdx = 0;
-    const eTotal = eSlides.length;
-    let eAuto = null;
-    function showE(idx) {
-      eSlides.forEach(function(s) { s.classList.remove('active-slide'); });
-      if (eSlides[idx]) eSlides[idx].classList.add('active-slide');
-      eDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
-      eIdx = idx;
-    }
-    function nextE() { showE((eIdx + 1) % eTotal); }
-    function prevE() { showE((eIdx - 1 + eTotal) % eTotal); }
-    function startE() { if (eAuto) clearInterval(eAuto); eAuto = setInterval(nextE, 3000); }
-    function resetE() { if (eAuto) clearInterval(eAuto); startE(); }
-    eNext.addEventListener('click', function() { nextE(); resetE(); });
-    ePrev.addEventListener('click', function() { prevE(); resetE(); });
-    eDots.forEach(function(d) {
-      d.addEventListener('click', function() {
-        var idx = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(idx) && idx !== eIdx) { showE(idx); resetE(); }
-      });
-    });
-    showE(0);
-    startE();
+            function resetAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval);
+                startAutoSlide(); }
+            nextBtn.addEventListener('click', function() { nextSlide();
+                resetAutoSlide(); });
+            prevBtn.addEventListener('click', function() { prevSlide();
+                resetAutoSlide(); });
+            dots.forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                    var index = parseInt(this.getAttribute('data-index'), 10);
+                    if (!isNaN(index) && index !== currentIndex) { showSlide(index);
+                        resetAutoSlide(); }
+                });
+            });
+            showSlide(0);
+            startAutoSlide();
 
-    // ----- TESTIMONIALS CAROUSEL (5 slides) -----
-    const tSlides = document.querySelectorAll('.testimonials-carousel .carousel-slide');
-    const tDots = document.querySelectorAll('.testimonials-carousel .dot');
-    const tPrev = document.getElementById('testPrevBtn');
-    const tNext = document.getElementById('testNextBtn');
-    let tIdx = 0;
-    const tTotal = tSlides.length;
-    let tAuto = null;
-    function showT(idx) {
-      tSlides.forEach(function(s) { s.classList.remove('active-slide'); });
-      if (tSlides[idx]) tSlides[idx].classList.add('active-slide');
-      tDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
-      tIdx = idx;
-    }
-    function nextT() { showT((tIdx + 1) % tTotal); }
-    function prevT() { showT((tIdx - 1 + tTotal) % tTotal); }
-    function startT() { if (tAuto) clearInterval(tAuto); tAuto = setInterval(nextT, 3500); }
-    function resetT() { if (tAuto) clearInterval(tAuto); startT(); }
-    tNext.addEventListener('click', function() { nextT(); resetT(); });
-    tPrev.addEventListener('click', function() { prevT(); resetT(); });
-    tDots.forEach(function(d) {
-      d.addEventListener('click', function() {
-        var idx = parseInt(this.getAttribute('data-index'), 10);
-        if (!isNaN(idx) && idx !== tIdx) { showT(idx); resetT(); }
-      });
-    });
-    showT(0);
-    startT();
-  })();
-</script>
+            // ----- BOTTOM CAROUSEL (2 slides) -----
+            const bSlides = document.querySelectorAll('.bottom-carousel .carousel-slide');
+            const bDots = document.querySelectorAll('.bottom-carousel .dot');
+            const bPrev = document.getElementById('bottomPrevBtn');
+            const bNext = document.getElementById('bottomNextBtn');
+            let bIdx = 0;
+            const bTotal = bSlides.length;
+            let bAuto = null;
+
+            function showB(idx) {
+                bSlides.forEach(function(s) { s.classList.remove('active-slide'); });
+                if (bSlides[idx]) bSlides[idx].classList.add('active-slide');
+                bDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
+                bIdx = idx;
+            }
+
+            function nextB() { showB((bIdx + 1) % bTotal); }
+
+            function prevB() { showB((bIdx - 1 + bTotal) % bTotal); }
+
+            function startB() { if (bAuto) clearInterval(bAuto);
+                bAuto = setInterval(nextB, 3000); }
+
+            function resetB() { if (bAuto) clearInterval(bAuto);
+                startB(); }
+            bNext.addEventListener('click', function() { nextB();
+                resetB(); });
+            bPrev.addEventListener('click', function() { prevB();
+                resetB(); });
+            bDots.forEach(function(d) {
+                d.addEventListener('click', function() {
+                    var idx = parseInt(this.getAttribute('data-index'), 10);
+                    if (!isNaN(idx) && idx !== bIdx) { showB(idx);
+                        resetB(); }
+                });
+            });
+            showB(0);
+            startB();
+
+            // ----- EXTRA BOTTOM CAROUSEL (2 slides) -----
+            const eSlides = document.querySelectorAll('.extra-bottom-carousel .carousel-slide');
+            const eDots = document.querySelectorAll('.extra-bottom-carousel .dot');
+            const ePrev = document.getElementById('extraPrevBtn');
+            const eNext = document.getElementById('extraNextBtn');
+            let eIdx = 0;
+            const eTotal = eSlides.length;
+            let eAuto = null;
+
+            function showE(idx) {
+                eSlides.forEach(function(s) { s.classList.remove('active-slide'); });
+                if (eSlides[idx]) eSlides[idx].classList.add('active-slide');
+                eDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
+                eIdx = idx;
+            }
+
+            function nextE() { showE((eIdx + 1) % eTotal); }
+
+            function prevE() { showE((eIdx - 1 + eTotal) % eTotal); }
+
+            function startE() { if (eAuto) clearInterval(eAuto);
+                eAuto = setInterval(nextE, 3000); }
+
+            function resetE() { if (eAuto) clearInterval(eAuto);
+                startE(); }
+            eNext.addEventListener('click', function() { nextE();
+                resetE(); });
+            ePrev.addEventListener('click', function() { prevE();
+                resetE(); });
+            eDots.forEach(function(d) {
+                d.addEventListener('click', function() {
+                    var idx = parseInt(this.getAttribute('data-index'), 10);
+                    if (!isNaN(idx) && idx !== eIdx) { showE(idx);
+                        resetE(); }
+                });
+            });
+            showE(0);
+            startE();
+
+            // ----- TESTIMONIALS CAROUSEL (5 slides) -----
+            const tSlides = document.querySelectorAll('.testimonials-carousel .carousel-slide');
+            const tDots = document.querySelectorAll('.testimonials-carousel .dot');
+            const tPrev = document.getElementById('testPrevBtn');
+            const tNext = document.getElementById('testNextBtn');
+            let tIdx = 0;
+            const tTotal = tSlides.length;
+            let tAuto = null;
+
+            function showT(idx) {
+                tSlides.forEach(function(s) { s.classList.remove('active-slide'); });
+                if (tSlides[idx]) tSlides[idx].classList.add('active-slide');
+                tDots.forEach(function(d, i) { i === idx ? d.classList.add('active') : d.classList.remove('active'); });
+                tIdx = idx;
+            }
+
+            function nextT() { showT((tIdx + 1) % tTotal); }
+
+            function prevT() { showT((tIdx - 1 + tTotal) % tTotal); }
+
+            function startT() { if (tAuto) clearInterval(tAuto);
+                tAuto = setInterval(nextT, 3500); }
+
+            function resetT() { if (tAuto) clearInterval(tAuto);
+                startT(); }
+            tNext.addEventListener('click', function() { nextT();
+                resetT(); });
+            tPrev.addEventListener('click', function() { prevT();
+                resetT(); });
+            tDots.forEach(function(d) {
+                d.addEventListener('click', function() {
+                    var idx = parseInt(this.getAttribute('data-index'), 10);
+                    if (!isNaN(idx) && idx !== tIdx) { showT(idx);
+                        resetT(); }
+                });
+            });
+            showT(0);
+            startT();
+        })();
+    </script>
 
 </body>
 </html>
