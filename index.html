@@ -295,7 +295,7 @@
         }
 
         /* ================================================================
-                   HERO : PROFESSIONAL REDESIGN
+                   HERO : FULL-IMAGE CAROUSEL (No text overlays)
                    ================================================================ */
         .hero-carousel {
             margin-top: 1.8rem;
@@ -373,127 +373,6 @@
             transform: scale(1.04);
         }
 
-        /* ---- overlay gradient ---- */
-        .hero-carousel .slide-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg,
-                    rgba(20, 12, 8, 0.65) 0%,
-                    rgba(20, 12, 8, 0.20) 50%,
-                    rgba(20, 12, 8, 0.05) 80%);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        /* ---- hero text content ---- */
-        .hero-carousel .hero-text {
-            position: absolute;
-            bottom: 9rem;
-            left: 5%;
-            z-index: 5;
-            max-width: 540px;
-            padding: 0 1rem;
-            pointer-events: none;
-            animation: heroFadeUp 1s ease forwards;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .hero-carousel .carousel-slide.active-slide .hero-text {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.9s ease 0.3s, transform 0.9s ease 0.3s;
-        }
-
-        @keyframes heroFadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-carousel .hero-text .hero-tag {
-            display: inline-block;
-            background: rgba(166, 124, 107, 0.92);
-            color: #ffffff;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 1.8px;
-            text-transform: uppercase;
-            padding: 0.25rem 1rem;
-            border-radius: 40px;
-            margin-bottom: 0.6rem;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .hero-carousel .hero-text .hero-tag.light {
-            background: rgba(255, 255, 255, 0.92);
-            color: #2c1810;
-        }
-
-        .hero-carousel .hero-text h2 {
-            font-size: clamp(1.8rem, 5vw, 3.6rem);
-            font-weight: 400;
-            color: #ffffff;
-            letter-spacing: 1.2px;
-            line-height: 1.15;
-            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-            margin-bottom: 0.3rem;
-        }
-
-        .hero-carousel .hero-text h2 strong {
-            font-weight: 600;
-            color: #f0dfd6;
-        }
-
-        .hero-carousel .hero-text .hero-sub {
-            font-size: clamp(0.9rem, 1.4vw, 1.15rem);
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 300;
-            letter-spacing: 0.6px;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-            margin-bottom: 1.2rem;
-            line-height: 1.6;
-            max-width: 460px;
-        }
-
-        .hero-carousel .hero-text .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: #ffffff;
-            color: #2c1810;
-            padding: 0.65rem 2rem 0.65rem 2rem;
-            border-radius: 60px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-            pointer-events: auto;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hero-carousel .hero-text .hero-cta:hover {
-            background: #2c1810;
-            color: #ffffff;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 36px rgba(0, 0, 0, 0.18);
-        }
-
-        .hero-carousel .hero-text .hero-cta i {
-            font-size: 0.7rem;
-            transition: transform 0.3s;
-        }
-
-        .hero-carousel .hero-text .hero-cta:hover i {
-            transform: translateX(5px);
-        }
-
         /* ---- hero controls ---- */
         .hero-carousel .carousel-controls {
             position: absolute;
@@ -568,49 +447,12 @@
             border-color: rgba(255, 255, 255, 0.6);
         }
 
-        /* ---- hero badge (top-left) ---- */
-        .hero-carousel .hero-badge {
-            position: absolute;
-            top: 1.8rem;
-            right: 2rem;
-            z-index: 5;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.20);
-            border-radius: 60px;
-            padding: 0.4rem 1.2rem 0.4rem 1.2rem;
-            color: #ffffff;
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.10);
-            pointer-events: none;
-        }
-
-        .hero-carousel .hero-badge i {
-            font-size: 0.65rem;
-            color: #f0dfd6;
-        }
-
         /* ---- responsive adjustments for hero ---- */
         @media screen and (max-width: 1024px) {
-            .hero-carousel .hero-text {
-                bottom: 7rem;
-                left: 4%;
-                max-width: 440px;
-            }
-            .hero-carousel .hero-text h2 {
-                font-size: clamp(1.6rem, 4vw, 2.8rem);
-            }
-            .hero-carousel .hero-badge {
-                top: 1.2rem;
-                right: 1.2rem;
-                padding: 0.3rem 0.9rem;
-                font-size: 0.5rem;
+            .hero-carousel {
+                height: calc(100vh - 200px);
+                min-height: 420px;
+                max-height: 700px;
             }
         }
 
@@ -622,26 +464,6 @@
                 height: calc(100vh - 280px);
                 min-height: 380px;
                 max-height: 620px;
-            }
-            .hero-carousel .hero-text {
-                bottom: 5.5rem;
-                left: 3%;
-                max-width: 360px;
-                padding: 0 0.5rem;
-            }
-            .hero-carousel .hero-text h2 {
-                font-size: clamp(1.4rem, 4vw, 2.2rem);
-            }
-            .hero-carousel .hero-text .hero-sub {
-                font-size: 0.8rem;
-                margin-bottom: 0.8rem;
-            }
-            .hero-carousel .hero-text .hero-cta {
-                padding: 0.5rem 1.4rem;
-                font-size: 0.7rem;
-            }
-            .hero-carousel .hero-badge {
-                display: none;
             }
             .hero-carousel .carousel-btn {
                 width: 42px;
@@ -665,30 +487,6 @@
                 height: calc(100vh - 260px);
                 min-height: 300px;
                 max-height: 480px;
-            }
-            .hero-carousel .hero-text {
-                bottom: 4.5rem;
-                left: 2%;
-                max-width: 280px;
-                padding: 0 0.3rem;
-            }
-            .hero-carousel .hero-text h2 {
-                font-size: clamp(1.1rem, 5vw, 1.7rem);
-            }
-            .hero-carousel .hero-text .hero-tag {
-                font-size: 0.45rem;
-                padding: 0.15rem 0.7rem;
-                margin-bottom: 0.3rem;
-            }
-            .hero-carousel .hero-text .hero-sub {
-                font-size: 0.7rem;
-                margin-bottom: 0.6rem;
-                max-width: 240px;
-            }
-            .hero-carousel .hero-text .hero-cta {
-                padding: 0.35rem 1.2rem;
-                font-size: 0.6rem;
-                gap: 0.4rem;
             }
             .hero-carousel .carousel-btn {
                 width: 34px;
@@ -2374,7 +2172,7 @@
         </header>
 
         <!-- ==========================================================
-        HERO : PROFESSIONAL REDESIGN (4 Slides)
+        HERO : FULL-IMAGE CAROUSEL (No text, no badge, no overlay)
         ========================================================== -->
         <section class="hero-carousel" id="heroCarousel">
             <div class="carousel-container">
@@ -2385,16 +2183,6 @@
                         <div class="slide-image">
                             <img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="South Silk" />
                         </div>
-                        <div class="slide-overlay"></div>
-                        <div class="hero-badge">
-                            <i class="fas fa-crown"></i> Heritage Collection
-                        </div>
-                        <div class="hero-text">
-                            <span class="hero-tag">✦ Premium Silk</span>
-                            <h2>Timeless <strong>South Silk</strong> Elegance</h2>
-                            <p class="hero-sub">Handwoven with pure zari, each drape tells a story of tradition &amp; royalty.</p>
-                            <a href="#" class="hero-cta">Explore Now <i class="fas fa-arrow-right"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -2403,16 +2191,6 @@
                     <div class="slide-content">
                         <div class="slide-image">
                             <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Maheshwari Silk" />
-                        </div>
-                        <div class="slide-overlay"></div>
-                        <div class="hero-badge">
-                            <i class="fas fa-star"></i> Bestseller
-                        </div>
-                        <div class="hero-text">
-                            <span class="hero-tag light">✦ Maheshwari</span>
-                            <h2>Luxury <strong>Maheshwari</strong> Weaves</h2>
-                            <p class="hero-sub">Lightweight, lustrous &amp; draped in heritage — perfect for every celebration.</p>
-                            <a href="#" class="hero-cta">Shop Now <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2423,16 +2201,6 @@
                         <div class="slide-image">
                             <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Maheshwari Silk 2" />
                         </div>
-                        <div class="slide-overlay"></div>
-                        <div class="hero-badge">
-                            <i class="fas fa-gem"></i> Artisan Craft
-                        </div>
-                        <div class="hero-text">
-                            <span class="hero-tag">✦ Handcrafted</span>
-                            <h2>Artisan <strong>Maheshwari</strong> Silk</h2>
-                            <p class="hero-sub">Intricate motifs and rich textures, brought to life by master weavers.</p>
-                            <a href="#" class="hero-cta">Discover <i class="fas fa-arrow-right"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -2441,16 +2209,6 @@
                     <div class="slide-content">
                         <div class="slide-image">
                             <img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Maheshwari Silk 3" />
-                        </div>
-                        <div class="slide-overlay"></div>
-                        <div class="hero-badge">
-                            <i class="fas fa-fire"></i> New Arrival
-                        </div>
-                        <div class="hero-text">
-                            <span class="hero-tag light">✦ Exclusive</span>
-                            <h2>Signature <strong>Maheshwari</strong> Collection</h2>
-                            <p class="hero-sub">Modern silhouettes meet timeless craftsmanship — redefine your ethnic wardrobe.</p>
-                            <a href="#" class="hero-cta">View Collection <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2787,7 +2545,7 @@
 
     <script>
         (function() {
-            // ===== HERO CAROUSEL (professional) =====
+            // ===== HERO CAROUSEL (full-image, no text) =====
             const heroSlides = document.querySelectorAll('.hero-carousel .carousel-slide');
             const heroDots = document.querySelectorAll('.hero-carousel .dot');
             const heroPrev = document.getElementById('heroPrevBtn');
