@@ -730,6 +730,10 @@
             cursor: pointer;
             transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-family: 'Inter', system-ui, sans-serif;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .action-buttons .btn-add-cart:hover {
             background: #8a6555;
@@ -751,6 +755,10 @@
             cursor: pointer;
             transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-family: 'Inter', system-ui, sans-serif;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .action-buttons .btn-buy-now:hover {
             background: #1a0f0a;
@@ -1222,7 +1230,7 @@
 
         <!-- ========== HEADER ========== -->
         <header class="top-header">
-            <a href="#" class="brand" style="text-decoration:none;">
+            <a href="index.html" class="brand" style="text-decoration:none;">
                 <span class="brand-icon">
                     <img src="https://vianta-demo.aamir68599.workers.dev/vanita%20logo.jpg" alt="Vianta Saree Logo" />
                 </span>
@@ -1239,7 +1247,7 @@
                 <div class="icon-group">
                     <a href="#" class="icon-item" aria-label="Account"><i class="fas fa-user-circle"></i></a>
                     <a href="#" class="icon-item" aria-label="Wishlist"><i class="fas fa-heart"></i></a>
-                    <a href="#" class="icon-item badge-dot" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="cart.html" class="icon-item badge-dot" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </div>
         </header>
@@ -1247,7 +1255,7 @@
         <!-- ========== BOTTOM NAV ========== -->
         <header class="bottom-header">
             <nav class="main-menu">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#">Lehenga</a>
                 <a href="#">Best Selling</a>
                 <a href="#">All Products</a>
@@ -1261,7 +1269,7 @@
 
         <!-- ========== BREADCRUMB ========== -->
         <div class="breadcrumb">
-            <a href="#">Home</a> <i class="fas fa-chevron-right"></i>
+            <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
             <a href="#">Half Saree</a> <i class="fas fa-chevron-right"></i>
             <span>New Traditional South Indian Half Saree</span>
         </div>
@@ -1358,8 +1366,8 @@
 
                     <!-- Action Buttons -->
                     <div class="action-buttons">
-                        <button class="btn-add-cart"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;"></i> Add to Cart</button>
-                        <button class="btn-buy-now">Buy Now</button>
+                        <a href="cart.html" class="btn-add-cart"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;"></i> Add to Cart</a>
+                        <a href="checkout.html" class="btn-buy-now">Buy Now</a>
                         <button class="btn-wishlist" aria-label="Wishlist"><i class="fas fa-heart"></i></button>
                     </div>
 
@@ -1573,7 +1581,6 @@
 
         thumbs.forEach(function(thumb) {
             thumb.addEventListener('click', function() {
-                // Remove active class from all thumbs
                 thumbs.forEach(function(t) { t.classList.remove('active'); });
                 this.classList.add('active');
                 const imgSrc = this.getAttribute('data-img');
