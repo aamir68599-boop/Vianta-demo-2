@@ -257,7 +257,7 @@
             font-size: 1.1rem;
         }
         .icon-group .badge-dot::after {
-            content: '3';
+            content: attr(data-count);
             position: absolute;
             top: 0px;
             right: 0px;
@@ -1000,6 +1000,40 @@
         }
 
         /* ================================================================
+                   TOAST NOTIFICATION
+                   ================================================================ */
+        .cart-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c1810;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            z-index: 9999;
+            animation: fadeInUp 0.4s ease;
+            max-width: 90%;
+            text-align: center;
+            display: none;
+        }
+        .cart-toast.show {
+            display: block;
+        }
+        .cart-toast i {
+            color: #a67c6b;
+            margin-right: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        /* ================================================================
                    FOOTER
                    ================================================================ */
         .footer {
@@ -1270,7 +1304,7 @@
                 <div class="icon-group">
                     <a href="#" class="icon-item" aria-label="Account"><i class="fas fa-user-circle"></i></a>
                     <a href="#" class="icon-item" aria-label="Wishlist"><i class="fas fa-heart"></i></a>
-                    <a href="cart.html" class="icon-item badge-dot" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="cart.html" class="icon-item badge-dot" data-count="0" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </div>
         </header>
@@ -1341,7 +1375,7 @@
                     </div>
 
                     <div class="price-row">
-                        <span class="current-price">₹1,299.00</span>
+                        <span class="current-price" id="productPrice">₹1,299.00</span>
                         <span class="original-price">₹5,999.00</span>
                         <span class="discount-badge">78% OFF</span>
                         <span class="tax-text">Inclusive of all taxes</span>
@@ -1368,11 +1402,11 @@
                     <!-- Color Variants -->
                     <div class="color-variants">
                         <span class="color-label">Colour:</span>
-                        <span class="color-option active">Green <span class="price-tag">₹1,299</span></span>
-                        <span class="color-option">Blue <span class="price-tag">₹1,399</span></span>
-                        <span class="color-option">Red <span class="price-tag">₹1,299</span></span>
-                        <span class="color-option">Purple <span class="price-tag">₹1,399</span></span>
-                        <span class="color-option">Gold <span class="price-tag">₹1,499</span></span>
+                        <span class="color-option active" data-color="Green">Green <span class="price-tag">₹1,299</span></span>
+                        <span class="color-option" data-color="Blue">Blue <span class="price-tag">₹1,399</span></span>
+                        <span class="color-option" data-color="Red">Red <span class="price-tag">₹1,299</span></span>
+                        <span class="color-option" data-color="Purple">Purple <span class="price-tag">₹1,399</span></span>
+                        <span class="color-option" data-color="Gold">Gold <span class="price-tag">₹1,499</span></span>
                     </div>
 
                     <!-- Delivery & Returns -->
@@ -1398,8 +1432,12 @@
 
                     <!-- Action Buttons -->
                     <div class="action-buttons">
-                        <a href="cart.html" class="btn-add-cart"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;"></i> Add to Cart</a>
-                        <a href="checkout.html" class="btn-buy-now">Buy Now</a>
+                        <button class="btn-add-cart" onclick="handleAddToCart()">
+                            <i class="fas fa-shopping-bag" style="margin-right:0.5rem;"></i> Add to Cart
+                        </button>
+                        <button class="btn-buy-now" onclick="handleBuyNow()">
+                            Buy Now
+                        </button>
                         <button class="btn-wishlist" aria-label="Wishlist"><i class="fas fa-heart"></i></button>
                     </div>
 
@@ -1615,45 +1653,202 @@
 
     </div>
 
+    <!-- ===== TOAST NOTIFICATION ===== -->
+    <div class="cart-toast" id="cartToast">
+        <i class="fas fa-check-circle"></i> <span id="toastMessage">Product added to cart!</span>
+    </div>
+
     <script>
-        // === Thumbnail click to change main image ===
-        const thumbs = document.querySelectorAll('.product-thumbnails .thumb');
-        const mainImage = document.getElementById('mainImage');
+        // ================================================================
+        // CART SYSTEM - Full localStorage based shopping cart
+        // ================================================================
 
-        thumbs.forEach(function(thumb) {
-            thumb.addEventListener('click', function() {
-                thumbs.forEach(function(t) { t.classList.remove('active'); });
-                this.classList.add('active');
-                const imgSrc = this.getAttribute('data-img');
-                if (imgSrc) {
-                    mainImage.setAttribute('src', imgSrc);
-                }
-            });
-        });
+        const CART_KEY = 'vianta_cart';
 
-        // === Accordion toggle ===
-        function toggleDetail(headerEl) {
-            const body = headerEl.nextElementSibling;
-            const icon = headerEl.querySelector('i');
-            if (body.classList.contains('open')) {
-                body.classList.remove('open');
-                headerEl.classList.remove('open');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                body.classList.add('open');
-                headerEl.classList.add('open');
-                icon.style.transform = 'rotate(180deg)';
+        // ---- Get cart from localStorage ----
+        function getCart() {
+            try {
+                const data = localStorage.getItem(CART_KEY);
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                return [];
             }
         }
 
-        // === Color option click ===
-        const colorOptions = document.querySelectorAll('.color-option');
-        colorOptions.forEach(function(opt) {
-            opt.addEventListener('click', function() {
-                colorOptions.forEach(function(o) { o.classList.remove('active'); });
-                this.classList.add('active');
+        // ---- Save cart to localStorage ----
+        function saveCart(cart) {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+            updateCartBadge();
+        }
+
+        // ---- Generate unique ID ----
+        function generateItemId(product) {
+            return product.name.replace(/\s+/g, '_').toLowerCase() + '_' + Date.now();
+        }
+
+        // ---- Update cart badge ----
+        function updateCartBadge() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.querySelector('.badge-dot');
+            if (badge) {
+                badge.setAttribute('data-count', totalItems);
+            }
+        }
+
+        // ---- Show toast notification ----
+        function showToast(message) {
+            const toast = document.getElementById('cartToast');
+            const msgEl = document.getElementById('toastMessage');
+            if (toast && msgEl) {
+                msgEl.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(toast._timeout);
+                toast._timeout = setTimeout(function() {
+                    toast.classList.remove('show');
+                }, 2500);
+            }
+        }
+
+        // ---- Add product to cart ----
+        function addToCart(product) {
+            if (!product || !product.name) return false;
+
+            const cart = getCart();
+
+            // Check if product already exists (by name + color)
+            const existingIndex = cart.findIndex(item =>
+                item.name === product.name && item.color === product.color
+            );
+
+            if (existingIndex !== -1) {
+                cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+            } else {
+                const newItem = {
+                    id: product.id || generateItemId(product),
+                    name: product.name,
+                    price: product.price || 0,
+                    originalPrice: product.originalPrice || null,
+                    image: product.image || 'https://vianta-demo.aamir68599.workers.dev/Banarasi%20cotton%20silk%20saree%20image%201%20(1).webp',
+                    color: product.color || 'Green',
+                    size: product.size || 'One Size',
+                    quantity: product.quantity || 1,
+                    meta: product.meta || ''
+                };
+                cart.push(newItem);
+            }
+
+            saveCart(cart);
+            return true;
+        }
+
+        // ---- Get current product data from page ----
+        function getCurrentProduct() {
+            const name = document.querySelector('h1')?.textContent?.trim() || 'SGF11 Women\'s Kanjivaram Soft Lichi Silk Saree';
+            const priceText = document.getElementById('productPrice')?.textContent?.trim() || '₹1,299.00';
+            const price = parseFloat(priceText.replace('₹', '').replace(/,/g, '')) || 1299;
+            const image = document.getElementById('mainImage')?.getAttribute('src') || 'https://vianta-demo.aamir68599.workers.dev/Banarasi%20cotton%20silk%20saree%20image%201%20(1).webp';
+
+            // Get selected color
+            const activeColor = document.querySelector('.color-option.active');
+            const color = activeColor ? activeColor.getAttribute('data-color') || activeColor.textContent.trim().split(' ')[0] : 'Green';
+
+            return {
+                name: name,
+                price: price,
+                originalPrice: 5999,
+                image: image,
+                color: color,
+                meta: 'Kanjivaram Soft Silk'
+            };
+        }
+
+        // ---- Handle Add to Cart button ----
+        function handleAddToCart() {
+            const product = getCurrentProduct();
+            const success = addToCart(product);
+            if (success) {
+                showToast(product.name + ' added to cart!');
+                // Update badge immediately
+                updateCartBadge();
+            }
+        }
+
+        // ---- Handle Buy Now button ----
+        function handleBuyNow() {
+            const product = getCurrentProduct();
+            // Add to cart first
+            addToCart(product);
+            // Then redirect to checkout
+            window.location.href = 'checkout.html';
+        }
+
+        // ---- Initialize on page load ----
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update cart badge
+            updateCartBadge();
+
+            // ---- Thumbnail click to change main image ----
+            const thumbs = document.querySelectorAll('.product-thumbnails .thumb');
+            const mainImage = document.getElementById('mainImage');
+
+            thumbs.forEach(function(thumb) {
+                thumb.addEventListener('click', function() {
+                    thumbs.forEach(function(t) { t.classList.remove('active'); });
+                    this.classList.add('active');
+                    const imgSrc = this.getAttribute('data-img');
+                    if (imgSrc) {
+                        mainImage.setAttribute('src', imgSrc);
+                    }
+                });
+            });
+
+            // ---- Accordion toggle ----
+            window.toggleDetail = function(headerEl) {
+                const body = headerEl.nextElementSibling;
+                const icon = headerEl.querySelector('i');
+                if (body.classList.contains('open')) {
+                    body.classList.remove('open');
+                    headerEl.classList.remove('open');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    body.classList.add('open');
+                    headerEl.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            };
+
+            // ---- Color option click ----
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(function(opt) {
+                opt.addEventListener('click', function() {
+                    colorOptions.forEach(function(o) { o.classList.remove('active'); });
+                    this.classList.add('active');
+                    // Update price based on color
+                    const priceTag = this.querySelector('.price-tag');
+                    if (priceTag) {
+                        const priceText = priceTag.textContent.trim().replace('₹', '');
+                        const price = parseFloat(priceText) || 1299;
+                        const priceEl = document.getElementById('productPrice');
+                        if (priceEl) {
+                            priceEl.textContent = '₹' + price.toFixed(2);
+                        }
+                    }
+                });
             });
         });
+
+        // Expose functions globally
+        window.addToCart = addToCart;
+        window.getCart = getCart;
+        window.saveCart = saveCart;
+        window.updateCartBadge = updateCartBadge;
+        window.handleAddToCart = handleAddToCart;
+        window.handleBuyNow = handleBuyNow;
+        window.getCurrentProduct = getCurrentProduct;
+
+        console.log('🛒 Vianta Cart System loaded.');
+        console.log('📦 Use addToCart() or click "Add to Cart" button.');
     </script>
 
 </body>
