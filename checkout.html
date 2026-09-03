@@ -14,7 +14,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: #f7f2ed;
             display: flex;
@@ -24,7 +23,6 @@
             width: 100%;
             font-family: 'Inter', system-ui, sans-serif;
         }
-
         .wrapper {
             max-width: 1440px;
             width: 100%;
@@ -33,8 +31,6 @@
             padding: 0 2.5rem 2.5rem 2.5rem;
             border-radius: 0 0 2.5rem 2.5rem;
         }
-
-        /* ===== OFFER BANNER ===== */
         .offer-banner {
             background: #fcf8f5;
             color: #2c1810;
@@ -50,48 +46,29 @@
             align-items: center;
             gap: 0.6rem;
             flex-wrap: wrap;
-            font-weight: 400;
             border: 1px solid #e8dfd9;
-            background: #fcf8f5;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
             transition: all 0.2s;
             font-family: 'Inter', system-ui, sans-serif;
         }
         .offer-banner:hover {
             border-color: #d6c9c0;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
         }
         .offer-banner strong {
             font-weight: 600;
             color: #a67c6b;
-            background: transparent;
-            padding: 0 0.2rem;
             letter-spacing: 0.8px;
             font-size: 0.85rem;
         }
-        .offer-banner i {
-            color: #b8a69b;
-            margin: 0 0.1rem;
-            font-size: 0.7rem;
-        }
         .offer-banner span {
-            background: transparent;
+            background: #ffffff;
             padding: 0.15rem 0.7rem;
             border-radius: 40px;
             color: #3d2c24;
-            font-weight: 400;
             font-size: 0.8rem;
             border: 1px solid #e8dfd9;
-            background: #ffffff;
-            transition: all 0.2s;
-        }
-        .offer-banner span:hover {
-            background: #f3ede8;
-            border-color: #d6c9c0;
         }
         .offer-banner .highlight {
             background: #f3ede8;
-            color: #2c1810;
             border-color: #ddd2ca;
         }
         .offer-banner .sep {
@@ -108,16 +85,13 @@
             border-bottom: 1px solid #f0ebe6;
             flex-wrap: wrap;
             gap: 0.8rem;
-            position: relative;
         }
-
         .brand {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
         }
-
         .brand-icon {
             width: 50px;
             height: 50px;
@@ -141,7 +115,6 @@
             object-fit: cover;
             display: block;
         }
-
         .brand-name {
             display: flex;
             flex-direction: column;
@@ -153,7 +126,6 @@
             font-weight: 600;
             letter-spacing: 1.2px;
             color: #2c1810;
-            transition: color 0.3s;
         }
         .brand-name .brand-title span {
             font-weight: 400;
@@ -161,23 +133,19 @@
             font-style: italic;
         }
         .brand-name .brand-sub {
-            font-family: 'Inter', system-ui, sans-serif;
             font-size: 0.55rem;
             font-weight: 500;
             letter-spacing: 2.4px;
             text-transform: uppercase;
             color: #a67c6b;
-            margin-top: -0.1rem;
             opacity: 0.7;
         }
-
         .top-actions {
             display: flex;
             align-items: center;
             gap: 0.6rem;
             flex-wrap: wrap;
         }
-
         .search-wrap {
             display: flex;
             align-items: center;
@@ -194,15 +162,6 @@
             background: #ffffff;
             box-shadow: 0 0 0 5px rgba(166, 124, 107, 0.08);
         }
-        .search-wrap i {
-            color: #a67c6b;
-            font-size: 0.8rem;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        .search-wrap:focus-within i {
-            opacity: 1;
-        }
         .search-wrap input {
             border: none;
             background: transparent;
@@ -217,21 +176,17 @@
         .search-wrap input::placeholder {
             color: #ab988b;
             font-weight: 300;
-            letter-spacing: 0.3px;
         }
-
         .icon-group {
             display: flex;
             align-items: center;
             gap: 1.2rem;
             color: #2c1810;
             font-size: 1.1rem;
-            margin-left: 0.2rem;
         }
         .icon-group .icon-item {
             position: relative;
             cursor: pointer;
-            transition: color 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             color: #3d2c24;
             display: flex;
             align-items: center;
@@ -239,26 +194,21 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: transparent;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         .icon-group .icon-item:hover {
             color: #a67c6b;
             background: rgba(166, 124, 107, 0.08);
             transform: translateY(-2px) scale(1.05);
         }
-        .icon-group .icon-item i {
-            font-size: 1.1rem;
-        }
         .icon-group .badge-dot::after {
-            content: '1';
+            content: attr(data-count);
             position: absolute;
             top: 0px;
             right: 0px;
             background: #a67c6b;
             color: #ffffff;
-            font-family: 'Inter', system-ui, sans-serif;
             font-size: 0.45rem;
             font-weight: 700;
             padding: 0.1rem 0.35rem;
@@ -268,7 +218,6 @@
             min-width: 16px;
             text-align: center;
         }
-
         .bottom-header {
             display: flex;
             justify-content: center;
@@ -276,9 +225,7 @@
             padding: 0.5rem 0 0.2rem 0;
             border-bottom: 1px solid #f0ebe6;
             flex-wrap: wrap;
-            position: relative;
         }
-
         .main-menu {
             display: flex;
             gap: 0.2rem;
@@ -299,45 +246,22 @@
             padding: 0.45rem 1.1rem;
             border-radius: 40px;
             transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
             font-weight: 500;
             letter-spacing: 0.8px;
             font-size: 0.72rem;
         }
-        .main-menu a::before {
-            content: '';
-            position: absolute;
-            bottom: 0.2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0%;
-            height: 2.5px;
-            background: #a67c6b;
-            border-radius: 4px;
-            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            opacity: 0.6;
-        }
         .main-menu a:hover {
             color: #a67c6b;
             background: rgba(166, 124, 107, 0.06);
-        }
-        .main-menu a:hover::before {
-            width: 40%;
         }
         .main-menu a.active {
             color: #ffffff;
             background: #a67c6b;
             box-shadow: 0 4px 16px rgba(166, 124, 107, 0.3);
         }
-        .main-menu a.active::before {
-            display: none;
-        }
         .main-menu a.active:hover {
             background: #8b6b5b;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 24px rgba(166, 124, 107, 0.4);
         }
-
         .more-dropdown {
             display: flex;
             align-items: center;
@@ -349,8 +273,7 @@
             font-weight: 500;
             letter-spacing: 0.8px;
             font-size: 0.72rem;
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            background: transparent;
+            transition: all 0.35s;
             border: 1.5px solid transparent;
         }
         .more-dropdown:hover {
@@ -362,7 +285,7 @@
             font-size: 0.5rem;
             margin-left: 0.1rem;
             color: #a67c6b;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.4s;
         }
         .more-dropdown:hover i {
             transform: rotate(180deg);
@@ -376,7 +299,6 @@
             .main-menu a { padding: 0.35rem 0.9rem; font-size: 0.65rem; }
             .more-dropdown { padding: 0.35rem 0.9rem; font-size: 0.65rem; }
         }
-
         @media screen and (max-width: 860px) {
             .wrapper { padding: 0 1rem 1.5rem 1rem; }
             .top-header { flex-direction: column; align-items: stretch; gap: 0.5rem; padding: 0.6rem 0 0.4rem 0; }
@@ -386,17 +308,14 @@
             .top-actions { flex-direction: column; align-items: stretch; gap: 0.5rem; width: 100%; }
             .search-wrap { width: 100%; min-width: unset; padding: 0.3rem 1rem 0.3rem 1.2rem; }
             .search-wrap input { width: 100%; font-size: 0.78rem; }
-            .icon-group { justify-content: center; gap: 1rem; margin-left: 0; }
-            .icon-group .icon-item { width: 36px; height: 36px; }
+            .icon-group { justify-content: center; gap: 1rem; }
             .bottom-header { padding: 0.3rem 0 0.2rem 0; }
             .main-menu { gap: 0.1rem; font-size: 0.6rem; }
             .main-menu a { padding: 0.3rem 0.7rem; font-size: 0.6rem; letter-spacing: 0.5px; }
             .more-dropdown { padding: 0.3rem 0.7rem; font-size: 0.6rem; }
             .offer-banner { font-size: 0.7rem; padding: 0.3rem 0.6rem; gap: 0.3rem; }
             .offer-banner span { font-size: 0.7rem; padding: 0.1rem 0.5rem; }
-            .offer-banner strong { font-size: 0.75rem; }
         }
-
         @media screen and (max-width: 480px) {
             .wrapper { padding: 0 0.5rem 1rem 0.5rem; }
             .brand-icon { width: 40px; height: 40px; }
@@ -408,16 +327,11 @@
             .icon-group .badge-dot::after { font-size: 0.4rem; padding: 0.05rem 0.3rem; min-width: 14px; top: -1px; right: -1px; }
             .search-wrap { padding: 0.25rem 0.8rem 0.25rem 1rem; }
             .search-wrap input { font-size: 0.72rem; padding: 0.15rem 0; }
-            .search-wrap i { font-size: 0.7rem; }
             .main-menu { gap: 0.05rem; font-size: 0.5rem; }
             .main-menu a { padding: 0.2rem 0.5rem; font-size: 0.5rem; letter-spacing: 0.3px; border-radius: 30px; }
             .more-dropdown { padding: 0.2rem 0.5rem; font-size: 0.5rem; letter-spacing: 0.3px; }
-            .more-dropdown i { font-size: 0.4rem; }
             .offer-banner { font-size: 0.6rem; padding: 0.2rem 0.4rem; gap: 0.2rem; border-radius: 40px; }
             .offer-banner span { font-size: 0.6rem; padding: 0.05rem 0.4rem; }
-            .offer-banner strong { font-size: 0.65rem; }
-            .offer-banner i { font-size: 0.55rem; }
-            .offer-banner .sep { font-size: 0.3rem; }
         }
 
         /* ===== BREADCRUMB ===== */
@@ -451,7 +365,6 @@
             margin-top: 1.5rem;
             padding: 0 0.2rem;
         }
-
         .checkout-section h1 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
@@ -460,20 +373,16 @@
             margin-bottom: 1.5rem;
             letter-spacing: 0.5px;
         }
-
         .checkout-grid {
             display: grid;
             grid-template-columns: 1fr 380px;
             gap: 2rem;
         }
-
-        /* ---- checkout form ---- */
         .checkout-form {
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
         }
-
         .form-section {
             background: #faf6f2;
             border-radius: 1.2rem;
@@ -493,7 +402,6 @@
         .form-section h3 i {
             color: #a67c6b;
         }
-
         .form-group {
             margin-bottom: 1rem;
         }
@@ -507,7 +415,8 @@
         .form-group label .required {
             color: #e74c3c;
         }
-        .form-group input, .form-group select {
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 0.6rem 0.8rem;
             border: 1px solid #e2d6ce;
@@ -518,7 +427,8 @@
             transition: border-color 0.3s, box-shadow 0.3s;
             outline: none;
         }
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             border-color: #a67c6b;
             box-shadow: 0 0 0 3px rgba(166, 124, 107, 0.1);
         }
@@ -528,7 +438,7 @@
             gap: 0.8rem;
         }
 
-        /* ---- order summary (checkout) ---- */
+        /* ===== CHECKOUT SUMMARY ===== */
         .checkout-summary {
             background: #faf6f2;
             border-radius: 1.2rem;
@@ -538,7 +448,6 @@
             position: sticky;
             top: 1.5rem;
         }
-
         .checkout-summary h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
@@ -548,7 +457,6 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #e2d6ce;
         }
-
         .checkout-summary .summary-item {
             display: flex;
             gap: 0.8rem;
@@ -557,8 +465,8 @@
             align-items: center;
         }
         .checkout-summary .summary-item img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 0.5rem;
             object-fit: contain;
             background: #f5f0eb;
@@ -568,12 +476,16 @@
             flex: 1;
         }
         .checkout-summary .summary-item .item-info h4 {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: #2c1810;
         }
+        .checkout-summary .summary-item .item-info .item-meta {
+            font-size: 0.7rem;
+            color: #7a685c;
+        }
         .checkout-summary .summary-item .item-info .item-price {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #a67c6b;
             font-weight: 600;
         }
@@ -581,7 +493,6 @@
             font-size: 0.7rem;
             color: #7a685c;
         }
-
         .checkout-summary .summary-row {
             display: flex;
             justify-content: space-between;
@@ -604,7 +515,6 @@
             color: #a67c6b;
             font-size: 1.2rem;
         }
-
         .checkout-summary .place-order-btn {
             display: block;
             width: 100%;
@@ -627,7 +537,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
         }
-
         .checkout-summary .secure-badge {
             text-align: center;
             margin-top: 0.8rem;
@@ -639,7 +548,7 @@
             margin-right: 0.3rem;
         }
 
-        /* ---- success message ---- */
+        /* ===== ORDER SUCCESS ===== */
         .order-success {
             display: none;
             text-align: center;
@@ -671,6 +580,42 @@
             transition: all 0.35s;
         }
         .order-success .continue-btn:hover {
+            background: #8a6555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(166, 124, 107, 0.35);
+        }
+
+        /* ===== EMPTY CHECKOUT ===== */
+        .empty-checkout {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .empty-checkout i {
+            font-size: 4rem;
+            color: #d6c9c0;
+            margin-bottom: 1rem;
+        }
+        .empty-checkout h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #2c1810;
+            margin-bottom: 0.5rem;
+        }
+        .empty-checkout p {
+            color: #7a685c;
+            margin-bottom: 1.5rem;
+        }
+        .empty-checkout .shop-now {
+            display: inline-block;
+            padding: 0.7rem 2.5rem;
+            background: #a67c6b;
+            color: #ffffff;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.35s;
+        }
+        .empty-checkout .shop-now:hover {
             background: #8a6555;
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(166, 124, 107, 0.35);
@@ -843,20 +788,17 @@
             .wrapper { padding: 0 1.8rem 1.8rem 1.8rem; }
             .footer { grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
         }
-
         @media screen and (max-width: 1024px) {
             .checkout-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .footer { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .checkout-summary { position: static; }
         }
-
         @media screen and (max-width: 860px) {
             .wrapper { padding: 0 1rem 1.5rem 1rem; }
             .footer { grid-template-columns: 1fr 1fr; gap: 1.2rem; padding: 1.5rem 0.8rem; }
             .checkout-section h1 { font-size: 1.4rem; }
             .form-group .form-row { grid-template-columns: 1fr; }
         }
-
         @media screen and (max-width: 480px) {
             .wrapper { padding: 0 0.5rem 1rem 0.5rem; }
             .form-section { padding: 1rem; }
@@ -880,11 +822,11 @@
         <div class="offer-banner">
             <i class="fas fa-tag" style="color:#a67c6b;"></i>
             <strong>OFFER</strong>
-            <span class="highlight">UP TO 68% OFF</span>
+            <span class="highlight">78% OFF</span>
             <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
-            <span>HALF SAREE</span>
+            <span>KANJIVARAM SILK</span>
             <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
-            <span>SOUTH INDIAN</span>
+            <span>SOFT LICHI</span>
         </div>
 
         <!-- ========== HEADER ========== -->
@@ -906,7 +848,7 @@
                 <div class="icon-group">
                     <a href="#" class="icon-item" aria-label="Account"><i class="fas fa-user-circle"></i></a>
                     <a href="#" class="icon-item" aria-label="Wishlist"><i class="fas fa-heart"></i></a>
-                    <a href="cart.html" class="icon-item badge-dot" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="cart.html" class="icon-item badge-dot" data-count="0" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </div>
         </header>
@@ -919,7 +861,7 @@
                 <a href="#">Best Selling</a>
                 <a href="#">All Products</a>
                 <a href="#">Cotton Saree</a>
-                <a href="#">Kanjiveram Silk</a>
+                <a href="#" class="active">Kanjivaram Silk</a>
                 <span class="more-dropdown">
                     More <i class="fas fa-chevron-down"></i>
                 </span>
@@ -1026,40 +968,11 @@
                     </div>
 
                     <!-- Order Summary -->
-                    <div class="checkout-summary">
+                    <div class="checkout-summary" id="checkoutSummary">
                         <h3>Order Summary</h3>
-
-                        <div class="summary-item">
-                            <img src="https://vianta-demo.aamir68599.workers.dev/Kanjivaram%20image%201.webp" alt="Half Saree" />
-                            <div class="item-info">
-                                <h4>New Traditional South Indian Half Saree</h4>
-                                <div class="item-price">₹949.00</div>
-                            </div>
-                            <div class="item-qty">x1</div>
-                        </div>
-
-                        <div class="summary-row">
-                            <span>Subtotal</span>
-                            <span class="amount">₹949.00</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Delivery</span>
-                            <span class="amount" style="color:#27ae60;">FREE</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Discount</span>
-                            <span class="amount" style="color:#e74c3c;">−₹2,050.00</span>
-                        </div>
-
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span class="amount">₹949.00</span>
-                        </div>
-
-                        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
-
-                        <div class="secure-badge">
-                            <i class="fas fa-lock"></i> Secure checkout · 100% protected
+                        <!-- Summary content rendered by JavaScript -->
+                        <div id="summaryContent">
+                            <!-- Dynamic content -->
                         </div>
                     </div>
 
@@ -1141,15 +1054,133 @@
     </div>
 
     <script>
+        // ================================================================
+        // CHECKOUT LOGIC - Reads from localStorage and renders dynamically
+        // ================================================================
+
+        const CHECKOUT_KEY = 'vianta_checkout_item';
+        const CART_KEY = 'vianta_cart';
+
+        function getCheckoutItem() {
+            try {
+                const data = localStorage.getItem(CHECKOUT_KEY);
+                return data ? JSON.parse(data) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function getCart() {
+            try {
+                const data = localStorage.getItem(CART_KEY);
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function updateCartBadge() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.querySelector('.badge-dot');
+            if (badge) {
+                badge.setAttribute('data-count', totalItems);
+            }
+        }
+
+        // ---- Render checkout summary ----
+        function renderCheckout() {
+            const item = getCheckoutItem();
+            const container = document.getElementById('summaryContent');
+            const checkoutContent = document.getElementById('checkoutContent');
+
+            if (!container) return;
+
+            // If no checkout item, try to get from cart (fallback)
+            let product = item;
+            if (!product) {
+                const cart = getCart();
+                if (cart.length > 0) {
+                    product = cart[0];
+                }
+            }
+
+            if (!product) {
+                // Show empty state
+                checkoutContent.innerHTML = `
+                    <div class="empty-checkout">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>No items to checkout</h3>
+                        <p>Please add items to your cart first.</p>
+                        <a href="index.html" class="shop-now">Start Shopping</a>
+                    </div>
+                `;
+                return;
+            }
+
+            // Build summary HTML
+            const price = product.price || 0;
+            const originalPrice = product.originalPrice || price;
+            const qty = product.quantity || 1;
+            const total = price * qty;
+            const discount = (originalPrice - price) * qty;
+            const imageUrl = product.image || 'https://vianta-demo.aamir68599.workers.dev/Banarasi%20cotton%20silk%20saree%20image%201%20(1).webp';
+            const name = product.name || 'SGF11 Women\'s Kanjivaram Soft Lichi Silk Saree';
+            const color = product.color || 'Green';
+            const meta = product.meta || 'Kanjivaram Soft Silk';
+
+            let html = `
+                <div class="summary-item">
+                    <img src="${imageUrl}" alt="${name}" />
+                    <div class="item-info">
+                        <h4>${name}</h4>
+                        <div class="item-meta">${meta} · Colour: ${color}</div>
+                        <div class="item-price">₹${price.toFixed(2)} ${originalPrice > price ? `<span style="text-decoration:line-through;color:#b7a69b;font-size:0.7rem;font-weight:400;">₹${originalPrice.toFixed(2)}</span>` : ''}</div>
+                    </div>
+                    <div class="item-qty">x${qty}</div>
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="amount">₹${total.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span class="amount" style="color:#27ae60;">FREE</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span class="amount" style="color:#e74c3c;">−₹${discount.toFixed(2)}</span>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="amount">₹${total.toFixed(2)}</span>
+                </div>
+
+                <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+
+                <div class="secure-badge">
+                    <i class="fas fa-lock"></i> Secure checkout · 100% protected
+                </div>
+            `;
+
+            container.innerHTML = html;
+            updateCartBadge();
+
+            console.log('✅ Checkout rendered with product:', product.name);
+        }
+
+        // ---- Place Order ----
         function placeOrder() {
             // Simple validation
-            const name = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const address = document.getElementById('address').value.trim();
-            const city = document.getElementById('city').value.trim();
-            const state = document.getElementById('state').value.trim();
-            const pincode = document.getElementById('pincode').value.trim();
+            const name = document.getElementById('fullName')?.value?.trim() || '';
+            const email = document.getElementById('email')?.value?.trim() || '';
+            const phone = document.getElementById('phone')?.value?.trim() || '';
+            const address = document.getElementById('address')?.value?.trim() || '';
+            const city = document.getElementById('city')?.value?.trim() || '';
+            const state = document.getElementById('state')?.value?.trim() || '';
+            const pincode = document.getElementById('pincode')?.value?.trim() || '';
 
             if (!name || !email || !phone || !address || !city || !state || !pincode) {
                 alert('Please fill in all required fields.');
@@ -1160,9 +1191,23 @@
             document.getElementById('checkoutContent').style.display = 'none';
             document.getElementById('orderSuccess').style.display = 'block';
 
+            // Clear checkout item
+            localStorage.removeItem(CHECKOUT_KEY);
+
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // ---- Initialize on load ----
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCheckout();
+            updateCartBadge();
+        });
+
+        // Make functions globally accessible
+        window.placeOrder = placeOrder;
+
+        console.log('📋 Checkout page loaded. Reading from localStorage key: "' + CHECKOUT_KEY + '"');
     </script>
 
 </body>
