@@ -1013,7 +1013,7 @@
             border-radius: 60px;
             font-size: 0.9rem;
             font-family: 'Inter', sans-serif;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             z-index: 9999;
             animation: fadeInUp 0.4s ease;
             max-width: 90%;
@@ -1029,8 +1029,14 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
         }
 
         /* ================================================================
@@ -1770,6 +1776,10 @@
             if (success) {
                 showToast(product.name + ' added to cart!');
                 updateCartBadge();
+                // Redirect to cart page after a short delay
+                setTimeout(function() {
+                    window.location.href = 'cart.html';
+                }, 600);
             }
         }
 
@@ -1778,7 +1788,7 @@
             const product = getCurrentProduct();
             // Add to cart first
             addToCart(product);
-            // Then redirect to checkout
+            // Redirect to checkout page
             window.location.href = 'checkout.html';
         }
 
