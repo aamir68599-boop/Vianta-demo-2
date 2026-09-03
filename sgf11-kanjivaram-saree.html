@@ -1687,9 +1687,9 @@
             updateCartBadge();
         }
 
-        // ---- Generate unique ID based on product name and color ----
+        // ---- Generate unique ID ----
         function generateItemId(product) {
-            return product.name.replace(/\s+/g, '_').toLowerCase() + '_' + (product.color || 'default') + '_' + Date.now();
+            return product.name.replace(/\s+/g, '_').toLowerCase() + '_' + Date.now();
         }
 
         // ---- Update cart badge ----
@@ -1722,7 +1722,7 @@
 
             const cart = getCart();
 
-            // Check if product already exists (by name + color) to update quantity
+            // Check if product already exists (by name + color)
             const existingIndex = cart.findIndex(item =>
                 item.name === product.name && item.color === product.color
             );
@@ -1759,16 +1759,7 @@
             const activeColor = document.querySelector('.color-option.active');
             const color = activeColor ? activeColor.getAttribute('data-color') || activeColor.textContent.trim().split(' ')[0] : 'Green';
 
-            // Try to extract ASIN from the product details table for a unique identifier
-            let asin = '';
-            const asinRow = document.querySelector('.detail-body table tr:has(td:first-child:contains("ASIN"))');
-            if (asinRow) {
-                const asinCell = asinRow.querySelector('td:last-child');
-                if (asinCell) asin = asinCell.textContent.trim();
-            }
-
             return {
-                id: asin || generateItemId({ name, color }),
                 name: name,
                 price: price,
                 originalPrice: 5999,
