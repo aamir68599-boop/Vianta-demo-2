@@ -1687,9 +1687,9 @@
             updateCartBadge();
         }
 
-        // ---- Generate unique ID ----
+        // ---- Generate unique ID based on product name and color ----
         function generateItemId(product) {
-            return product.name.replace(/\s+/g, '_').toLowerCase() + '_' + Date.now();
+            return product.name.replace(/\s+/g, '_').toLowerCase() + '_' + (product.color || 'default') + '_' + Date.now();
         }
 
         // ---- Update cart badge ----
@@ -1722,7 +1722,7 @@
 
             const cart = getCart();
 
-            // Check if product already exists (by name + color)
+            // Check if product already exists (by name + color) to update quantity
             const existingIndex = cart.findIndex(item =>
                 item.name === product.name && item.color === product.color
             );
@@ -1759,7 +1759,16 @@
             const activeColor = document.querySelector('.color-option.active');
             const color = activeColor ? activeColor.getAttribute('data-color') || activeColor.textContent.trim().split(' ')[0] : 'Green';
 
+            // Try to extract ASIN from the product details table for a unique identifier
+            let asin = '';
+            const asinRow = document.querySelector('.detail-body table tr:has(td:first-child:contains("ASIN"))');
+            if (asinRow) {
+                const asinCell = asinRow.querySelector('td:last-child');
+                if (asinCell) asin = asinCell.textContent.trim();
+            }
+
             return {
+                id: asin || generateItemId({ name, color }),
                 name: name,
                 price: price,
                 originalPrice: 5999,
@@ -1776,7 +1785,7 @@
             if (success) {
                 showToast(product.name + ' added to cart!');
                 updateCartBadge();
-                // Redirect to cart page with product information
+                // Redirect to cart page after a short delay
                 setTimeout(function() {
                     window.location.href = 'cart.html';
                 }, 600);
@@ -1788,7 +1797,7 @@
             const product = getCurrentProduct();
             // Add to cart first
             addToCart(product);
-            // Redirect to checkout page with product information
+            // Redirect to checkout page
             window.location.href = 'checkout.html';
         }
 
