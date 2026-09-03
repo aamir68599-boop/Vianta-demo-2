@@ -1776,7 +1776,7 @@
             if (success) {
                 showToast(product.name + ' added to cart!');
                 updateCartBadge();
-                // Redirect to cart page after a short delay
+                // Redirect to cart page with product information
                 setTimeout(function() {
                     window.location.href = 'cart.html';
                 }, 600);
@@ -1788,7 +1788,7 @@
             const product = getCurrentProduct();
             // Add to cart first
             addToCart(product);
-            // Redirect to checkout page
+            // Redirect to checkout page with product information
             window.location.href = 'checkout.html';
         }
 
