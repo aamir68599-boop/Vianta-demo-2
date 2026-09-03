@@ -2001,7 +2001,7 @@
                 if (cp) colorPrice = parseFloat(cp) || price;
             }
 
-            // Build product object
+            // Build product object - THIS IS THE CORRECT SGF11 PRODUCT DATA
             return {
                 id: 'sgf11_kanjivaram_' + Date.now(),
                 name: name,
@@ -2013,7 +2013,11 @@
                 category: 'Kanjivaram Silk',
                 meta: 'Kanjivaram Soft Silk Saree with Blouse Piece',
                 quantity: 1,
-                url: window.location.href
+                url: window.location.href,
+                // Extra fields for cart/checkout display
+                shortName: 'SGF11 Kanjivaram Silk Saree',
+                material: 'Kanjivaram Soft Silk',
+                occasion: 'Festival, Wedding, Casual, Ceremony'
             };
         }
 
@@ -2042,7 +2046,10 @@
                     quantity: product.quantity || 1,
                     brand: product.brand || '',
                     category: product.category || '',
-                    meta: product.meta || ''
+                    meta: product.meta || '',
+                    shortName: product.shortName || '',
+                    material: product.material || '',
+                    occasion: product.occasion || ''
                 };
                 cart.push(newItem);
             }
@@ -2054,7 +2061,13 @@
         // ---- Save product for checkout (separate from cart) ----
         function saveCheckoutItem(product) {
             try {
-                localStorage.setItem(CHECKOUT_KEY, JSON.stringify(product));
+                // Save the full product data for checkout
+                const checkoutData = {
+                    ...product,
+                    id: product.id || 'sgf11_kanjivaram_' + Date.now(),
+                    quantity: 1
+                };
+                localStorage.setItem(CHECKOUT_KEY, JSON.stringify(checkoutData));
                 return true;
             } catch (e) {
                 console.warn('Could not save checkout item:', e);
@@ -2144,6 +2157,9 @@
                     }
                 });
             });
+
+            // ---- Debug: log current product data ----
+            console.log('🛒 Current product data:', getCurrentProduct());
         });
 
         // Expose functions globally
@@ -2157,8 +2173,9 @@
         window.saveCheckoutItem = saveCheckoutItem;
 
         console.log('🛒 Vianta Cart System loaded.');
-        console.log('📦 Use handleAddToCart() or handleBuyNow() buttons.');
+        console.log('📦 Product: SGF11 Women\'s Kanjivaram Soft Lichi Silk Saree');
         console.log('💡 Checkout item saved to localStorage key: "vianta_checkout_item"');
+        console.log('📋 Cart items saved to localStorage key: "vianta_cart"');
     </script>
 
 </body>
