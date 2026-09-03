@@ -14,7 +14,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: #f7f2ed;
             display: flex;
@@ -24,7 +23,6 @@
             width: 100%;
             font-family: 'Inter', system-ui, sans-serif;
         }
-
         .wrapper {
             max-width: 1440px;
             width: 100%;
@@ -33,8 +31,6 @@
             padding: 0 2.5rem 2.5rem 2.5rem;
             border-radius: 0 0 2.5rem 2.5rem;
         }
-
-        /* ===== OFFER BANNER ===== */
         .offer-banner {
             background: #fcf8f5;
             color: #2c1810;
@@ -50,48 +46,29 @@
             align-items: center;
             gap: 0.6rem;
             flex-wrap: wrap;
-            font-weight: 400;
             border: 1px solid #e8dfd9;
-            background: #fcf8f5;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
             transition: all 0.2s;
             font-family: 'Inter', system-ui, sans-serif;
         }
         .offer-banner:hover {
             border-color: #d6c9c0;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
         }
         .offer-banner strong {
             font-weight: 600;
             color: #a67c6b;
-            background: transparent;
-            padding: 0 0.2rem;
             letter-spacing: 0.8px;
             font-size: 0.85rem;
         }
-        .offer-banner i {
-            color: #b8a69b;
-            margin: 0 0.1rem;
-            font-size: 0.7rem;
-        }
         .offer-banner span {
-            background: transparent;
+            background: #ffffff;
             padding: 0.15rem 0.7rem;
             border-radius: 40px;
             color: #3d2c24;
-            font-weight: 400;
             font-size: 0.8rem;
             border: 1px solid #e8dfd9;
-            background: #ffffff;
-            transition: all 0.2s;
-        }
-        .offer-banner span:hover {
-            background: #f3ede8;
-            border-color: #d6c9c0;
         }
         .offer-banner .highlight {
             background: #f3ede8;
-            color: #2c1810;
             border-color: #ddd2ca;
         }
         .offer-banner .sep {
@@ -108,16 +85,13 @@
             border-bottom: 1px solid #f0ebe6;
             flex-wrap: wrap;
             gap: 0.8rem;
-            position: relative;
         }
-
         .brand {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
         }
-
         .brand-icon {
             width: 50px;
             height: 50px;
@@ -141,7 +115,6 @@
             object-fit: cover;
             display: block;
         }
-
         .brand-name {
             display: flex;
             flex-direction: column;
@@ -153,7 +126,6 @@
             font-weight: 600;
             letter-spacing: 1.2px;
             color: #2c1810;
-            transition: color 0.3s;
         }
         .brand-name .brand-title span {
             font-weight: 400;
@@ -161,23 +133,19 @@
             font-style: italic;
         }
         .brand-name .brand-sub {
-            font-family: 'Inter', system-ui, sans-serif;
             font-size: 0.55rem;
             font-weight: 500;
             letter-spacing: 2.4px;
             text-transform: uppercase;
             color: #a67c6b;
-            margin-top: -0.1rem;
             opacity: 0.7;
         }
-
         .top-actions {
             display: flex;
             align-items: center;
             gap: 0.6rem;
             flex-wrap: wrap;
         }
-
         .search-wrap {
             display: flex;
             align-items: center;
@@ -194,15 +162,6 @@
             background: #ffffff;
             box-shadow: 0 0 0 5px rgba(166, 124, 107, 0.08);
         }
-        .search-wrap i {
-            color: #a67c6b;
-            font-size: 0.8rem;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        .search-wrap:focus-within i {
-            opacity: 1;
-        }
         .search-wrap input {
             border: none;
             background: transparent;
@@ -217,21 +176,17 @@
         .search-wrap input::placeholder {
             color: #ab988b;
             font-weight: 300;
-            letter-spacing: 0.3px;
         }
-
         .icon-group {
             display: flex;
             align-items: center;
             gap: 1.2rem;
             color: #2c1810;
             font-size: 1.1rem;
-            margin-left: 0.2rem;
         }
         .icon-group .icon-item {
             position: relative;
             cursor: pointer;
-            transition: color 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             color: #3d2c24;
             display: flex;
             align-items: center;
@@ -239,26 +194,21 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: transparent;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         .icon-group .icon-item:hover {
             color: #a67c6b;
             background: rgba(166, 124, 107, 0.08);
             transform: translateY(-2px) scale(1.05);
         }
-        .icon-group .icon-item i {
-            font-size: 1.1rem;
-        }
         .icon-group .badge-dot::after {
-            content: '1';
+            content: attr(data-count);
             position: absolute;
             top: 0px;
             right: 0px;
             background: #a67c6b;
             color: #ffffff;
-            font-family: 'Inter', system-ui, sans-serif;
             font-size: 0.45rem;
             font-weight: 700;
             padding: 0.1rem 0.35rem;
@@ -268,7 +218,6 @@
             min-width: 16px;
             text-align: center;
         }
-
         .bottom-header {
             display: flex;
             justify-content: center;
@@ -276,9 +225,7 @@
             padding: 0.5rem 0 0.2rem 0;
             border-bottom: 1px solid #f0ebe6;
             flex-wrap: wrap;
-            position: relative;
         }
-
         .main-menu {
             display: flex;
             gap: 0.2rem;
@@ -299,45 +246,22 @@
             padding: 0.45rem 1.1rem;
             border-radius: 40px;
             transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
             font-weight: 500;
             letter-spacing: 0.8px;
             font-size: 0.72rem;
         }
-        .main-menu a::before {
-            content: '';
-            position: absolute;
-            bottom: 0.2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0%;
-            height: 2.5px;
-            background: #a67c6b;
-            border-radius: 4px;
-            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            opacity: 0.6;
-        }
         .main-menu a:hover {
             color: #a67c6b;
             background: rgba(166, 124, 107, 0.06);
-        }
-        .main-menu a:hover::before {
-            width: 40%;
         }
         .main-menu a.active {
             color: #ffffff;
             background: #a67c6b;
             box-shadow: 0 4px 16px rgba(166, 124, 107, 0.3);
         }
-        .main-menu a.active::before {
-            display: none;
-        }
         .main-menu a.active:hover {
             background: #8b6b5b;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 24px rgba(166, 124, 107, 0.4);
         }
-
         .more-dropdown {
             display: flex;
             align-items: center;
@@ -349,8 +273,7 @@
             font-weight: 500;
             letter-spacing: 0.8px;
             font-size: 0.72rem;
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            background: transparent;
+            transition: all 0.35s;
             border: 1.5px solid transparent;
         }
         .more-dropdown:hover {
@@ -362,7 +285,7 @@
             font-size: 0.5rem;
             margin-left: 0.1rem;
             color: #a67c6b;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.4s;
         }
         .more-dropdown:hover i {
             transform: rotate(180deg);
@@ -376,7 +299,6 @@
             .main-menu a { padding: 0.35rem 0.9rem; font-size: 0.65rem; }
             .more-dropdown { padding: 0.35rem 0.9rem; font-size: 0.65rem; }
         }
-
         @media screen and (max-width: 860px) {
             .wrapper { padding: 0 1rem 1.5rem 1rem; }
             .top-header { flex-direction: column; align-items: stretch; gap: 0.5rem; padding: 0.6rem 0 0.4rem 0; }
@@ -386,17 +308,14 @@
             .top-actions { flex-direction: column; align-items: stretch; gap: 0.5rem; width: 100%; }
             .search-wrap { width: 100%; min-width: unset; padding: 0.3rem 1rem 0.3rem 1.2rem; }
             .search-wrap input { width: 100%; font-size: 0.78rem; }
-            .icon-group { justify-content: center; gap: 1rem; margin-left: 0; }
-            .icon-group .icon-item { width: 36px; height: 36px; }
+            .icon-group { justify-content: center; gap: 1rem; }
             .bottom-header { padding: 0.3rem 0 0.2rem 0; }
             .main-menu { gap: 0.1rem; font-size: 0.6rem; }
             .main-menu a { padding: 0.3rem 0.7rem; font-size: 0.6rem; letter-spacing: 0.5px; }
             .more-dropdown { padding: 0.3rem 0.7rem; font-size: 0.6rem; }
             .offer-banner { font-size: 0.7rem; padding: 0.3rem 0.6rem; gap: 0.3rem; }
             .offer-banner span { font-size: 0.7rem; padding: 0.1rem 0.5rem; }
-            .offer-banner strong { font-size: 0.75rem; }
         }
-
         @media screen and (max-width: 480px) {
             .wrapper { padding: 0 0.5rem 1rem 0.5rem; }
             .brand-icon { width: 40px; height: 40px; }
@@ -408,16 +327,11 @@
             .icon-group .badge-dot::after { font-size: 0.4rem; padding: 0.05rem 0.3rem; min-width: 14px; top: -1px; right: -1px; }
             .search-wrap { padding: 0.25rem 0.8rem 0.25rem 1rem; }
             .search-wrap input { font-size: 0.72rem; padding: 0.15rem 0; }
-            .search-wrap i { font-size: 0.7rem; }
             .main-menu { gap: 0.05rem; font-size: 0.5rem; }
             .main-menu a { padding: 0.2rem 0.5rem; font-size: 0.5rem; letter-spacing: 0.3px; border-radius: 30px; }
             .more-dropdown { padding: 0.2rem 0.5rem; font-size: 0.5rem; letter-spacing: 0.3px; }
-            .more-dropdown i { font-size: 0.4rem; }
             .offer-banner { font-size: 0.6rem; padding: 0.2rem 0.4rem; gap: 0.2rem; border-radius: 40px; }
             .offer-banner span { font-size: 0.6rem; padding: 0.05rem 0.4rem; }
-            .offer-banner strong { font-size: 0.65rem; }
-            .offer-banner i { font-size: 0.55rem; }
-            .offer-banner .sep { font-size: 0.3rem; }
         }
 
         /* ===== BREADCRUMB ===== */
@@ -451,7 +365,6 @@
             margin-top: 1.5rem;
             padding: 0 0.2rem;
         }
-
         .cart-section h1 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
@@ -460,20 +373,16 @@
             margin-bottom: 1.5rem;
             letter-spacing: 0.5px;
         }
-
         .cart-grid {
             display: grid;
             grid-template-columns: 1fr 380px;
             gap: 2rem;
         }
-
-        /* ---- cart items ---- */
         .cart-items {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-
         .cart-item {
             display: flex;
             gap: 1.2rem;
@@ -488,7 +397,6 @@
             border-color: #e2d6ce;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
-
         .cart-item .item-image {
             width: 100px;
             height: 100px;
@@ -503,7 +411,6 @@
             object-fit: contain;
             display: block;
         }
-
         .cart-item .item-details {
             flex: 1;
         }
@@ -519,6 +426,15 @@
             color: #7a685c;
             margin-bottom: 0.2rem;
         }
+        .cart-item .item-details .item-color {
+            font-size: 0.75rem;
+            color: #7a685c;
+            margin-bottom: 0.2rem;
+        }
+        .cart-item .item-details .item-color span {
+            font-weight: 600;
+            color: #2c1810;
+        }
         .cart-item .item-details .item-price {
             font-size: 1rem;
             font-weight: 600;
@@ -531,7 +447,6 @@
             font-size: 0.8rem;
             margin-left: 0.3rem;
         }
-
         .cart-item .item-quantity {
             display: flex;
             align-items: center;
@@ -563,7 +478,6 @@
             min-width: 24px;
             text-align: center;
         }
-
         .cart-item .item-remove {
             background: none;
             border: none;
@@ -578,7 +492,7 @@
             transform: scale(1.1);
         }
 
-        /* ---- cart summary ---- */
+        /* ===== CART SUMMARY ===== */
         .cart-summary {
             background: #faf6f2;
             border-radius: 1.2rem;
@@ -588,7 +502,6 @@
             position: sticky;
             top: 1.5rem;
         }
-
         .cart-summary h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
@@ -598,7 +511,6 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #e2d6ce;
         }
-
         .cart-summary .summary-row {
             display: flex;
             justify-content: space-between;
@@ -621,7 +533,6 @@
             color: #a67c6b;
             font-size: 1.2rem;
         }
-
         .cart-summary .coupon-section {
             display: flex;
             gap: 0.5rem;
@@ -657,7 +568,6 @@
             background: #8a6555;
             transform: translateY(-2px);
         }
-
         .cart-summary .checkout-btn {
             display: block;
             width: 100%;
@@ -682,7 +592,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
         }
-
         .cart-summary .continue-shopping {
             display: block;
             text-align: center;
@@ -697,7 +606,7 @@
             text-decoration: underline;
         }
 
-        /* empty cart */
+        /* ===== EMPTY CART ===== */
         .empty-cart {
             text-align: center;
             padding: 3rem 1rem;
@@ -731,6 +640,37 @@
             background: #8a6555;
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(166, 124, 107, 0.35);
+        }
+
+        /* ===== TOAST ===== */
+        .cart-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c1810;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            animation: fadeInUp 0.4s ease;
+            max-width: 90%;
+            text-align: center;
+            display: none;
+        }
+        .cart-toast.show {
+            display: block;
+        }
+        .cart-toast i {
+            color: #a67c6b;
+            margin-right: 10px;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
         /* ===== FOOTER ===== */
@@ -900,13 +840,11 @@
             .wrapper { padding: 0 1.8rem 1.8rem 1.8rem; }
             .footer { grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
         }
-
         @media screen and (max-width: 1024px) {
             .cart-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .footer { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .cart-summary { position: static; }
         }
-
         @media screen and (max-width: 860px) {
             .wrapper { padding: 0 1rem 1.5rem 1rem; }
             .cart-item { flex-wrap: wrap; }
@@ -914,7 +852,6 @@
             .footer { grid-template-columns: 1fr 1fr; gap: 1.2rem; padding: 1.5rem 0.8rem; }
             .cart-section h1 { font-size: 1.4rem; }
         }
-
         @media screen and (max-width: 480px) {
             .wrapper { padding: 0 0.5rem 1rem 0.5rem; }
             .cart-item { padding: 0.8rem; gap: 0.8rem; }
@@ -940,11 +877,11 @@
         <div class="offer-banner">
             <i class="fas fa-tag" style="color:#a67c6b;"></i>
             <strong>OFFER</strong>
-            <span class="highlight">UP TO 68% OFF</span>
+            <span class="highlight">78% OFF</span>
             <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
-            <span>HALF SAREE</span>
+            <span>KANJIVARAM SILK</span>
             <i class="fas fa-circle sep" style="font-size:0.3rem; color:#d6c9c0;"></i>
-            <span>SOUTH INDIAN</span>
+            <span>SOFT LICHI</span>
         </div>
 
         <!-- ========== HEADER ========== -->
@@ -966,7 +903,7 @@
                 <div class="icon-group">
                     <a href="#" class="icon-item" aria-label="Account"><i class="fas fa-user-circle"></i></a>
                     <a href="#" class="icon-item" aria-label="Wishlist"><i class="fas fa-heart"></i></a>
-                    <a href="cart.html" class="icon-item badge-dot" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="cart.html" class="icon-item badge-dot" data-count="0" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </div>
         </header>
@@ -979,7 +916,7 @@
                 <a href="#">Best Selling</a>
                 <a href="#">All Products</a>
                 <a href="#">Cotton Saree</a>
-                <a href="#">Kanjiveram Silk</a>
+                <a href="#" class="active">Kanjivaram Silk</a>
                 <span class="more-dropdown">
                     More <i class="fas fa-chevron-down"></i>
                 </span>
@@ -998,30 +935,9 @@
 
             <div class="cart-grid">
 
-                <!-- Cart Items -->
-                <div class="cart-items">
-                    <!-- Cart Item -->
-                    <div class="cart-item">
-                        <div class="item-image">
-                            <img src="https://vianta-demo.aamir68599.workers.dev/Kanjivaram%20image%201.webp" alt="Half Saree" />
-                        </div>
-                        <div class="item-details">
-                            <h4>New Traditional South Indian Half Saree</h4>
-                            <div class="item-meta">Firoji · Lichi Silk</div>
-                            <div class="item-price">₹949 <span class="original">₹2,999</span></div>
-                            <div class="item-quantity">
-                                <button onclick="updateQty(this, -1)">−</button>
-                                <span id="qtyDisplay">1</span>
-                                <button onclick="updateQty(this, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="item-remove" onclick="removeItem(this)" aria-label="Remove item">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <!-- Additional cart item example (commented for single product) -->
-                    <!-- More items can be added here -->
+                <!-- Cart Items Container -->
+                <div class="cart-items" id="cartItemsContainer">
+                    <!-- Items will be rendered by JavaScript -->
                 </div>
 
                 <!-- Cart Summary -->
@@ -1030,7 +946,7 @@
 
                     <div class="summary-row">
                         <span>Subtotal</span>
-                        <span class="amount" id="subtotal">₹949.00</span>
+                        <span class="amount" id="subtotal">₹0.00</span>
                     </div>
                     <div class="summary-row">
                         <span>Delivery</span>
@@ -1038,7 +954,7 @@
                     </div>
                     <div class="summary-row">
                         <span>Discount</span>
-                        <span class="amount" style="color:#e74c3c;">−₹2,050.00</span>
+                        <span class="amount" style="color:#e74c3c;" id="discountAmount">−₹0.00</span>
                     </div>
 
                     <div class="coupon-section">
@@ -1048,10 +964,10 @@
 
                     <div class="summary-row total">
                         <span>Total</span>
-                        <span class="amount" id="total">₹949.00</span>
+                        <span class="amount" id="total">₹0.00</span>
                     </div>
 
-                    <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+                    <a href="checkout.html" class="checkout-btn" id="checkoutBtn">Proceed to Checkout</a>
                     <a href="index.html" class="continue-shopping"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
                 </div>
 
@@ -1131,57 +1047,163 @@
 
     </div>
 
+    <!-- ===== TOAST ===== -->
+    <div class="cart-toast" id="cartToast">
+        <i class="fas fa-check-circle"></i> <span id="toastMessage">Item removed from cart!</span>
+    </div>
+
     <script>
-        // Update quantity
-        function updateQty(btn, delta) {
-            const item = btn.closest('.cart-item');
-            const qtySpan = item.querySelector('#qtyDisplay');
-            let qty = parseInt(qtySpan.textContent) + delta;
-            if (qty < 1) qty = 1;
-            qtySpan.textContent = qty;
-            updateSummary();
+        // ================================================================
+        // CART LOGIC - Reads from localStorage and renders dynamically
+        // ================================================================
+
+        const CART_KEY = 'vianta_cart';
+
+        function getCart() {
+            try {
+                const data = localStorage.getItem(CART_KEY);
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                return [];
+            }
         }
 
-        // Remove item
-        function removeItem(btn) {
-            const item = btn.closest('.cart-item');
-            item.style.transition = 'all 0.3s ease';
-            item.style.opacity = '0';
-            item.style.transform = 'translateX(20px)';
-            setTimeout(function() {
-                item.remove();
-                updateSummary();
-                // If no items left, show empty state
-                const itemsContainer = document.querySelector('.cart-items');
-                if (itemsContainer.children.length === 0) {
-                    itemsContainer.innerHTML = `
-                        <div class="empty-cart">
-                            <i class="fas fa-shopping-bag"></i>
-                            <h3>Your cart is empty</h3>
-                            <p>Looks like you haven't added any items yet.</p>
-                            <a href="index.html" class="shop-now">Start Shopping</a>
-                        </div>
-                    `;
-                    document.querySelector('.cart-summary .checkout-btn').style.display = 'none';
-                    document.querySelector('.cart-summary .continue-shopping').textContent = 'Continue Shopping';
-                }
-            }, 300);
+        function saveCart(cart) {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+            updateCartBadge();
+            renderCart();
         }
 
-        // Update summary totals
-        function updateSummary() {
-            const items = document.querySelectorAll('.cart-item');
+        function updateCartBadge() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.querySelector('.badge-dot');
+            if (badge) {
+                badge.setAttribute('data-count', totalItems);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('cartToast');
+            const msgEl = document.getElementById('toastMessage');
+            if (toast && msgEl) {
+                msgEl.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(toast._timeout);
+                toast._timeout = setTimeout(function() {
+                    toast.classList.remove('show');
+                }, 2500);
+            }
+        }
+
+        // ---- Render cart items ----
+        function renderCart() {
+            const container = document.getElementById('cartItemsContainer');
+            const cart = getCart();
+
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Looks like you haven't added any items yet.</p>
+                        <a href="index.html" class="shop-now">Start Shopping</a>
+                    </div>
+                `;
+                document.getElementById('subtotal').textContent = '₹0.00';
+                document.getElementById('discountAmount').textContent = '−₹0.00';
+                document.getElementById('total').textContent = '₹0.00';
+                document.getElementById('checkoutBtn').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('checkoutBtn').style.display = 'block';
+
+            let html = '';
             let subtotal = 0;
-            items.forEach(function(item) {
-                const qtySpan = item.querySelector('#qtyDisplay');
-                const priceText = item.querySelector('.item-price').textContent.trim();
-                const price = parseFloat(priceText.replace('₹', '').replace(',', ''));
-                const qty = parseInt(qtySpan.textContent);
-                subtotal += price * qty;
+            let totalDiscount = 0;
+
+            cart.forEach((item, index) => {
+                const price = item.price || 0;
+                const qty = item.quantity || 1;
+                const originalPrice = item.originalPrice || price;
+                const itemTotal = price * qty;
+                const itemDiscount = (originalPrice - price) * qty;
+                subtotal += itemTotal;
+                totalDiscount += itemDiscount;
+
+                const colorDisplay = item.color ? `<span style="font-weight:600;color:#2c1810;">${item.color}</span>` : '';
+                const metaDisplay = item.meta || 'Kanjivaram Soft Silk';
+
+                html += `
+                    <div class="cart-item" data-index="${index}">
+                        <div class="item-image">
+                            <img src="${item.image || 'https://vianta-demo.aamir68599.workers.dev/Banarasi%20cotton%20silk%20saree%20image%201%20(1).webp'}" alt="${item.name}" />
+                        </div>
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <div class="item-meta">${metaDisplay}</div>
+                            <div class="item-color">Colour: ${colorDisplay}</div>
+                            <div class="item-price">
+                                ₹${price.toFixed(2)}
+                                ${originalPrice > price ? `<span class="original">₹${originalPrice.toFixed(2)}</span>` : ''}
+                            </div>
+                            <div class="item-quantity">
+                                <button onclick="updateQuantity(${index}, -1)">−</button>
+                                <span id="qty_${index}">${qty}</span>
+                                <button onclick="updateQuantity(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="item-remove" onclick="removeItem(${index})" aria-label="Remove item">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
             });
+
+            container.innerHTML = html;
+
+            // Update summary
             document.getElementById('subtotal').textContent = '₹' + subtotal.toFixed(2);
+            document.getElementById('discountAmount').textContent = '−₹' + totalDiscount.toFixed(2);
             document.getElementById('total').textContent = '₹' + subtotal.toFixed(2);
+
+            updateCartBadge();
         }
+
+        // ---- Update quantity ----
+        function updateQuantity(index, delta) {
+            const cart = getCart();
+            if (index < 0 || index >= cart.length) return;
+            const newQty = (cart[index].quantity || 1) + delta;
+            if (newQty < 1) return;
+            cart[index].quantity = newQty;
+            saveCart(cart);
+        }
+
+        // ---- Remove item ----
+        function removeItem(index) {
+            const cart = getCart();
+            if (index < 0 || index >= cart.length) return;
+            const removed = cart.splice(index, 1);
+            saveCart(cart);
+            showToast(removed[0]?.name + ' removed from cart!');
+        }
+
+        // ---- Initialize on load ----
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCart();
+            updateCartBadge();
+        });
+
+        // Make functions globally accessible for inline onclick
+        window.updateQuantity = updateQuantity;
+        window.removeItem = removeItem;
+        window.getCart = getCart;
+
+        console.log('🛒 Cart page loaded. Reading from localStorage key: "' + CART_KEY + '"');
     </script>
 
 </body>
