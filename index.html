@@ -1268,79 +1268,7 @@
             gap: 1.4rem;
         }
 
-        .spotlight-card {
-            background: #ffffff;
-            border-radius: 1.2rem;
-            overflow: hidden;
-            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: pointer;
-            border: 1px solid #f0ebe6;
-            position: relative;
-        }
-        .spotlight-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
-            border-color: #e2d6ce;
-        }
-
-        .spotlight-card .spotlight-image {
-            width: 100%;
-            aspect-ratio: 1/1;
-            overflow: hidden;
-            background: #f5f0eb;
-        }
-        .spotlight-card .spotlight-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .spotlight-card:hover .spotlight-image img {
-            transform: scale(1.05);
-        }
-
-        .spotlight-card .spotlight-badge {
-            position: absolute;
-            top: 0.8rem;
-            left: 0.8rem;
-            background: #a67c6b;
-            color: #ffffff;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 0.25rem 0.9rem;
-            border-radius: 30px;
-            letter-spacing: 0.6px;
-            box-shadow: 0 2px 10px rgba(166, 124, 107, 0.3);
-        }
-
-        .spotlight-card .spotlight-info {
-            padding: 0.8rem 1rem 1.1rem 1rem;
-            text-align: center;
-        }
-        .spotlight-card .spotlight-info h4 {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #2c1810;
-            margin-bottom: 0.3rem;
-            line-height: 1.3;
-            letter-spacing: 0.3px;
-        }
-        .spotlight-card .spotlight-info .offer-tag-spotlight {
-            display: inline-block;
-            background: #e8dfd9;
-            color: #2c1810;
-            font-size: 0.65rem;
-            font-weight: 600;
-            padding: 0.15rem 0.7rem;
-            border-radius: 30px;
-            letter-spacing: 0.6px;
-        }
-        .spotlight-card .spotlight-info .offer-tag-spotlight.highlight {
-            background: #a67c6b;
-            color: #ffffff;
-        }
+        /* we keep .spotlight-grid but now we place .arrival-card inside */
 
         /* ===== VIDEO SECTION ===== */
         .video-section {
@@ -2157,19 +2085,6 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.6rem;
             }
-            .spotlight-card .spotlight-info h4 {
-                font-size: 0.65rem;
-            }
-            .spotlight-card .spotlight-info .offer-tag-spotlight {
-                font-size: 0.5rem;
-                padding: 0.1rem 0.5rem;
-            }
-            .spotlight-card .spotlight-badge {
-                font-size: 0.5rem;
-                padding: 0.15rem 0.6rem;
-                top: 0.5rem;
-                left: 0.5rem;
-            }
             .all-products-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.6rem;
@@ -2546,10 +2461,47 @@
         <section class="spotlight-section">
             <div class="section-header"><h2>IN THE SPOTLIGHT</h2><a href="#">VIEW ALL <i class="fas fa-arrow-right"></i></a></div>
             <div class="spotlight-grid">
-                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/image45%20(1).webp" alt="Kanjivaram Silk Zari Half Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
-                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
-                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%202.webp" alt="Kanjivaram Silk Zari Half Saree Lehenga" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>KANJIVARAM SILK ZARI HALF SAREE LEH</h4><span class="offer-tag-spotlight highlight">50% OFF</span></div></div>
-                <div class="spotlight-card"><div class="spotlight-image"><img src="https://vianta-demo.aamir68599.workers.dev/Maheshwari%20image%203.webp" alt="Premium Banarasi Silk Chanderi Saree" /></div><span class="spotlight-badge">Extra 50% OFF</span><div class="spotlight-info"><h4>PREMIUM BANARASI SILK CHANDERI SAREE</h4><span class="offer-tag-spotlight">50% OFF</span></div></div>
+                <!-- Same products as NEW ARRIVALS -->
+                <a href="https://vianta-demo.aamir68599.workers.dev/lue-banarasi-silk-saree.html%2C%20pink-lehenga-set" class="arrival-card">
+                    <div class="arrival-image">
+                        <img src="https://vianta-demo.aamir68599.workers.dev/Kanjivaram%20image%201.webp" alt="Lavender Kanchipuram Tissue Silk" />
+                    </div>
+                    <span class="arrival-badge">NEW</span>
+                    <div class="arrival-info">
+                        <h4>Lavender Kanchipuram Tissue Silk</h4>
+                        <div class="price">₹12,283 <span class="original">₹22,109</span></div>
+                    </div>
+                </a>
+                <a href="https://vianta-demo.aamir68599.workers.dev/sgf11-kanjivaram-saree" class="arrival-card">
+                    <div class="arrival-image">
+                        <img src="https://vianta-demo.aamir68599.workers.dev/Banarasi%20cotton%20silk%20saree%20image%201.webp" alt="Blue Kattam Banarasi Chiniya Silk" />
+                    </div>
+                    <span class="arrival-badge">NEW</span>
+                    <div class="arrival-info">
+                        <h4>Blue Kattam Banarasi Chiniya Silk</h4>
+                        <div class="price">₹10,765 <span class="original">₹14,999</span></div>
+                    </div>
+                </a>
+                <a href="purple-embellished-silk-suit-set.html" class="arrival-card">
+                    <div class="arrival-image">
+                        <img src="https://vianta-demo.aamir68599.workers.dev/cotton%20silk%20iamge%201.webp" alt="Purple Embellished Slub Silk Palazzo Set" />
+                    </div>
+                    <span class="arrival-badge">NEW</span>
+                    <div class="arrival-info">
+                        <h4>Purple Embellished Slub Silk Palazzo Set</h4>
+                        <div class="price">₹12,283 <span class="original">₹22,109</span></div>
+                    </div>
+                </a>
+                <a href="https://vianta-demo.aamir68599.workers.dev/rani-silk-lehenga-choli" class="arrival-card">
+                    <div class="arrival-image">
+                        <img src="https://vianta-demo.aamir68599.workers.dev/lehenga%20image%201.webp" alt="Pink Embellished Lehenga Set" />
+                    </div>
+                    <span class="arrival-badge">NEW</span>
+                    <div class="arrival-info">
+                        <h4>Pink Embellished Lehenga Set</h4>
+                        <div class="price">₹12,283 <span class="original">₹22,109</span></div>
+                    </div>
+                </a>
             </div>
         </section>
 
