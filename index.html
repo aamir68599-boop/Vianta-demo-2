@@ -627,7 +627,8 @@
             background: #f5f0eb;
         }
 
-        .hero-carousel .slide-image img {
+        .hero-carousel .slide-image img,
+        .hero-carousel .slide-image picture img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -635,6 +636,23 @@
             display: block;
             background: #f5f0eb;
             transition: none;
+        }
+
+        .hero-carousel .slide-image picture {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-carousel .slide-image picture source+img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            background: #f5f0eb;
         }
 
         /* ---- hero controls ---- */
@@ -2189,11 +2207,14 @@
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
+                <!-- Slide 4 — mobile image via <picture> (only on mobile, desktop shows original) -->
                 <div class="carousel-slide" data-index="3">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://vianta-demo.aamir68599.workers.dev/sale%20saree.png" alt="Maheshwari Silk 3" />
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="https://vianta-demo.aamir68599.workers.dev/sale%20saree%202.png">
+                                <img src="https://vianta-demo.aamir68599.workers.dev/sale%20saree.png" alt="Maheshwari Silk 3" />
+                            </picture>
                         </div>
                     </div>
                 </div>
