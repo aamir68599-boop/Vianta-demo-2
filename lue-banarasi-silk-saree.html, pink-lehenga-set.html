@@ -257,7 +257,7 @@
             font-size: 1.1rem;
         }
         .icon-group .badge-dot::after {
-            content: '3';
+            content: '0';
             position: absolute;
             top: 0px;
             right: 0px;
@@ -1247,7 +1247,8 @@
                 <div class="icon-group">
                     <a href="#" class="icon-item" aria-label="Account"><i class="fas fa-user-circle"></i></a>
                     <a href="#" class="icon-item" aria-label="Wishlist"><i class="fas fa-heart"></i></a>
-                    <a href="cart.html" class="icon-item badge-dot" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+                    <!-- Cart icon with dynamic badge -->
+                    <a href="cart.html" class="icon-item badge-dot" aria-label="Cart" id="cartIcon"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </div>
         </header>
@@ -1366,8 +1367,8 @@
 
                     <!-- Action Buttons -->
                     <div class="action-buttons">
-                        <a href="cart.html" class="btn-add-cart"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;"></i> Add to Cart</a>
-                        <a href="checkout.html" class="btn-buy-now">Buy Now</a>
+                        <a href="#" class="btn-add-cart" id="addToCartBtn"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;"></i> Add to Cart</a>
+                        <a href="#" class="btn-buy-now" id="buyNowBtn">Buy Now</a>
                         <button class="btn-wishlist" aria-label="Wishlist"><i class="fas fa-heart"></i></button>
                     </div>
 
@@ -1613,6 +1614,109 @@
                 this.classList.add('active');
             });
         });
+
+        // ============================================================
+        // CART FUNCTIONALITY (localStorage)
+        // ============================================================
+
+        // Helper: get cart from localStorage
+        function getCart() {
+            try {
+                const data = localStorage.getItem('cart');
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        // Helper: save cart to localStorage
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Helper: update cart badge count
+        function updateCartBadge() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.querySelector('.badge-dot');
+            if (badge) {
+                // Remove old pseudo-element content by updating ::after via style? We'll use data attribute and CSS.
+                // Use a more reliable method: set a data attribute and style using JS or just update content via pseudo.
+                // We'll use a span inside badge? But badge is an <a> with pseudo. Better to create a span.
+                // To keep it simple, we'll directly set the text content of a new span inside.
+                let existing = badge.querySelector('.badge-count');
+                if (!existing) {
+                    existing = document.createElement('span');
+                    existing.className = 'badge-count';
+                    existing.style.cssText = 'position:absolute; top:-2px; right:-4px; background:#a67c6b; color:#fff; font-size:0.45rem; font-weight:700; padding:0.1rem 0.35rem; border-radius:20px; box-shadow:0 2px 8px rgba(166,124,107,0.35); line-height:1.2; min-width:16px; text-align:center; font-family:Inter,system-ui,sans-serif;';
+                    badge.style.position = 'relative';
+                    badge.appendChild(existing);
+                }
+                existing.textContent = totalItems;
+                if (totalItems === 0) {
+                    existing.style.display = 'none';
+                } else {
+                    existing.style.display = 'block';
+                }
+                // Also remove the old ::after content if any
+                badge.style.setProperty('--badge-content', 'none');
+                // Hide default pseudo content by setting content to none
+                badge.classList.add('badge-dot');
+            }
+        }
+
+        // Add product to cart
+        function addToCart(product) {
+            let cart = getCart();
+            // Check if product already exists (by id)
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity = (existing.quantity || 1) + 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            saveCart(cart);
+            updateCartBadge();
+        }
+
+        // Get current product data from page
+        function getCurrentProduct() {
+            const name = document.querySelector('.product-info-detail h1')?.innerText || 'New Traditional South Indian Half Saree';
+            const priceText = document.querySelector('.current-price')?.innerText || '₹949.00';
+            const price = parseFloat(priceText.replace(/[₹,]/g, '')) || 949;
+            const image = document.getElementById('mainImage')?.src || 'https://vianta-demo.aamir68599.workers.dev/Kanjivaram%20image%201.webp';
+            // Use a unique id (could be ASIN or generate one)
+            const id = 'half-saree-001';
+            return { id, name, price, image, quantity: 1 };
+        }
+
+        // Handle Add to Cart click
+        document.getElementById('addToCartBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const product = getCurrentProduct();
+            addToCart(product);
+            // Optionally show a quick message or redirect to cart
+            // Redirect to cart.html after short delay to allow save
+            window.location.href = 'cart.html';
+        });
+
+        // Handle Buy Now click (add to cart and go to checkout)
+        document.getElementById('buyNowBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const product = getCurrentProduct();
+            // For Buy Now, we can either just add and go to checkout, or clear cart and add only this item.
+            // Let's add and then redirect to checkout.html
+            addToCart(product);
+            window.location.href = 'checkout.html';
+        });
+
+        // Initialize badge on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartBadge();
+        });
+
+        // Also update when page loads (if cart already has items)
+        updateCartBadge();
     </script>
 
 </body>
