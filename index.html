@@ -557,6 +557,17 @@
             .offer-banner .sep {
                 font-size: 0.3rem;
             }
+
+            /* -------- FIX: remove gaps above & below hero carousel on mobile -------- */
+            .hero-carousel {
+                margin-top: 0 !important;
+            }
+            .category-section {
+                margin-top: 0 !important;
+            }
+            .bottom-header {
+                padding-bottom: 0 !important;
+            }
         }
 
         /* ================================================================
@@ -787,6 +798,14 @@
             }
             .hero-carousel .dot.active {
                 width: 20px;
+            }
+
+            /* -------- ADDED: make carousel images full (no crop) on mobile -------- */
+            .hero-carousel .slide-image img,
+            .hero-carousel .slide-image picture img,
+            .bottom-carousel .slide-image img,
+            .extra-bottom-carousel .slide-image img {
+                object-fit: contain !important;
             }
         }
 
@@ -2117,6 +2136,14 @@
             }
             .extra-bottom-carousel .dot.active {
                 width: 18px;
+            }
+
+            /* -------- ADDED: make carousel images full (no crop) on mobile -------- */
+            .hero-carousel .slide-image img,
+            .hero-carousel .slide-image picture img,
+            .bottom-carousel .slide-image img,
+            .extra-bottom-carousel .slide-image img {
+                object-fit: contain !important;
             }
         }
     </style>
